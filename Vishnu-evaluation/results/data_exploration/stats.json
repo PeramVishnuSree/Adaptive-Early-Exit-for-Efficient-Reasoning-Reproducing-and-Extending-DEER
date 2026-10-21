@@ -1,0 +1,124 @@
+{
+  "gsm8k": {
+    "n_test": 1319,
+    "n_train": 7473,
+    "question_tokens_test": {
+      "mean": 61.30780894617134,
+      "median": 57.0,
+      "max": 188
+    },
+    "calc_steps_test": {
+      "mean": 3.246398786959818,
+      "dist": {
+        "0": 18,
+        "1": 65,
+        "2": 357,
+        "3": 364,
+        "4": 290,
+        "5": 138,
+        "6": 57,
+        "7": 21,
+        "8": 9
+      }
+    },
+    "calc_steps_train_mean": 3.173558142646862,
+    "answer_types_test": {
+      "integer": 1319
+    },
+    "negative_answers_test": 2,
+    "trial_answer_tokens_test": {
+      "mean": 2.293404094010614,
+      "dist": {
+        "1": 253,
+        "2": 639,
+        "3": 296,
+        "4": 78,
+        "5": 30,
+        "6": 19,
+        "7": 3,
+        "9": 1
+      }
+    },
+    "duplicate_questions_in_test": 0,
+    "test_questions_also_in_train": 0,
+    "train_gold_parse_failures": 0
+  },
+  "math500": {
+    "n": 500,
+    "n_hf_math500": 500,
+    "missing_vs_hf": [],
+    "levels": {
+      "1": 43,
+      "2": 90,
+      "3": 105,
+      "4": 128,
+      "5": 134
+    },
+    "subjects": {
+      "Algebra": 124,
+      "Intermediate Algebra": 97,
+      "Prealgebra": 82,
+      "Number Theory": 62,
+      "Precalculus": 56,
+      "Geometry": 41,
+      "Counting & Probability": 38
+    },
+    "question_tokens": {
+      "mean": 70.94,
+      "median": 50.0,
+      "max": 791
+    },
+    "answer_types": {
+      "integer": 313,
+      "expression (sqrt, pi, vars...)": 97,
+      "fraction": 50,
+      "tuple/interval/list": 23,
+      "text/choice": 10,
+      "decimal": 7
+    },
+    "trial_answer_tokens": {
+      "mean": 4.028,
+      "median": 2.0,
+      "max": 31
+    },
+    "by_level": {
+      "1": {
+        "n": 43,
+        "question_tokens_mean": 42.44186046511628,
+        "solution_tokens_mean": 98.0,
+        "trial_answer_tokens_mean": 2.7209302325581395,
+        "share_integer_answers": 0.7906976744186046
+      },
+      "2": {
+        "n": 90,
+        "question_tokens_mean": 52.955555555555556,
+        "solution_tokens_mean": 141.3,
+        "trial_answer_tokens_mean": 3.3777777777777778,
+        "share_integer_answers": 0.6444444444444445
+      },
+      "3": {
+        "n": 105,
+        "question_tokens_mean": 57.285714285714285,
+        "solution_tokens_mean": 183.24761904761905,
+        "trial_answer_tokens_mean": 4.266666666666667,
+        "share_integer_answers": 0.6190476190476191
+      },
+      "4": {
+        "n": 128,
+        "question_tokens_mean": 76.3125,
+        "solution_tokens_mean": 212.7578125,
+        "trial_answer_tokens_mean": 4.34375,
+        "share_integer_answers": 0.640625
+      },
+      "5": {
+        "n": 134,
+        "question_tokens_mean": 97.73134328358209,
+        "solution_tokens_mean": 345.04477611940297,
+        "trial_answer_tokens_mean": 4.395522388059701,
+        "share_integer_answers": 0.5522388059701493
+      }
+    },
+    "reference_solutions_graded_correct": 500,
+    "grader_failures_on_reference": []
+  }
+}
