@@ -1,0 +1,14 @@
+# Local evaluation / analysis (no GPU). python -m venv .venv && .venv/bin/pip install -r requirements-eval.txt
+sympy==1.12
+antlr4-python3-runtime==4.11.0
+latex2sympy2_extended[antlr4_11_0]
+regex
+word2number
+transformers
+jinja2
+datasets
+numpy
+pandas
+matplotlib
+pytest
+nltk

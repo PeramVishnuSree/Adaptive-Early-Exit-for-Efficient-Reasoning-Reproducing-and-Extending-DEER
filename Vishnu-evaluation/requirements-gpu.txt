@@ -1,0 +1,4 @@
+# GPU runs (Colab T4 / HPC). Matches the official DEER pin vllm<=0.6.1.
+vllm==0.6.1
+nltk
+-r requirements-eval.txt
