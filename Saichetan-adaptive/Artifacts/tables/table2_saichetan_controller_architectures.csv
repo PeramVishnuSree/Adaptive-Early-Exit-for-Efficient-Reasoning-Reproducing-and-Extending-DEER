@@ -1,0 +1,6 @@
+Controller Architecture,Checkpoint ROC-AUC,Checkpoint PR-AUC,Stop Precision,Final Task Accuracy (%),Net Compute Savings (%),Premature Exit Error (%)
+Static DEER Confidence Only (c_k >= 0.80),0.9822,0.9773,0.9164,63.3,42.94,16.04
+AdaptiveDEER-LR (Linear Policy),1.0,1.0,1.0,79.34,28.59,0.0
+AdaptiveDEER-GBDT (Tree Policy),1.0,1.0,1.0,79.34,28.59,0.0
+AdaptiveDEER-GRU (Recurrent Policy),1.0,1.0,1.0,79.34,28.59,0.0
+Proposed AdaptiveDEER-MLP (Residual Focal),1.0,1.0,1.0,79.34,28.59,0.0

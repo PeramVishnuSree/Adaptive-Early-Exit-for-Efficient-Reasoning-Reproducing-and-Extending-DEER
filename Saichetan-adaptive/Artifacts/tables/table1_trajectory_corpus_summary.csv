@@ -1,0 +1,5 @@
+model_scale,dataset,Problems,Total_Checkpoints,Full_CoT_Acc_Pct,Avg_Full_Tokens
+1.5B,GSM8K,800,6591,84.36,562.7
+1.5B,MATH-500,500,8499,63.2,1599.9
+7B,GSM8K,800,6176,89.28,525.7
+7B,MATH-500,500,8043,73.03,1531.6

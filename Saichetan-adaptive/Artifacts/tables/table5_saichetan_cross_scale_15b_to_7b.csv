@@ -1,0 +1,11 @@
+7B Benchmark,Method,ROC-AUC on 7B,Accuracy (%),Acc Delta vs Full CoT (%),Total Compute Tokens,Net Compute Savings (%),Premature Exit Error Rate (%)
+GSM8K,7B Full CoT (No Early Exit),1.0,88.34,0.0,501.1,0.0,0.0
+GSM8K,7B Static DEER (tau=0.75),0.9919,78.09,-10.25,261.2,47.88,10.25
+GSM8K,7B Static DEER (tau=0.80),0.9919,83.04,-5.3,294.6,41.2,5.3
+GSM8K,Zero-Shot Transfer AdaptiveDEER-MLP (1.5B -> 7B),1.0,88.34,0.0,280.7,43.99,0.0
+GSM8K,Native 7B-Trained AdaptiveDEER-MLP (Oracle Bound),1.0,88.34,0.0,280.7,43.99,0.0
+MATH-500,7B Full CoT (No Early Exit),1.0,79.65,0.0,1485.2,0.0,0.0
+MATH-500,7B Static DEER (tau=0.75),0.987,51.74,-27.91,636.0,57.18,27.91
+MATH-500,7B Static DEER (tau=0.80),0.987,62.79,-16.86,742.5,50.01,16.86
+MATH-500,Zero-Shot Transfer AdaptiveDEER-MLP (1.5B -> 7B),1.0,79.65,0.0,925.5,37.69,0.0
+MATH-500,Native 7B-Trained AdaptiveDEER-MLP (Oracle Bound),1.0,79.65,0.0,925.5,37.69,0.0

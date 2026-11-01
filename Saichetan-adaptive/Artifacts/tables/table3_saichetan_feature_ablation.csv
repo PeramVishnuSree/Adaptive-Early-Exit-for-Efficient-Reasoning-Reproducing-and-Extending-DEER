@@ -1,0 +1,6 @@
+Feature Set Configuration,Dim,ROC-AUC,Final Accuracy (%),Reasoning Tokens,Net Compute Savings (%),Premature Exit Error (%)
+1. Instantaneous Confidence Only [c_k],1,0.9822,76.7,625.7,18.99,2.64
+"2. + Confidence Momentum [c_k, d_c1, d_c2, EMA, drawdown]",5,0.9892,77.8,604.7,21.73,1.54
+"3. + Token Uncertainty [H_k, min_prob, SNR]",8,1.0,79.34,552.8,28.59,0.0
+"4. + Answer Self-Consistency [I(A_k==A_{k-1}), streak]",10,1.0,79.34,552.8,28.59,0.0
+"5. Full 12-Feature Trajectory Vector (+ L_k, k)",12,1.0,79.34,552.8,28.59,0.0

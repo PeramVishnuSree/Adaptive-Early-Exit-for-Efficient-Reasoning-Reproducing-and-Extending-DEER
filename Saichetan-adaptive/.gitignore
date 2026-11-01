@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+results/*.pt
+results/*.json
+Artifacts/data/*.parquet
+Artifacts/checkpoints/*.pt
+!Artifacts/data/README.md
+!Artifacts/checkpoints/README.md

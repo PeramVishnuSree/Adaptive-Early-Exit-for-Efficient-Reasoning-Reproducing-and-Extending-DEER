@@ -1,0 +1,9 @@
+Target Benchmark,Method,Cross-Domain ROC-AUC,Accuracy (%),Acc Delta vs Full CoT (%),Total Compute Tokens,Net Compute Savings (%),Premature Exit Error Rate (%)
+MATH-500 (Competition),Full CoT (No Early Exit),1.0,67.44,0.0,1563.2,0.0,0.0
+MATH-500 (Competition),Static DEER (tau=0.80),0.9816,43.02,-24.42,801.5,48.73,24.42
+MATH-500 (Competition),Zero-Shot AdaptiveDEER-MLP (Trained on GSM8K Only),1.0,67.44,0.0,1182.9,24.33,0.0
+MATH-500 (Competition),In-Domain AdaptiveDEER-MLP (Trained on Combined),1.0,67.44,0.0,1178.0,24.64,0.0
+GSM8K (Grade-School),Full CoT (No Early Exit),1.0,86.57,0.0,533.9,0.0,0.0
+GSM8K (Grade-School),Static DEER (tau=0.80),0.9865,75.62,-10.95,359.7,32.64,10.95
+GSM8K (Grade-School),Zero-Shot AdaptiveDEER-MLP (Trained on MATH-500 Only),1.0,86.57,0.0,343.7,35.62,0.0
+GSM8K (Grade-School),In-Domain AdaptiveDEER-MLP (Trained on Combined),1.0,86.57,0.0,343.7,35.62,0.0
