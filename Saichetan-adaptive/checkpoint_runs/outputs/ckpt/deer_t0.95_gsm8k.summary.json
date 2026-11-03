@@ -1,0 +1,50 @@
+{
+  "n": 100,
+  "accuracy": 0.68,
+  "accuracy_ci95": 0.0914293257111743,
+  "avg_reasoning_tokens": 441.74,
+  "median_reasoning_tokens": 198.0,
+  "avg_output_tokens": 772.65,
+  "avg_compute_tokens": 777.57,
+  "avg_checkpoints": 0.83,
+  "exit_reasons": {
+    "natural": 66,
+    "budget": 3,
+    "confident": 31
+  },
+  "wall_time_s": 389.1000428199768,
+  "wall_time_per_question_s": 3.891000428199768,
+  "input": "deer_t0.95_gsm8k.jsonl",
+  "dataset": "gsm8k",
+  "run_meta": {
+    "wall_time_s": 389.1000428199768,
+    "n_questions": 100,
+    "args": {
+      "model_name_or_path": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+      "dataset_dir": "data",
+      "dtype": "float16",
+      "model_context_len": 16000,
+      "gpu_memory_utilization": 0.9,
+      "trust_remote_code": false,
+      "run_time": 1,
+      "no_thinking": 0,
+      "rep": 0,
+      "points": 1,
+      "af": 0,
+      "max_judge_steps": 10,
+      "policy": "avg1",
+      "threshold": 0.95,
+      "max_len": 8000,
+      "dataset": "gsm8k",
+      "output_path": "./outputs",
+      "think_ratio": 0.6,
+      "batch_size": 2000,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "prob_check_max_tokens": 20,
+      "limit": 100,
+      "output_file": "outputs/ckpt/deer_t0.95_gsm8k.jsonl",
+      "trial_temperature": -1.0
+    }
+  }
+}
