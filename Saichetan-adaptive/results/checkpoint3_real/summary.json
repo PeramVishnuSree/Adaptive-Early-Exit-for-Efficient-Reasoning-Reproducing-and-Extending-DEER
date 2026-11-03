@@ -1,0 +1,933 @@
+{
+  "summary": {
+    "seeds": 5,
+    "test_size": 0.3,
+    "epochs": 15,
+    "auc": {
+      "MLP": [
+        0.9195590390317067,
+        0.024566137224690445
+      ],
+      "DEER confidence": [
+        0.9286763195151956,
+        0.02793651113007852
+      ]
+    },
+    "gsm8k": {
+      "Full reasoning": {
+        "accuracy_pct": [
+          79.34574036511155,
+          13.163111201879623
+        ],
+        "output_tokens": [
+          1091.9337559161595,
+          196.19317588126654
+        ]
+      },
+      "DEER tau=0.8": {
+        "accuracy_pct": [
+          83.88343475321162,
+          10.526170206930786
+        ],
+        "output_tokens": [
+          489.37822920892495,
+          22.553028970576708
+        ]
+      },
+      "DEER tau=0.9": {
+        "accuracy_pct": [
+          83.88343475321162,
+          10.526170206930786
+        ],
+        "output_tokens": [
+          497.7495527383368,
+          30.612220242634137
+        ]
+      },
+      "DEER tau=0.95": {
+        "accuracy_pct": [
+          84.50843475321162,
+          10.062726558133374
+        ],
+        "output_tokens": [
+          522.4463377281947,
+          42.41066896533316
+        ]
+      },
+      "DEER tau=0.99": {
+        "accuracy_pct": [
+          83.295199459094,
+          11.458008597093242
+        ],
+        "output_tokens": [
+          671.3491000676132,
+          125.83581684027345
+        ]
+      },
+      "Consistency (2 in a row)": {
+        "accuracy_pct": [
+          83.88343475321162,
+          10.526170206930786
+        ],
+        "output_tokens": [
+          646.9572557471264,
+          83.98424148816305
+        ]
+      },
+      "Consistency + momentum": {
+        "accuracy_pct": [
+          83.88343475321162,
+          10.526170206930786
+        ],
+        "output_tokens": [
+          668.5475358350237,
+          86.44654163174866
+        ]
+      },
+      "MLP p>=0.3": {
+        "accuracy_pct": [
+          84.40701487491549,
+          8.582790977199005
+        ],
+        "output_tokens": [
+          486.02152281947264,
+          27.812630679521675
+        ]
+      },
+      "MLP p>=0.4": {
+        "accuracy_pct": [
+          85.09667004732928,
+          9.099760214988954
+        ],
+        "output_tokens": [
+          551.4799766734279,
+          70.65218425492617
+        ]
+      },
+      "MLP p>=0.5": {
+        "accuracy_pct": [
+          85.09667004732928,
+          9.099760214988954
+        ],
+        "output_tokens": [
+          561.317476673428,
+          72.16439009793575
+        ]
+      },
+      "MLP p>=0.62": {
+        "accuracy_pct": [
+          84.50843475321162,
+          10.062726558133374
+        ],
+        "output_tokens": [
+          593.1576485801218,
+          85.69835139057189
+        ]
+      },
+      "MLP p>=0.7": {
+        "accuracy_pct": [
+          84.50843475321162,
+          10.062726558133374
+        ],
+        "output_tokens": [
+          641.6755218052738,
+          120.78055724375695
+        ]
+      },
+      "MLP p>=0.8": {
+        "accuracy_pct": [
+          84.50843475321162,
+          10.062726558133374
+        ],
+        "output_tokens": [
+          771.5889229208926,
+          164.0276724363417
+        ]
+      },
+      "MLP p>=0.9": {
+        "accuracy_pct": [
+          84.50843475321162,
+          10.062726558133374
+        ],
+        "output_tokens": [
+          851.4195728532793,
+          200.0729543331708
+        ]
+      }
+    },
+    "math": {
+      "Full reasoning": {
+        "accuracy_pct": [
+          83.38272480207965,
+          2.7388302916801117
+        ],
+        "output_tokens": [
+          2968.6748973965105,
+          200.35644076899112
+        ]
+      },
+      "DEER tau=0.8": {
+        "accuracy_pct": [
+          70.20969711292291,
+          6.270082310101743
+        ],
+        "output_tokens": [
+          1102.372094607901,
+          193.98591251732688
+        ]
+      },
+      "DEER tau=0.9": {
+        "accuracy_pct": [
+          82.05380282799638,
+          5.632732596151779
+        ],
+        "output_tokens": [
+          1353.0704033242741,
+          177.8839617436938
+        ]
+      },
+      "DEER tau=0.95": {
+        "accuracy_pct": [
+          82.54023395958879,
+          4.8844596625985535
+        ],
+        "output_tokens": [
+          1454.0303265193588,
+          147.47764134370166
+        ]
+      },
+      "DEER tau=0.99": {
+        "accuracy_pct": [
+          83.09578951514436,
+          4.088334179578583
+        ],
+        "output_tokens": [
+          1520.0370018511953,
+          178.72689464637224
+        ]
+      },
+      "Consistency (2 in a row)": {
+        "accuracy_pct": [
+          84.24156130607743,
+          3.764702855671857
+        ],
+        "output_tokens": [
+          1429.8588534404664,
+          174.2198903186561
+        ]
+      },
+      "Consistency + momentum": {
+        "accuracy_pct": [
+          83.47233053684667,
+          3.99558990804609
+        ],
+        "output_tokens": [
+          1494.7763744141162,
+          173.54032061760952
+        ]
+      },
+      "MLP p>=0.3": {
+        "accuracy_pct": [
+          71.06975461814172,
+          4.497270983125729
+        ],
+        "output_tokens": [
+          991.8848816416557,
+          160.40029070873874
+        ]
+      },
+      "MLP p>=0.4": {
+        "accuracy_pct": [
+          76.43530662885503,
+          3.613005653322723
+        ],
+        "output_tokens": [
+          1206.5242416006931,
+          174.4800623656985
+        ]
+      },
+      "MLP p>=0.5": {
+        "accuracy_pct": [
+          81.12584190003545,
+          3.450808694273005
+        ],
+        "output_tokens": [
+          1424.8679593524755,
+          190.35374830783525
+        ]
+      },
+      "MLP p>=0.62": {
+        "accuracy_pct": [
+          83.81007522943007,
+          4.1706067580186446
+        ],
+        "output_tokens": [
+          1623.4154838709678,
+          126.20473135768549
+        ]
+      },
+      "MLP p>=0.7": {
+        "accuracy_pct": [
+          85.0107920753082,
+          4.137023601622159
+        ],
+        "output_tokens": [
+          1804.0860282011895,
+          152.22882475029846
+        ]
+      },
+      "MLP p>=0.8": {
+        "accuracy_pct": [
+          85.0107920753082,
+          4.137023601622159
+        ],
+        "output_tokens": [
+          2011.3936539446217,
+          185.4872754857882
+        ]
+      },
+      "MLP p>=0.9": {
+        "accuracy_pct": [
+          84.9949190594352,
+          4.589872762988787
+        ],
+        "output_tokens": [
+          2289.7226196384263,
+          127.08706759377617
+        ]
+      }
+    }
+  },
+  "per_seed": [
+    {
+      "auc": {
+        "MLP": 0.9424046232727905,
+        "DEER confidence": 0.9593291040236378
+      },
+      "n_train_checkpoints": 947,
+      "n_test_checkpoints": 459,
+      "gsm8k": {
+        "n_questions": 25,
+        "Full reasoning": {
+          "accuracy": 0.92,
+          "output_tokens": 920.0
+        },
+        "DEER tau=0.8": {
+          "accuracy": 0.92,
+          "output_tokens": 490.72
+        },
+        "DEER tau=0.9": {
+          "accuracy": 0.92,
+          "output_tokens": 490.72
+        },
+        "DEER tau=0.95": {
+          "accuracy": 0.92,
+          "output_tokens": 518.12
+        },
+        "DEER tau=0.99": {
+          "accuracy": 0.92,
+          "output_tokens": 603.68
+        },
+        "Consistency (2 in a row)": {
+          "accuracy": 0.92,
+          "output_tokens": 639.0
+        },
+        "Consistency + momentum": {
+          "accuracy": 0.92,
+          "output_tokens": 664.96
+        },
+        "MLP p>=0.3": {
+          "accuracy": 0.92,
+          "output_tokens": 490.72
+        },
+        "MLP p>=0.4": {
+          "accuracy": 0.92,
+          "output_tokens": 561.56
+        },
+        "MLP p>=0.5": {
+          "accuracy": 0.92,
+          "output_tokens": 561.56
+        },
+        "MLP p>=0.62": {
+          "accuracy": 0.92,
+          "output_tokens": 573.32
+        },
+        "MLP p>=0.7": {
+          "accuracy": 0.92,
+          "output_tokens": 621.16
+        },
+        "MLP p>=0.8": {
+          "accuracy": 0.92,
+          "output_tokens": 788.24
+        },
+        "MLP p>=0.9": {
+          "accuracy": 0.92,
+          "output_tokens": 788.24
+        }
+      },
+      "math": {
+        "n_questions": 35,
+        "Full reasoning": {
+          "accuracy": 0.8,
+          "output_tokens": 3324.4
+        },
+        "DEER tau=0.8": {
+          "accuracy": 0.6571428571428571,
+          "output_tokens": 1292.2
+        },
+        "DEER tau=0.9": {
+          "accuracy": 0.8,
+          "output_tokens": 1644.9714285714285
+        },
+        "DEER tau=0.95": {
+          "accuracy": 0.8,
+          "output_tokens": 1663.3428571428572
+        },
+        "DEER tau=0.99": {
+          "accuracy": 0.8,
+          "output_tokens": 1751.0857142857142
+        },
+        "Consistency (2 in a row)": {
+          "accuracy": 0.8,
+          "output_tokens": 1718.1714285714286
+        },
+        "Consistency + momentum": {
+          "accuracy": 0.8,
+          "output_tokens": 1809.6857142857143
+        },
+        "MLP p>=0.3": {
+          "accuracy": 0.7142857142857143,
+          "output_tokens": 1174.2
+        },
+        "MLP p>=0.4": {
+          "accuracy": 0.7714285714285715,
+          "output_tokens": 1404.9714285714285
+        },
+        "MLP p>=0.5": {
+          "accuracy": 0.8,
+          "output_tokens": 1708.8285714285714
+        },
+        "MLP p>=0.62": {
+          "accuracy": 0.8,
+          "output_tokens": 1833.4
+        },
+        "MLP p>=0.7": {
+          "accuracy": 0.8,
+          "output_tokens": 1936.5428571428572
+        },
+        "MLP p>=0.8": {
+          "accuracy": 0.8,
+          "output_tokens": 2033.7428571428572
+        },
+        "MLP p>=0.9": {
+          "accuracy": 0.7714285714285715,
+          "output_tokens": 2217.5142857142855
+        }
+      }
+    },
+    {
+      "auc": {
+        "MLP": 0.8845793906623687,
+        "DEER confidence": 0.8866798377872518
+      },
+      "n_train_checkpoints": 948,
+      "n_test_checkpoints": 458,
+      "gsm8k": {
+        "n_questions": 34,
+        "Full reasoning": {
+          "accuracy": 0.5882352941176471,
+          "output_tokens": 1426.5294117647059
+        },
+        "DEER tau=0.8": {
+          "accuracy": 0.6764705882352942,
+          "output_tokens": 489.88235294117646
+        },
+        "DEER tau=0.9": {
+          "accuracy": 0.6764705882352942,
+          "output_tokens": 510.1764705882353
+        },
+        "DEER tau=0.95": {
+          "accuracy": 0.6764705882352942,
+          "output_tokens": 547.7647058823529
+        },
+        "DEER tau=0.99": {
+          "accuracy": 0.6470588235294118,
+          "output_tokens": 881.9117647058823
+        },
+        "Consistency (2 in a row)": {
+          "accuracy": 0.6764705882352942,
+          "output_tokens": 794.5
+        },
+        "Consistency + momentum": {
+          "accuracy": 0.6764705882352942,
+          "output_tokens": 828.7352941176471
+        },
+        "MLP p>=0.3": {
+          "accuracy": 0.7058823529411765,
+          "output_tokens": 486.47058823529414
+        },
+        "MLP p>=0.4": {
+          "accuracy": 0.7058823529411765,
+          "output_tokens": 669.4411764705883
+        },
+        "MLP p>=0.5": {
+          "accuracy": 0.7058823529411765,
+          "output_tokens": 680.9411764705883
+        },
+        "MLP p>=0.62": {
+          "accuracy": 0.6764705882352942,
+          "output_tokens": 699.3529411764706
+        },
+        "MLP p>=0.7": {
+          "accuracy": 0.6764705882352942,
+          "output_tokens": 739.7941176470588
+        },
+        "MLP p>=0.8": {
+          "accuracy": 0.6764705882352942,
+          "output_tokens": 982.0882352941177
+        },
+        "MLP p>=0.9": {
+          "accuracy": 0.6764705882352942,
+          "output_tokens": 1152.1764705882354
+        }
+      },
+      "math": {
+        "n_questions": 26,
+        "Full reasoning": {
+          "accuracy": 0.8076923076923077,
+          "output_tokens": 3000.8076923076924
+        },
+        "DEER tau=0.8": {
+          "accuracy": 0.6923076923076923,
+          "output_tokens": 1091.3846153846155
+        },
+        "DEER tau=0.9": {
+          "accuracy": 0.8846153846153846,
+          "output_tokens": 1369.3461538461538
+        },
+        "DEER tau=0.95": {
+          "accuracy": 0.8846153846153846,
+          "output_tokens": 1439.3461538461538
+        },
+        "DEER tau=0.99": {
+          "accuracy": 0.8846153846153846,
+          "output_tokens": 1499.8076923076924
+        },
+        "Consistency (2 in a row)": {
+          "accuracy": 0.8461538461538461,
+          "output_tokens": 1429.3846153846155
+        },
+        "Consistency + momentum": {
+          "accuracy": 0.8076923076923077,
+          "output_tokens": 1481.6153846153845
+        },
+        "MLP p>=0.3": {
+          "accuracy": 0.6538461538461539,
+          "output_tokens": 1097.923076923077
+        },
+        "MLP p>=0.4": {
+          "accuracy": 0.7692307692307693,
+          "output_tokens": 1265.923076923077
+        },
+        "MLP p>=0.5": {
+          "accuracy": 0.8461538461538461,
+          "output_tokens": 1439.8076923076924
+        },
+        "MLP p>=0.62": {
+          "accuracy": 0.8846153846153846,
+          "output_tokens": 1505.0
+        },
+        "MLP p>=0.7": {
+          "accuracy": 0.8846153846153846,
+          "output_tokens": 1520.0384615384614
+        },
+        "MLP p>=0.8": {
+          "accuracy": 0.8846153846153846,
+          "output_tokens": 1782.076923076923
+        },
+        "MLP p>=0.9": {
+          "accuracy": 0.8846153846153846,
+          "output_tokens": 2223.076923076923
+        }
+      }
+    },
+    {
+      "auc": {
+        "MLP": 0.9413933264013612,
+        "DEER confidence": 0.9050949995273655
+      },
+      "n_train_checkpoints": 902,
+      "n_test_checkpoints": 504,
+      "gsm8k": {
+        "n_questions": 32,
+        "Full reasoning": {
+          "accuracy": 0.6875,
+          "output_tokens": 1192.5
+        },
+        "DEER tau=0.8": {
+          "accuracy": 0.75,
+          "output_tokens": 526.375
+        },
+        "DEER tau=0.9": {
+          "accuracy": 0.75,
+          "output_tokens": 547.9375
+        },
+        "DEER tau=0.95": {
+          "accuracy": 0.78125,
+          "output_tokens": 582.8125
+        },
+        "DEER tau=0.99": {
+          "accuracy": 0.75,
+          "output_tokens": 726.0
+        },
+        "Consistency (2 in a row)": {
+          "accuracy": 0.75,
+          "output_tokens": 633.59375
+        },
+        "Consistency + momentum": {
+          "accuracy": 0.75,
+          "output_tokens": 637.0625
+        },
+        "MLP p>=0.3": {
+          "accuracy": 0.78125,
+          "output_tokens": 533.09375
+        },
+        "MLP p>=0.4": {
+          "accuracy": 0.78125,
+          "output_tokens": 538.4375
+        },
+        "MLP p>=0.5": {
+          "accuracy": 0.78125,
+          "output_tokens": 569.0
+        },
+        "MLP p>=0.62": {
+          "accuracy": 0.78125,
+          "output_tokens": 667.71875
+        },
+        "MLP p>=0.7": {
+          "accuracy": 0.78125,
+          "output_tokens": 804.53125
+        },
+        "MLP p>=0.8": {
+          "accuracy": 0.78125,
+          "output_tokens": 862.5
+        },
+        "MLP p>=0.9": {
+          "accuracy": 0.78125,
+          "output_tokens": 914.34375
+        }
+      },
+      "math": {
+        "n_questions": 28,
+        "Full reasoning": {
+          "accuracy": 0.8571428571428571,
+          "output_tokens": 2802.214285714286
+        },
+        "DEER tau=0.8": {
+          "accuracy": 0.8214285714285714,
+          "output_tokens": 796.5357142857143
+        },
+        "DEER tau=0.9": {
+          "accuracy": 0.8571428571428571,
+          "output_tokens": 1148.392857142857
+        },
+        "DEER tau=0.95": {
+          "accuracy": 0.8214285714285714,
+          "output_tokens": 1269.1785714285713
+        },
+        "DEER tau=0.99": {
+          "accuracy": 0.8214285714285714,
+          "output_tokens": 1273.392857142857
+        },
+        "Consistency (2 in a row)": {
+          "accuracy": 0.8571428571428571,
+          "output_tokens": 1168.7857142857142
+        },
+        "Consistency + momentum": {
+          "accuracy": 0.8571428571428571,
+          "output_tokens": 1277.7142857142858
+        },
+        "MLP p>=0.3": {
+          "accuracy": 0.7857142857142857,
+          "output_tokens": 728.9285714285714
+        },
+        "MLP p>=0.4": {
+          "accuracy": 0.8214285714285714,
+          "output_tokens": 962.5
+        },
+        "MLP p>=0.5": {
+          "accuracy": 0.8214285714285714,
+          "output_tokens": 1173.2142857142858
+        },
+        "MLP p>=0.62": {
+          "accuracy": 0.8571428571428571,
+          "output_tokens": 1481.25
+        },
+        "MLP p>=0.7": {
+          "accuracy": 0.8571428571428571,
+          "output_tokens": 1911.9285714285713
+        },
+        "MLP p>=0.8": {
+          "accuracy": 0.8571428571428571,
+          "output_tokens": 2134.3214285714284
+        },
+        "MLP p>=0.9": {
+          "accuracy": 0.8571428571428571,
+          "output_tokens": 2320.3928571428573
+        }
+      }
+    },
+    {
+      "auc": {
+        "MLP": 0.9340505367151135,
+        "DEER confidence": 0.9420775149615275
+      },
+      "n_train_checkpoints": 990,
+      "n_test_checkpoints": 416,
+      "gsm8k": {
+        "n_questions": 24,
+        "Full reasoning": {
+          "accuracy": 0.875,
+          "output_tokens": 904.7083333333334
+        },
+        "DEER tau=0.8": {
+          "accuracy": 0.9166666666666666,
+          "output_tokens": 455.5
+        },
+        "DEER tau=0.9": {
+          "accuracy": 0.9166666666666666,
+          "output_tokens": 455.5
+        },
+        "DEER tau=0.95": {
+          "accuracy": 0.9166666666666666,
+          "output_tokens": 455.5
+        },
+        "DEER tau=0.99": {
+          "accuracy": 0.9166666666666666,
+          "output_tokens": 510.2916666666667
+        },
+        "Consistency (2 in a row)": {
+          "accuracy": 0.9166666666666666,
+          "output_tokens": 532.4166666666666
+        },
+        "Consistency + momentum": {
+          "accuracy": 0.9166666666666666,
+          "output_tokens": 568.0833333333334
+        },
+        "MLP p>=0.3": {
+          "accuracy": 0.9166666666666666,
+          "output_tokens": 448.375
+        },
+        "MLP p>=0.4": {
+          "accuracy": 0.9166666666666666,
+          "output_tokens": 448.375
+        },
+        "MLP p>=0.5": {
+          "accuracy": 0.9166666666666666,
+          "output_tokens": 455.5
+        },
+        "MLP p>=0.62": {
+          "accuracy": 0.9166666666666666,
+          "output_tokens": 455.5
+        },
+        "MLP p>=0.7": {
+          "accuracy": 0.9166666666666666,
+          "output_tokens": 460.375
+        },
+        "MLP p>=0.8": {
+          "accuracy": 0.9166666666666666,
+          "output_tokens": 487.875
+        },
+        "MLP p>=0.9": {
+          "accuracy": 0.9166666666666666,
+          "output_tokens": 532.9583333333334
+        }
+      },
+      "math": {
+        "n_questions": 36,
+        "Full reasoning": {
+          "accuracy": 0.8333333333333334,
+          "output_tokens": 2755.6944444444443
+        },
+        "DEER tau=0.8": {
+          "accuracy": 0.6944444444444444,
+          "output_tokens": 1324.611111111111
+        },
+        "DEER tau=0.9": {
+          "accuracy": 0.7222222222222222,
+          "output_tokens": 1414.2222222222222
+        },
+        "DEER tau=0.95": {
+          "accuracy": 0.75,
+          "output_tokens": 1572.638888888889
+        },
+        "DEER tau=0.99": {
+          "accuracy": 0.7777777777777778,
+          "output_tokens": 1687.0277777777778
+        },
+        "Consistency (2 in a row)": {
+          "accuracy": 0.8055555555555556,
+          "output_tokens": 1408.6944444444443
+        },
+        "Consistency + momentum": {
+          "accuracy": 0.8055555555555556,
+          "output_tokens": 1436.0277777777778
+        },
+        "MLP p>=0.3": {
+          "accuracy": 0.7222222222222222,
+          "output_tokens": 1064.888888888889
+        },
+        "MLP p>=0.4": {
+          "accuracy": 0.75,
+          "output_tokens": 1357.1944444444443
+        },
+        "MLP p>=0.5": {
+          "accuracy": 0.75,
+          "output_tokens": 1535.1666666666667
+        },
+        "MLP p>=0.62": {
+          "accuracy": 0.7777777777777778,
+          "output_tokens": 1644.75
+        },
+        "MLP p>=0.7": {
+          "accuracy": 0.8055555555555556,
+          "output_tokens": 1775.6944444444443
+        },
+        "MLP p>=0.8": {
+          "accuracy": 0.8055555555555556,
+          "output_tokens": 1829.4722222222222
+        },
+        "MLP p>=0.9": {
+          "accuracy": 0.8333333333333334,
+          "output_tokens": 2164.5
+        }
+      }
+    },
+    {
+      "auc": {
+        "MLP": 0.895367318106899,
+        "DEER confidence": 0.950200141276195
+      },
+      "n_train_checkpoints": 1008,
+      "n_test_checkpoints": 398,
+      "gsm8k": {
+        "n_questions": 29,
+        "Full reasoning": {
+          "accuracy": 0.896551724137931,
+          "output_tokens": 1015.9310344827586
+        },
+        "DEER tau=0.8": {
+          "accuracy": 0.9310344827586207,
+          "output_tokens": 484.41379310344826
+        },
+        "DEER tau=0.9": {
+          "accuracy": 0.9310344827586207,
+          "output_tokens": 484.41379310344826
+        },
+        "DEER tau=0.95": {
+          "accuracy": 0.9310344827586207,
+          "output_tokens": 508.0344827586207
+        },
+        "DEER tau=0.99": {
+          "accuracy": 0.9310344827586207,
+          "output_tokens": 634.8620689655172
+        },
+        "Consistency (2 in a row)": {
+          "accuracy": 0.9310344827586207,
+          "output_tokens": 635.2758620689655
+        },
+        "Consistency + momentum": {
+          "accuracy": 0.9310344827586207,
+          "output_tokens": 643.8965517241379
+        },
+        "MLP p>=0.3": {
+          "accuracy": 0.896551724137931,
+          "output_tokens": 471.44827586206895
+        },
+        "MLP p>=0.4": {
+          "accuracy": 0.9310344827586207,
+          "output_tokens": 539.5862068965517
+        },
+        "MLP p>=0.5": {
+          "accuracy": 0.9310344827586207,
+          "output_tokens": 539.5862068965517
+        },
+        "MLP p>=0.62": {
+          "accuracy": 0.9310344827586207,
+          "output_tokens": 569.8965517241379
+        },
+        "MLP p>=0.7": {
+          "accuracy": 0.9310344827586207,
+          "output_tokens": 582.5172413793103
+        },
+        "MLP p>=0.8": {
+          "accuracy": 0.9310344827586207,
+          "output_tokens": 737.2413793103449
+        },
+        "MLP p>=0.9": {
+          "accuracy": 0.9310344827586207,
+          "output_tokens": 869.3793103448276
+        }
+      },
+      "math": {
+        "n_questions": 31,
+        "Full reasoning": {
+          "accuracy": 0.8709677419354839,
+          "output_tokens": 2960.2580645161293
+        },
+        "DEER tau=0.8": {
+          "accuracy": 0.6451612903225806,
+          "output_tokens": 1007.1290322580645
+        },
+        "DEER tau=0.9": {
+          "accuracy": 0.8387096774193549,
+          "output_tokens": 1188.4193548387098
+        },
+        "DEER tau=0.95": {
+          "accuracy": 0.8709677419354839,
+          "output_tokens": 1325.6451612903227
+        },
+        "DEER tau=0.99": {
+          "accuracy": 0.8709677419354839,
+          "output_tokens": 1388.8709677419354
+        },
+        "Consistency (2 in a row)": {
+          "accuracy": 0.9032258064516129,
+          "output_tokens": 1424.258064516129
+        },
+        "Consistency + momentum": {
+          "accuracy": 0.9032258064516129,
+          "output_tokens": 1468.8387096774193
+        },
+        "MLP p>=0.3": {
+          "accuracy": 0.6774193548387096,
+          "output_tokens": 893.483870967742
+        },
+        "MLP p>=0.4": {
+          "accuracy": 0.7096774193548387,
+          "output_tokens": 1042.032258064516
+        },
+        "MLP p>=0.5": {
+          "accuracy": 0.8387096774193549,
+          "output_tokens": 1267.3225806451612
+        },
+        "MLP p>=0.62": {
+          "accuracy": 0.8709677419354839,
+          "output_tokens": 1652.6774193548388
+        },
+        "MLP p>=0.7": {
+          "accuracy": 0.9032258064516129,
+          "output_tokens": 1876.225806451613
+        },
+        "MLP p>=0.8": {
+          "accuracy": 0.9032258064516129,
+          "output_tokens": 2277.3548387096776
+        },
+        "MLP p>=0.9": {
+          "accuracy": 0.9032258064516129,
+          "output_tokens": 2523.1290322580644
+        }
+      }
+    }
+  ]
+}
