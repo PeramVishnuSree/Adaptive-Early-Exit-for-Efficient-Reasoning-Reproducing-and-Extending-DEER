@@ -1,0 +1,48 @@
+{
+  "summaries": {
+    "Full CoT": {
+      "n": 100,
+      "accuracy": 0.77,
+      "accuracy_ci95": 0.08248317161700318,
+      "avg_reasoning_tokens": 1228.8,
+      "median_reasoning_tokens": 198.5,
+      "avg_output_tokens": 1451.77,
+      "avg_compute_tokens": 1451.77,
+      "avg_checkpoints": 0.0,
+      "exit_reasons": {
+        "natural": 89,
+        "budget": 11
+      }
+    },
+    "DEER t=0.95": {
+      "n": 100,
+      "accuracy": 0.68,
+      "accuracy_ci95": 0.0914293257111743,
+      "avg_reasoning_tokens": 441.74,
+      "median_reasoning_tokens": 198.0,
+      "avg_output_tokens": 772.65,
+      "avg_compute_tokens": 777.57,
+      "avg_checkpoints": 0.83,
+      "exit_reasons": {
+        "natural": 66,
+        "budget": 3,
+        "confident": 31
+      }
+    },
+    "Never-exit (forced answer)": {
+      "n": 100,
+      "accuracy": 0.76,
+      "accuracy_ci95": 0.08370829349592548,
+      "avg_reasoning_tokens": 854.91,
+      "median_reasoning_tokens": 198.0,
+      "avg_output_tokens": 1122.81,
+      "avg_compute_tokens": 1141.08,
+      "avg_checkpoints": 3.56,
+      "exit_reasons": {
+        "natural": 90,
+        "budget": 10
+      }
+    }
+  },
+  "n_common": 100
+}
