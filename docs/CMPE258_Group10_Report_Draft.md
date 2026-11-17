@@ -5,7 +5,7 @@
 Jaswanthi Mandalapu (019148883) · Sai Chetan Muppalla (018310504) · Vishnu Sree Peram (018902481)
 Department of Computer Engineering, San José State University
 
-Repository: [https://github.com/peramvishnusree/adaptive-early-exit-for-efficient-reasoning-reproducing-and-extending-deer](https://github.com/peramvishnusree/adaptive-early-exit-for-efficient-reasoning-reproducing-and-extending-deer)
+Repository: [https://github.com/PeramVishnuSree/Adaptive-Early-Exit-for-Efficient-Reasoning-Reproducing-and-Extending-DEER](https://github.com/PeramVishnuSree/Adaptive-Early-Exit-for-Efficient-Reasoning-Reproducing-and-Extending-DEER)
 
 This draft updates the Check-In 3 report with the measurements already in the repository (commits of 16 November 2026). It does not add a new GPU run. The emphasis is the reading of the figures, which was the feedback on Check-In 3.
 
@@ -157,7 +157,7 @@ That is a usable outcome for the final report. The extension was tested on held-
 
 Repository (code, notebooks, tables, and the figures in this draft):
 
-[https://github.com/peramvishnusree/adaptive-early-exit-for-efficient-reasoning-reproducing-and-extending-deer](https://github.com/peramvishnusree/adaptive-early-exit-for-efficient-reasoning-reproducing-and-extending-deer)
+[https://github.com/PeramVishnuSree/Adaptive-Early-Exit-for-Efficient-Reasoning-Reproducing-and-Extending-DEER](https://github.com/PeramVishnuSree/Adaptive-Early-Exit-for-Efficient-Reasoning-Reproducing-and-Extending-DEER)
 
 | What | Path in the repository |
 |---|---|
