@@ -5,6 +5,32 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{url}
+\usepackage{float}
+\usepackage{dblfloatfix}
+
+\setcounter{topnumber}{3}
+\setcounter{dbltopnumber}{2}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\dbltopfraction}{0.9}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.7}
+\renewcommand{\dblfloatpagefraction}{0.6}
+\extrafloats{40}
+
+\newcommand{\colfig}[3]{%
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=0.98\textwidth,height=0.36\textheight,keepaspectratio]{#1}
+\caption{#2}
+\label{#3}
+\end{figure*}}
+\newcommand{\widefig}[3]{%
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=0.98\textwidth,height=0.36\textheight,keepaspectratio]{#1}
+\caption{#2}
+\label{#3}
+\end{figure*}}
 
 \begin{document}
 
@@ -44,6 +70,7 @@ A log-odds evidence rule, AdaDEER-E, then replaces the fixed threshold: a new an
 On all 500 MATH-500 problems, with parameters frozen before scoring, AdaDEER-E reaches 79.6\% accuracy at 1{,}488 tokens, against 76.6\% at 1{,}623 for DEER at $\tau=0.95$ (McNemar $p=0.003$) and 79.0\% at 1{,}892 for DEER at $\tau=0.99$.
 It matches full reasoning at 46\% of the tokens.
 The gain is an offline replay of never-exit trajectories, not a new live GPU run.
+The appendix copies the scored tables already in the repository: the dataset counts, the Check-In 2 smoke test, the synthetic controller bake-off, the Check-In 3 live runs, the answer-step fix, the stopping-method comparison, the state-dependent threshold, and the AdaDEER-E replay.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -95,6 +122,33 @@ Accumulate log-odds only while the trial answer repeats. Freeze $\theta=4.6$ and
 \end{tabular}
 \end{table}
 
+\section{Data and the First Reproduction}
+\label{sec:data}
+MATH-500 is not a flat set of 500 problems.
+Fig.~\ref{fig:levels} counts problems by level and by subject, and it shows that the reference solutions themselves get longer at Level~5.
+Fig.~\ref{fig:lengths} is the matching view of the questions: GSM8K and MATH-500 questions are short, GSM8K reference solutions contain a handful of calculation steps, and the gold answers that DEER averages for confidence are usually only a few tokens long.
+A stopping rule that looks only at a global threshold is ignoring both the level mix and the fact that the confidence statistic is computed on a short string.
+
+\widefig{figures/data_levels.png}{MATH-500 composition. Most problems are Level 4 or 5, Algebra is the largest subject, and reference solutions lengthen as the level rises.}{fig:levels}
+
+\widefig{figures/data_lengths.png}{Question length on the GSM8K test set and on MATH-500, calculation steps in the GSM8K references, and the number of tokens in the gold answers that DEER's confidence average would cover.}{fig:lengths}
+
+Figs.~\ref{fig:jm-acc}--\ref{fig:jm-long} are the Check-In 2 reproduction on 20 GSM8K questions.
+They are included because they are the project's first measured plots.
+They are not the result this report stands on.
+On that slice DEER is 70.0\% against 65.0\% for full chain-of-thought, and the average length falls only from 634.5 to 600.5 tokens.
+The question-wise plot shows why an average hides the mechanism: a few long traces (questions 19, 8, and 12) move a lot, and most questions barely move.
+The three longest items are broken out in Fig.~\ref{fig:jm-long}.
+The same three bars also exist as an untitled copy, \path{Plots/04_long_reasoning.png}, in the same Plots folder. That copy is the same figure and is not printed twice.
+
+\colfig{figures/jm_accuracy.png}{Check-In 2, 20 GSM8K questions. DEER at 70.0\% against full chain-of-thought at 65.0\%. A 20-question slice, not the Check-In 4 claim.}{fig:jm-acc}
+
+\colfig{figures/jm_tokens.png}{Same 20 questions. Mean generated tokens fall from 634.5 (full chain-of-thought) to 600.5 (DEER).}{fig:jm-tok}
+
+\widefig{figures/jm_questionwise.png}{Same 20 questions, sorted by full chain-of-thought length. Token savings are concentrated on a few long traces. Question 12 is a case where DEER is longer than full chain-of-thought.}{fig:jm-q}
+
+\colfig{figures/jm_long.png}{The three longest of the 20 GSM8K questions. Q19 drops from just over 2{,}000 tokens to about 720. Q8 barely moves.}{fig:jm-long}
+
 \section{Method}
 \subsection{DEER, unchanged except the exit test}
 The model, the transition monitor, the answer inducer, and the confidence statistic stay as in DEER.
@@ -112,6 +166,24 @@ On MATH-500 the same training protocol saves tokens by giving up accuracy.
 The one rule that rose off DEER's curve on the held-out Check-In 3 splits was ``stop when the same trial answer appears twice.''
 That is the signal the final rule keeps.
 
+Figs.~\ref{fig:mlp-gsm} and~\ref{fig:mlp-math} are that comparison on the held-out Check-In 3 logs, as the mean of five splits.
+On GSM8K the MLP curve sits just above the DEER sweep.
+On MATH-500 the DEER threshold curve is at least as good, and the two consistency points (the same answer twice, and the same answer with a momentum term) are the markers that leave the DEER curve.
+Figs.~\ref{fig:mlp-bound} and~\ref{fig:mlp-xfer} are the Check-In 2 controller diagnostics.
+Both were produced with synthetic trajectories (\texttt{enable\_live\_llm=False}).
+They show the shape of the prototype: a stopping boundary in the confidence--momentum plane, and a zero-shot transfer picture that includes a 7B panel.
+The 7B panel is not a live 7B generation in this repository.
+Neither figure is used as a performance number.
+
+\widefig{figures/mlp_gsm8k.png}{GSM8K, mean of five held-out splits of the Check-In 3 logs. The MLP (red) sits just above the DEER sweep (blue). Full reasoning (black) is longer and less accurate on this log, because many traces hit the budget with no answer.}{fig:mlp-gsm}
+
+\widefig{figures/mlp_math.png}{MATH-500, same protocol. Raw DEER confidence is not beaten by the MLP. Consistency (green) and consistency plus momentum (purple) are the points off the blue curve.}{fig:mlp-math}
+
+\widefig{figures/mlp_boundary.png}{Check-In 2 synthetic diagnostic of the controller: training loss on the left, and the learned stopping boundary at $\theta=0.62$ on the right, with the static DEER line at $\tau=0.80$. Not a live accuracy result.}{fig:mlp-bound}
+
+\widefig{figures/mlp_transfer.png}{Check-In 2 synthetic transfer figure. Panel (a) is cross-dataset token savings. Panel (b) draws a 1.5B-to-7B story. The 7B curve is synthetic. It is not a measured 7B run.}{fig:mlp-xfer}
+
+\clearpage
 \subsection{AdaDEER, then the ablation}
 AdaDEER replaces $\tau$ with a per-checkpoint threshold
 \begin{equation}
@@ -155,6 +227,8 @@ With $\rho=0$ the rule is exactly DEER at $\tau=\sigma(\theta)$.
 There is no training, no extra probe, and no extra forward pass.
 $\theta$ and $\rho$ were fixed on a dev slice (MATH-500 problems 100--131 and GSM8K problems 100--147) before the evaluation problems were scored.
 
+\widefig{figures/threshold_evolution.png}{Illustrative exit bar, not one logged problem. DEER stays at $0.95$. AdaDEER-E opens at $0.99$. After a trial answer of confidence $0.95$, the next agreeing answer has to clear $0.84$. An answer change puts the bar back at $0.99$. Open circles are the confidences in this example. The star is where that confidence clears the AdaDEER-E bar. The band is the gray zone, $[0.95,0.99]$.}{fig:tau-evol}
+
 \section{Experimental Setup}
 The model is DeepSeek-R1-Distill-Qwen-1.5B, greedy decoding, an 8{,}000-token budget, and a thinking cap at 60\% of that budget (4{,}800 tokens).
 Checkpoints are ``Wait'' transitions, at most 10 of them, with \texttt{avg1} confidence.
@@ -175,6 +249,53 @@ The AdaDEER grid contains DEER itself.
 Differences of one or two points on a 30-problem test slice are treated as noise.
 Claims of a gain use the paired test on all 500 problems.
 
+\section{Check-In 3 and 4 Live Comparisons}
+\label{sec:live}
+The live runs use vLLM on the first 100 problems of each dataset, an 8{,}000-token budget, and DeepSeek-R1-Distill-Qwen-1.5B.
+Figs.~\ref{fig:c3-gsm} and~\ref{fig:c3-math} put three operating points on one axis: full chain-of-thought, live DEER at $\tau=0.95$, and the never-exit run that forces an answer at the thinking cap.
+The pale curve is the simulator replaying the same traces at several thresholds.
+On GSM8K the live DEER point is less accurate than both full chain-of-thought and never-exit, at roughly a third of the reasoning tokens.
+On MATH-500, never-exit is the most accurate of the three live points, and full chain-of-thought is the longest because many traces hit the budget without an answer.
+Figs.~\ref{fig:c3-acc} and~\ref{fig:c3-tok} split the MATH-500 slice by level.
+The Level~1 DEER bar is the weak one; never-exit is ahead at Levels 1--4.
+
+\widefig{figures/c3_gsm8k.png}{Check-In 3, GSM8K, first 100 problems. Live DEER at $\tau=0.95$ (blue square) is shorter and less accurate than full chain-of-thought (gray) and never-exit (teal). The pale curve is the simulated threshold sweep. Error bars are 95\% intervals on 100 problems.}{fig:c3-gsm}
+
+\widefig{figures/c3_math.png}{Check-In 3, MATH-500, first 100 problems, same three live points. Never-exit is more accurate than live DEER and than full chain-of-thought, which spends the most tokens.}{fig:c3-math}
+
+\colfig{figures/c3_math_acc_level.png}{Check-In 3 MATH-500 accuracy by level on the first 100 problems. Live DEER at $\tau=0.95$ is weakest at Level 1. Never-exit leads at Levels 1--4.}{fig:c3-acc}
+
+\colfig{figures/c3_math_tok_level.png}{Check-In 3 MATH-500 reasoning tokens by level on the same 100 problems. Full chain-of-thought is the longest bar at every level.}{fig:c3-tok}
+
+Keeping the trial answer, instead of letting the model write a new one after \texttt{</think>}, is the Check-In 4 change to the answer step.
+Figs.~\ref{fig:fix-gsm} and~\ref{fig:fix-math} add that variant to the same axes.
+On both datasets the trial-answer and boxed-answer points sit on top of the simulated DEER curve, while the original live DEER point (the answer rewritten after the exit) falls off it.
+Figs.~\ref{fig:fix-acc} and~\ref{fig:fix-tok} are the same MATH-500 slice by level after that change.
+
+\widefig{figures/fix_gsm8k.png}{GSM8K, first 100. Scoring the trial answer (blue) or the boxed answer recovers the accuracy that the rewritten final answer loses, at the same token count as live DEER.}{fig:fix-gsm}
+
+\widefig{figures/fix_math.png}{MATH-500, first 100, answer-step variants. The trial answer and the boxed answer land on the simulated DEER curve. The rewritten DEER answer does not.}{fig:fix-math}
+
+\widefig{figures/fix_math_acc_level.png}{MATH-500 accuracy by level after the answer-step change. Trial-answer and boxed-answer bars sit with never-exit at the easier levels and above the rewritten DEER bar at Level 1.}{fig:fix-acc}
+
+\widefig{figures/fix_math_tok_level.png}{MATH-500 tokens by level for the same answer-step variants. The answer-step change does not add a second generation.}{fig:fix-tok}
+
+The last live comparison trains a stopper on problems that are not in the plotted test set.
+Figs.~\ref{fig:m-gsm} and~\ref{fig:m-math} train on that dataset's own training split.
+Figs.~\ref{fig:mb-gsm} and~\ref{fig:mb-math} train on GSM8K and MATH together and test on each set.
+Logistic regression, gradient boosting, and the MLP track the DEER curve.
+The gold star is a perfect-stopping bound, not a method we can run.
+None of these learned curves is the rule in Section~\ref{sec:results}.
+
+\widefig{figures/methods_gsm8k.png}{GSM8K stopping methods trained on the GSM8K training split and tested on the GSM8K test split. Learned scores track DEER. The star is an oracle bound.}{fig:m-gsm}
+
+\widefig{figures/methods_math.png}{MATH-500 stopping methods trained on the MATH training split and tested on the MATH test split. The learned curves do not rise above DEER.}{fig:m-math}
+
+\widefig{figures/methods_both_gsm8k.png}{Same GSM8K test, with the stopper trained on GSM8K and MATH together.}{fig:mb-gsm}
+
+\widefig{figures/methods_both_math.png}{Same MATH-500 test, with the stopper trained on both training sets. Joint training does not put a learned curve above DEER.}{fig:mb-math}
+
+\clearpage
 \section{Results}
 \label{sec:results}
 \subsection{All 500 MATH-500 problems}
@@ -209,19 +330,9 @@ Against full reasoning, AdaDEER-E is $+0.6$ points at 46\% of the tokens (1{,}48
 Dropping the 32 dev problems that were used to choose $\theta$ and $\rho$ leaves 79.9\% at 1{,}448 tokens, against 76.7\% at 1{,}569 for DEER at $\tau=0.95$, with the same 19-to-4 split.
 The dev set is inside the 500, so this exclusion is the check that the headline is not an artifact of those 32 items.
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=\linewidth]{figures/math500_full_kfold_tradeoff.png}
-\caption{MATH-500, 5-fold held-out means. AdaDEER-E (red) lies above the DEER threshold curve (blue) at every operating point near 1{,}300--1{,}700 tokens. Full reasoning (black square) is no more accurate and costs about twice the tokens.}
-\label{fig:kfold}
-\end{figure}
+\widefig{figures/math500_full_kfold_tradeoff.png}{All 500 MATH-500 problems, 5-fold held-out means. AdaDEER-E (red) lies above the DEER threshold curve (blue) near 1{,}300--1{,}700 tokens. Full reasoning (black square) is no more accurate and costs about twice the tokens.}{fig:kfold}
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=\linewidth]{figures/math500_full_random_tradeoff.png}
-\caption{The same comparison on five random 70/30 splits of all 500 MATH-500 problems. The red curve is again above the blue DEER curve. Iso-token gain of frozen AdaDEER-E on this protocol is $+4.7\pm 1.1$ points.}
-\label{fig:random}
-\end{figure}
+\widefig{figures/math500_full_random_tradeoff.png}{The same comparison on five random 70/30 splits of all 500 MATH-500 problems. The red curve is again above the blue DEER curve. The iso-token gain of frozen AdaDEER-E on this protocol is $+4.7\pm 1.1$ points.}{fig:random}
 
 Fig.~\ref{fig:kfold} and Fig.~\ref{fig:random} are the reason a single operating point is not enough.
 Raising DEER's $\tau$ buys accuracy by delaying every exit, so the blue curve climbs and then flattens.
@@ -290,12 +401,9 @@ Fig.~\ref{fig:first100} is that smaller MATH-500 curve.
 GSM8K accuracy matches DEER at $\tau=0.99$ with about 21\% fewer tokens (667 versus 846).
 That is parity, not a significant accuracy gain.
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=\linewidth]{figures/first100_kfold_tradeoff.png}
-\caption{First 100 MATH-500 problems, 5-fold means. The same frozen AdaDEER-E rule is at or above the DEER curve. Error bars across folds are large at this sample size, consistent with $p=0.375$ on the paired test.}
-\label{fig:first100}
-\end{figure}
+\widefig{figures/first100_kfold_tradeoff.png}{First 100 problems, 5-fold means. Left: GSM8K, where frozen AdaDEER-E tracks the DEER curve. Right: MATH-500, where the red curve sits at or above that sweep. Error bars across folds are large at this sample size, consistent with $p=0.375$ on the paired test of the 200 problems.}{fig:first100}
+
+\widefig{figures/e_100_random.png}{First 100 problems, five random 70/30 splits. Left: GSM8K, where frozen AdaDEER-E is tied with the DEER curve at the same token count ($0.0\pm 2.1$ points). Right: MATH-500, where the same frozen rule is about one point above that curve, inside the split noise ($+1.0\pm 3.3$).}{fig:e100rand}
 
 \subsection{Why this rule, and not the neighbors}
 Table~\ref{tab:decision} is the decision.
@@ -324,6 +432,7 @@ AdaDEER & 80.0\% & 1{,}694 & 8 & no \\
 \end{tabular}
 \end{table}
 
+\clearpage
 \section{Artifacts, Repository, and Check-Ins}
 The repository is
 {\scriptsize https://github.com/\allowbreak PeramVishnuSree/\allowbreak Adaptive-Early-Exit-for-\allowbreak Efficient-Reasoning-\allowbreak Reproducing-and-Extending-DEER}.
@@ -342,7 +451,7 @@ A shareable Drive URL is not in the repository yet and has to be pasted here bef
 \toprule
 Path & Contents \\
 \midrule
-\path{Jaswanthi Mandalapu/Artifacts/adadeer/} &
+\path{Jaswanthi~Mandalapu/Artifacts/adadeer/} &
 AdaDEER-E policy, replay, grading, and the experiment driver. \\
 \path{.../math500_full_kfold/} &
 Table~\ref{tab:headline}, the ablation, and Fig.~\ref{fig:kfold}. \\
@@ -385,7 +494,8 @@ The dev slice used to freeze $\theta$ and $\rho$ sits inside the 500; the dev-ex
 Check-In 3's state-dependent threshold (0.995 on the first checkpoint, 0.95 on a new answer, 0.85 on a repeat, and no exit on an unfinished formula) was shaped after reading misses on the same 200 problems, so that particular gain was optimistic.
 AdaDEER-E does not use that rule.
 Its parameters were frozen on the dev slice named above.
-Check-In 2's synthetic accuracy figures are not results and are not repeated here.
+The Check-In 2 controller plots in Figs.~\ref{fig:mlp-bound} and~\ref{fig:mlp-xfer} are synthetic, and the 20-question bars in Figs.~\ref{fig:jm-acc}--\ref{fig:jm-long} are a smoke test.
+Neither set is a result of this check-in.
 Absolute GSM8K numbers differ between the vLLM logs and this MLX replay because the prompt and the checkpoint rate differ.
 The two should not be averaged.
 
@@ -397,6 +507,11 @@ AdaDEER-E writes that fact as log-odds evidence: a new answer must clear $0.99$,
 On all 500 MATH-500 problems the frozen rule is more accurate and cheaper than DEER at $\tau=0.95$, and as accurate as DEER at $\tau=0.99$ at 21\% fewer tokens, at under half the tokens of full reasoning.
 The remaining work before the final submission, which this draft does not pretend is done, is a live run of the same rule, a shareable Drive link, invitations for the instructor and the TA, and enough further commits to meet the check-in count.
 
+\clearpage
+\appendices
+\input{appendix_data}
+
+\clearpage
 \begin{thebibliography}{9}
 \bibitem{yang2025deer}
 Y.~Yang \emph{et al.}, ``Dynamic early exit in reasoning models,'' in \emph{Proc.\ ICLR}, 2026, arXiv:2504.15895.
