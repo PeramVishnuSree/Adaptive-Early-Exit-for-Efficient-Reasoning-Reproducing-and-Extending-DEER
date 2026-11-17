@@ -1,0 +1,2368 @@
+{
+ "rows": {
+  "Full reasoning (never-exit)": {
+   "gsm8k": [
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 1677.0,
+     "compute": 1695.05,
+     "exits": 0,
+     "exit_acc": NaN
+    },
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 2071.9,
+     "compute": 2088.35,
+     "exits": 0,
+     "exit_acc": NaN
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 2172.45,
+     "compute": 2189.3,
+     "exits": 0,
+     "exit_acc": NaN
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 2503.9,
+     "compute": 2525.45,
+     "exits": 0,
+     "exit_acc": NaN
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 1659.15,
+     "compute": 1672.4,
+     "exits": 0,
+     "exit_acc": NaN
+    }
+   ],
+   "math500": [
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 2746.2,
+     "compute": 2767.05,
+     "exits": 0,
+     "exit_acc": NaN
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 2685.95,
+     "compute": 2711.6,
+     "exits": 0,
+     "exit_acc": NaN
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 2290.8,
+     "compute": 2306.0,
+     "exits": 0,
+     "exit_acc": NaN
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 2953.55,
+     "compute": 2985.4,
+     "exits": 0,
+     "exit_acc": NaN
+    },
+    {
+     "n": 20,
+     "acc": 70.0,
+     "tokens": 3602.7,
+     "compute": 3634.6,
+     "exits": 0,
+     "exit_acc": NaN
+    }
+   ],
+   "all": [
+    {
+     "n": 40,
+     "acc": 87.5,
+     "tokens": 2211.6,
+     "compute": 2231.05,
+     "exits": 0,
+     "exit_acc": NaN
+    },
+    {
+     "n": 40,
+     "acc": 87.5,
+     "tokens": 2378.925,
+     "compute": 2399.975,
+     "exits": 0,
+     "exit_acc": NaN
+    },
+    {
+     "n": 40,
+     "acc": 80.0,
+     "tokens": 2231.625,
+     "compute": 2247.65,
+     "exits": 0,
+     "exit_acc": NaN
+    },
+    {
+     "n": 40,
+     "acc": 75.0,
+     "tokens": 2728.725,
+     "compute": 2755.425,
+     "exits": 0,
+     "exit_acc": NaN
+    },
+    {
+     "n": 40,
+     "acc": 75.0,
+     "tokens": 2630.925,
+     "compute": 2653.5,
+     "exits": 0,
+     "exit_acc": NaN
+    }
+   ]
+  },
+  "DEER tau=0.9": {
+   "gsm8k": [
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 498.0,
+     "compute": 500.8,
+     "exits": 20,
+     "exit_acc": 85.0
+    },
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 705.65,
+     "compute": 709.6,
+     "exits": 18,
+     "exit_acc": 94.44444444444444
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 697.25,
+     "compute": 700.5,
+     "exits": 19,
+     "exit_acc": 84.21052631578948
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 477.45,
+     "compute": 478.85,
+     "exits": 20,
+     "exit_acc": 80.0
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 702.35,
+     "compute": 705.9,
+     "exits": 18,
+     "exit_acc": 88.88888888888889
+    }
+   ],
+   "math500": [
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 1323.7,
+     "compute": 1327.4,
+     "exits": 17,
+     "exit_acc": 88.23529411764706
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 1017.2,
+     "compute": 1026.8,
+     "exits": 19,
+     "exit_acc": 78.94736842105263
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 1555.75,
+     "compute": 1562.65,
+     "exits": 16,
+     "exit_acc": 100.0
+    },
+    {
+     "n": 20,
+     "acc": 65.0,
+     "tokens": 1204.35,
+     "compute": 1209.8,
+     "exits": 19,
+     "exit_acc": 68.42105263157895
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 1254.35,
+     "compute": 1262.8,
+     "exits": 19,
+     "exit_acc": 78.94736842105263
+    }
+   ],
+   "all": [
+    {
+     "n": 40,
+     "acc": 82.5,
+     "tokens": 910.85,
+     "compute": 914.1,
+     "exits": 37,
+     "exit_acc": 86.48648648648648
+    },
+    {
+     "n": 40,
+     "acc": 82.5,
+     "tokens": 861.425,
+     "compute": 868.2,
+     "exits": 37,
+     "exit_acc": 86.48648648648648
+    },
+    {
+     "n": 40,
+     "acc": 82.5,
+     "tokens": 1126.5,
+     "compute": 1131.575,
+     "exits": 35,
+     "exit_acc": 91.42857142857143
+    },
+    {
+     "n": 40,
+     "acc": 72.5,
+     "tokens": 840.9,
+     "compute": 844.325,
+     "exits": 39,
+     "exit_acc": 74.35897435897436
+    },
+    {
+     "n": 40,
+     "acc": 80.0,
+     "tokens": 978.35,
+     "compute": 984.35,
+     "exits": 37,
+     "exit_acc": 83.78378378378379
+    }
+   ]
+  },
+  "DEER tau=0.95": {
+   "gsm8k": [
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 498.0,
+     "compute": 500.8,
+     "exits": 20,
+     "exit_acc": 85.0
+    },
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 713.0,
+     "compute": 717.2,
+     "exits": 18,
+     "exit_acc": 94.44444444444444
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 955.1,
+     "compute": 961.05,
+     "exits": 17,
+     "exit_acc": 88.23529411764706
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 539.5,
+     "compute": 541.4,
+     "exits": 20,
+     "exit_acc": 80.0
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 709.65,
+     "compute": 713.6,
+     "exits": 18,
+     "exit_acc": 88.88888888888889
+    }
+   ],
+   "math500": [
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 1378.25,
+     "compute": 1383.2,
+     "exits": 16,
+     "exit_acc": 93.75
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 1147.8,
+     "compute": 1161.6,
+     "exits": 18,
+     "exit_acc": 77.77777777777777
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 1556.3,
+     "compute": 1563.5,
+     "exits": 16,
+     "exit_acc": 100.0
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 1246.75,
+     "compute": 1253.35,
+     "exits": 19,
+     "exit_acc": 78.94736842105263
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 1714.35,
+     "compute": 1727.55,
+     "exits": 17,
+     "exit_acc": 82.3529411764706
+    }
+   ],
+   "all": [
+    {
+     "n": 40,
+     "acc": 85.0,
+     "tokens": 938.125,
+     "compute": 942.0,
+     "exits": 36,
+     "exit_acc": 88.88888888888889
+    },
+    {
+     "n": 40,
+     "acc": 82.5,
+     "tokens": 930.4,
+     "compute": 939.4,
+     "exits": 36,
+     "exit_acc": 86.11111111111111
+    },
+    {
+     "n": 40,
+     "acc": 82.5,
+     "tokens": 1255.7,
+     "compute": 1262.275,
+     "exits": 33,
+     "exit_acc": 93.93939393939394
+    },
+    {
+     "n": 40,
+     "acc": 77.5,
+     "tokens": 893.125,
+     "compute": 897.375,
+     "exits": 39,
+     "exit_acc": 79.48717948717949
+    },
+    {
+     "n": 40,
+     "acc": 80.0,
+     "tokens": 1212.0,
+     "compute": 1220.575,
+     "exits": 35,
+     "exit_acc": 85.71428571428571
+    }
+   ]
+  },
+  "DEER tau=0.99": {
+   "gsm8k": [
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 779.65,
+     "compute": 785.65,
+     "exits": 17,
+     "exit_acc": 88.23529411764706
+    },
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 811.0,
+     "compute": 816.5,
+     "exits": 17,
+     "exit_acc": 94.11764705882354
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 1048.65,
+     "compute": 1055.75,
+     "exits": 14,
+     "exit_acc": 85.71428571428571
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 761.9,
+     "compute": 766.8,
+     "exits": 19,
+     "exit_acc": 84.21052631578948
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 826.3,
+     "compute": 831.65,
+     "exits": 16,
+     "exit_acc": 87.5
+    }
+   ],
+   "math500": [
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 1378.25,
+     "compute": 1383.2,
+     "exits": 16,
+     "exit_acc": 93.75
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 1753.95,
+     "compute": 1771.4,
+     "exits": 15,
+     "exit_acc": 86.66666666666667
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 1644.8,
+     "compute": 1653.6,
+     "exits": 14,
+     "exit_acc": 100.0
+    },
+    {
+     "n": 20,
+     "acc": 70.0,
+     "tokens": 1429.85,
+     "compute": 1444.35,
+     "exits": 16,
+     "exit_acc": 75.0
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 2144.6,
+     "compute": 2161.7,
+     "exits": 14,
+     "exit_acc": 85.71428571428571
+    }
+   ],
+   "all": [
+    {
+     "n": 40,
+     "acc": 87.5,
+     "tokens": 1078.95,
+     "compute": 1084.425,
+     "exits": 33,
+     "exit_acc": 90.9090909090909
+    },
+    {
+     "n": 40,
+     "acc": 85.0,
+     "tokens": 1282.475,
+     "compute": 1293.95,
+     "exits": 32,
+     "exit_acc": 90.625
+    },
+    {
+     "n": 40,
+     "acc": 82.5,
+     "tokens": 1346.725,
+     "compute": 1354.675,
+     "exits": 28,
+     "exit_acc": 92.85714285714286
+    },
+    {
+     "n": 40,
+     "acc": 75.0,
+     "tokens": 1095.875,
+     "compute": 1105.575,
+     "exits": 35,
+     "exit_acc": 80.0
+    },
+    {
+     "n": 40,
+     "acc": 80.0,
+     "tokens": 1485.45,
+     "compute": 1496.675,
+     "exits": 30,
+     "exit_acc": 86.66666666666667
+    }
+   ]
+  },
+  "Consistency (2 in a row)": {
+   "gsm8k": [
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 820.35,
+     "compute": 827.35,
+     "exits": 8,
+     "exit_acc": 62.5
+    },
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 802.9,
+     "compute": 808.55,
+     "exits": 12,
+     "exit_acc": 83.33333333333333
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 823.6,
+     "compute": 828.25,
+     "exits": 12,
+     "exit_acc": 75.0
+    },
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 881.25,
+     "compute": 887.3,
+     "exits": 11,
+     "exit_acc": 81.81818181818181
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 773.15,
+     "compute": 778.55,
+     "exits": 13,
+     "exit_acc": 76.92307692307692
+    }
+   ],
+   "math500": [
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 1277.5,
+     "compute": 1285.45,
+     "exits": 11,
+     "exit_acc": 81.81818181818181
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 1186.2,
+     "compute": 1199.1,
+     "exits": 14,
+     "exit_acc": 78.57142857142857
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 1210.95,
+     "compute": 1217.55,
+     "exits": 12,
+     "exit_acc": 75.0
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 1317.85,
+     "compute": 1326.8,
+     "exits": 17,
+     "exit_acc": 76.47058823529412
+    },
+    {
+     "n": 20,
+     "acc": 60.0,
+     "tokens": 1289.3,
+     "compute": 1301.1,
+     "exits": 17,
+     "exit_acc": 58.8235294117647
+    }
+   ],
+   "all": [
+    {
+     "n": 40,
+     "acc": 87.5,
+     "tokens": 1048.925,
+     "compute": 1056.4,
+     "exits": 19,
+     "exit_acc": 73.6842105263158
+    },
+    {
+     "n": 40,
+     "acc": 87.5,
+     "tokens": 994.55,
+     "compute": 1003.825,
+     "exits": 26,
+     "exit_acc": 80.76923076923077
+    },
+    {
+     "n": 40,
+     "acc": 85.0,
+     "tokens": 1017.275,
+     "compute": 1022.9,
+     "exits": 24,
+     "exit_acc": 75.0
+    },
+    {
+     "n": 40,
+     "acc": 82.5,
+     "tokens": 1099.55,
+     "compute": 1107.05,
+     "exits": 28,
+     "exit_acc": 78.57142857142857
+    },
+    {
+     "n": 40,
+     "acc": 72.5,
+     "tokens": 1031.225,
+     "compute": 1039.825,
+     "exits": 30,
+     "exit_acc": 66.66666666666667
+    }
+   ]
+  },
+  "Consistency + momentum": {
+   "gsm8k": [
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 893.0,
+     "compute": 903.1,
+     "exits": 8,
+     "exit_acc": 75.0
+    },
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 812.85,
+     "compute": 818.95,
+     "exits": 12,
+     "exit_acc": 83.33333333333333
+    },
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 1111.0,
+     "compute": 1119.25,
+     "exits": 11,
+     "exit_acc": 90.9090909090909
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 931.25,
+     "compute": 938.7,
+     "exits": 11,
+     "exit_acc": 72.72727272727273
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 806.6,
+     "compute": 812.65,
+     "exits": 12,
+     "exit_acc": 75.0
+    }
+   ],
+   "math500": [
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 1293.6,
+     "compute": 1302.55,
+     "exits": 11,
+     "exit_acc": 81.81818181818181
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 1227.2,
+     "compute": 1240.9,
+     "exits": 14,
+     "exit_acc": 78.57142857142857
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 1254.85,
+     "compute": 1262.7,
+     "exits": 11,
+     "exit_acc": 72.72727272727273
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 1368.55,
+     "compute": 1379.55,
+     "exits": 17,
+     "exit_acc": 76.47058823529412
+    },
+    {
+     "n": 20,
+     "acc": 70.0,
+     "tokens": 1467.4,
+     "compute": 1483.6,
+     "exits": 17,
+     "exit_acc": 70.58823529411765
+    }
+   ],
+   "all": [
+    {
+     "n": 40,
+     "acc": 90.0,
+     "tokens": 1093.3,
+     "compute": 1102.825,
+     "exits": 19,
+     "exit_acc": 78.94736842105263
+    },
+    {
+     "n": 40,
+     "acc": 87.5,
+     "tokens": 1020.025,
+     "compute": 1029.925,
+     "exits": 26,
+     "exit_acc": 80.76923076923077
+    },
+    {
+     "n": 40,
+     "acc": 87.5,
+     "tokens": 1182.925,
+     "compute": 1190.975,
+     "exits": 22,
+     "exit_acc": 81.81818181818181
+    },
+    {
+     "n": 40,
+     "acc": 80.0,
+     "tokens": 1149.9,
+     "compute": 1159.125,
+     "exits": 28,
+     "exit_acc": 75.0
+    },
+    {
+     "n": 40,
+     "acc": 77.5,
+     "tokens": 1137.0,
+     "compute": 1148.125,
+     "exits": 29,
+     "exit_acc": 72.41379310344827
+    }
+   ]
+  },
+  "DEER tuned tau (train)": {
+   "gsm8k": [
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 498.0,
+     "compute": 500.8,
+     "exits": 20,
+     "exit_acc": 85.0
+    },
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 713.0,
+     "compute": 717.2,
+     "exits": 18,
+     "exit_acc": 94.44444444444444
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 955.1,
+     "compute": 961.05,
+     "exits": 17,
+     "exit_acc": 88.23529411764706
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 539.5,
+     "compute": 541.4,
+     "exits": 20,
+     "exit_acc": 80.0
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 709.65,
+     "compute": 713.6,
+     "exits": 18,
+     "exit_acc": 88.88888888888889
+    }
+   ],
+   "math500": [
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 1378.25,
+     "compute": 1383.2,
+     "exits": 16,
+     "exit_acc": 93.75
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 1147.8,
+     "compute": 1161.6,
+     "exits": 18,
+     "exit_acc": 77.77777777777777
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 1556.3,
+     "compute": 1563.5,
+     "exits": 16,
+     "exit_acc": 100.0
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 1246.75,
+     "compute": 1253.35,
+     "exits": 19,
+     "exit_acc": 78.94736842105263
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 1714.35,
+     "compute": 1727.55,
+     "exits": 17,
+     "exit_acc": 82.3529411764706
+    }
+   ],
+   "all": [
+    {
+     "n": 40,
+     "acc": 85.0,
+     "tokens": 938.125,
+     "compute": 942.0,
+     "exits": 36,
+     "exit_acc": 88.88888888888889
+    },
+    {
+     "n": 40,
+     "acc": 82.5,
+     "tokens": 930.4,
+     "compute": 939.4,
+     "exits": 36,
+     "exit_acc": 86.11111111111111
+    },
+    {
+     "n": 40,
+     "acc": 82.5,
+     "tokens": 1255.7,
+     "compute": 1262.275,
+     "exits": 33,
+     "exit_acc": 93.93939393939394
+    },
+    {
+     "n": 40,
+     "acc": 77.5,
+     "tokens": 893.125,
+     "compute": 897.375,
+     "exits": 39,
+     "exit_acc": 79.48717948717949
+    },
+    {
+     "n": 40,
+     "acc": 80.0,
+     "tokens": 1212.0,
+     "compute": 1220.575,
+     "exits": 35,
+     "exit_acc": 85.71428571428571
+    }
+   ]
+  },
+  "AdaDEER defaults": {
+   "gsm8k": [
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 648.55,
+     "compute": 653.75,
+     "exits": 16,
+     "exit_acc": 87.5
+    },
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 874.15,
+     "compute": 880.3,
+     "exits": 16,
+     "exit_acc": 93.75
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 1088.6,
+     "compute": 1096.1,
+     "exits": 13,
+     "exit_acc": 84.61538461538461
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 645.25,
+     "compute": 649.1,
+     "exits": 20,
+     "exit_acc": 80.0
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 862.95,
+     "compute": 868.55,
+     "exits": 13,
+     "exit_acc": 92.3076923076923
+    }
+   ],
+   "math500": [
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 1469.8,
+     "compute": 1477.75,
+     "exits": 15,
+     "exit_acc": 100.0
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 1323.75,
+     "compute": 1339.3,
+     "exits": 17,
+     "exit_acc": 82.3529411764706
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 1598.9,
+     "compute": 1607.3,
+     "exits": 15,
+     "exit_acc": 100.0
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 1272.25,
+     "compute": 1282.95,
+     "exits": 18,
+     "exit_acc": 72.22222222222223
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 1798.05,
+     "compute": 1814.1,
+     "exits": 17,
+     "exit_acc": 82.3529411764706
+    }
+   ],
+   "all": [
+    {
+     "n": 40,
+     "acc": 90.0,
+     "tokens": 1059.175,
+     "compute": 1065.75,
+     "exits": 31,
+     "exit_acc": 93.54838709677419
+    },
+    {
+     "n": 40,
+     "acc": 85.0,
+     "tokens": 1098.95,
+     "compute": 1109.8,
+     "exits": 33,
+     "exit_acc": 87.87878787878788
+    },
+    {
+     "n": 40,
+     "acc": 82.5,
+     "tokens": 1343.75,
+     "compute": 1351.7,
+     "exits": 28,
+     "exit_acc": 92.85714285714286
+    },
+    {
+     "n": 40,
+     "acc": 77.5,
+     "tokens": 958.75,
+     "compute": 966.025,
+     "exits": 38,
+     "exit_acc": 76.3157894736842
+    },
+    {
+     "n": 40,
+     "acc": 80.0,
+     "tokens": 1330.5,
+     "compute": 1341.325,
+     "exits": 30,
+     "exit_acc": 86.66666666666667
+    }
+   ]
+  },
+  "  - no stability (alpha=0)": {
+   "gsm8k": [
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 901.9,
+     "compute": 909.5,
+     "exits": 13,
+     "exit_acc": 84.61538461538461
+    },
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 1100.3,
+     "compute": 1107.95,
+     "exits": 15,
+     "exit_acc": 93.33333333333333
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 1088.6,
+     "compute": 1096.1,
+     "exits": 13,
+     "exit_acc": 84.61538461538461
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 939.85,
+     "compute": 946.8,
+     "exits": 19,
+     "exit_acc": 78.94736842105263
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 953.0,
+     "compute": 959.8,
+     "exits": 12,
+     "exit_acc": 91.66666666666667
+    }
+   ],
+   "math500": [
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 1559.25,
+     "compute": 1568.45,
+     "exits": 14,
+     "exit_acc": 100.0
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 1983.35,
+     "compute": 2004.05,
+     "exits": 13,
+     "exit_acc": 100.0
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 1675.45,
+     "compute": 1684.95,
+     "exits": 13,
+     "exit_acc": 100.0
+    },
+    {
+     "n": 20,
+     "acc": 70.0,
+     "tokens": 1563.9,
+     "compute": 1579.3,
+     "exits": 15,
+     "exit_acc": 66.66666666666667
+    },
+    {
+     "n": 20,
+     "acc": 70.0,
+     "tokens": 2423.85,
+     "compute": 2442.55,
+     "exits": 12,
+     "exit_acc": 83.33333333333333
+    }
+   ],
+   "all": [
+    {
+     "n": 40,
+     "acc": 90.0,
+     "tokens": 1230.575,
+     "compute": 1238.975,
+     "exits": 27,
+     "exit_acc": 92.5925925925926
+    },
+    {
+     "n": 40,
+     "acc": 87.5,
+     "tokens": 1541.825,
+     "compute": 1556.0,
+     "exits": 28,
+     "exit_acc": 96.42857142857143
+    },
+    {
+     "n": 40,
+     "acc": 82.5,
+     "tokens": 1382.025,
+     "compute": 1390.525,
+     "exits": 26,
+     "exit_acc": 92.3076923076923
+    },
+    {
+     "n": 40,
+     "acc": 75.0,
+     "tokens": 1251.875,
+     "compute": 1263.05,
+     "exits": 34,
+     "exit_acc": 73.52941176470588
+    },
+    {
+     "n": 40,
+     "acc": 77.5,
+     "tokens": 1688.425,
+     "compute": 1701.175,
+     "exits": 24,
+     "exit_acc": 87.5
+    }
+   ]
+  },
+  "  - no volatility (gamma=0)": {
+   "gsm8k": [
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 617.0,
+     "compute": 621.8,
+     "exits": 17,
+     "exit_acc": 88.23529411764706
+    },
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 855.25,
+     "compute": 860.85,
+     "exits": 16,
+     "exit_acc": 93.75
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 1046.05,
+     "compute": 1053.2,
+     "exits": 14,
+     "exit_acc": 85.71428571428571
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 625.8,
+     "compute": 629.05,
+     "exits": 20,
+     "exit_acc": 80.0
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 802.9,
+     "compute": 807.75,
+     "exits": 15,
+     "exit_acc": 86.66666666666667
+    }
+   ],
+   "math500": [
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 1469.8,
+     "compute": 1477.75,
+     "exits": 15,
+     "exit_acc": 100.0
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 1295.25,
+     "compute": 1310.2,
+     "exits": 17,
+     "exit_acc": 82.3529411764706
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 1569.05,
+     "compute": 1577.0,
+     "exits": 16,
+     "exit_acc": 100.0
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 1183.5,
+     "compute": 1192.5,
+     "exits": 19,
+     "exit_acc": 73.6842105263158
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 1404.45,
+     "compute": 1418.95,
+     "exits": 18,
+     "exit_acc": 83.33333333333333
+    }
+   ],
+   "all": [
+    {
+     "n": 40,
+     "acc": 90.0,
+     "tokens": 1043.4,
+     "compute": 1049.775,
+     "exits": 32,
+     "exit_acc": 93.75
+    },
+    {
+     "n": 40,
+     "acc": 85.0,
+     "tokens": 1075.25,
+     "compute": 1085.525,
+     "exits": 33,
+     "exit_acc": 87.87878787878788
+    },
+    {
+     "n": 40,
+     "acc": 82.5,
+     "tokens": 1307.55,
+     "compute": 1315.1,
+     "exits": 30,
+     "exit_acc": 93.33333333333333
+    },
+    {
+     "n": 40,
+     "acc": 77.5,
+     "tokens": 904.65,
+     "compute": 910.775,
+     "exits": 39,
+     "exit_acc": 76.92307692307692
+    },
+    {
+     "n": 40,
+     "acc": 82.5,
+     "tokens": 1103.675,
+     "compute": 1113.35,
+     "exits": 33,
+     "exit_acc": 84.84848484848484
+    }
+   ]
+  },
+  "  - no switching (beta=0)": {
+   "gsm8k": [
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 648.55,
+     "compute": 653.75,
+     "exits": 16,
+     "exit_acc": 87.5
+    },
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 874.15,
+     "compute": 880.3,
+     "exits": 16,
+     "exit_acc": 93.75
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 1088.6,
+     "compute": 1096.1,
+     "exits": 13,
+     "exit_acc": 84.61538461538461
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 634.55,
+     "compute": 638.2,
+     "exits": 20,
+     "exit_acc": 80.0
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 852.1,
+     "compute": 857.55,
+     "exits": 13,
+     "exit_acc": 92.3076923076923
+    }
+   ],
+   "math500": [
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 1469.8,
+     "compute": 1477.75,
+     "exits": 15,
+     "exit_acc": 100.0
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 1323.75,
+     "compute": 1339.3,
+     "exits": 17,
+     "exit_acc": 82.3529411764706
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 1598.9,
+     "compute": 1607.3,
+     "exits": 15,
+     "exit_acc": 100.0
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 1271.9,
+     "compute": 1281.9,
+     "exits": 18,
+     "exit_acc": 72.22222222222223
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 1458.85,
+     "compute": 1474.1,
+     "exits": 18,
+     "exit_acc": 83.33333333333333
+    }
+   ],
+   "all": [
+    {
+     "n": 40,
+     "acc": 90.0,
+     "tokens": 1059.175,
+     "compute": 1065.75,
+     "exits": 31,
+     "exit_acc": 93.54838709677419
+    },
+    {
+     "n": 40,
+     "acc": 85.0,
+     "tokens": 1098.95,
+     "compute": 1109.8,
+     "exits": 33,
+     "exit_acc": 87.87878787878788
+    },
+    {
+     "n": 40,
+     "acc": 82.5,
+     "tokens": 1343.75,
+     "compute": 1351.7,
+     "exits": 28,
+     "exit_acc": 92.85714285714286
+    },
+    {
+     "n": 40,
+     "acc": 77.5,
+     "tokens": 953.225,
+     "compute": 960.05,
+     "exits": 38,
+     "exit_acc": 76.3157894736842
+    },
+    {
+     "n": 40,
+     "acc": 82.5,
+     "tokens": 1155.475,
+     "compute": 1165.825,
+     "exits": 31,
+     "exit_acc": 87.09677419354838
+    }
+   ]
+  },
+  "  - no budget (eta=0)": {
+   "gsm8k": [
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 648.55,
+     "compute": 653.75,
+     "exits": 16,
+     "exit_acc": 87.5
+    },
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 874.15,
+     "compute": 880.3,
+     "exits": 16,
+     "exit_acc": 93.75
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 1088.6,
+     "compute": 1096.1,
+     "exits": 13,
+     "exit_acc": 84.61538461538461
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 645.25,
+     "compute": 649.1,
+     "exits": 20,
+     "exit_acc": 80.0
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 862.95,
+     "compute": 868.55,
+     "exits": 13,
+     "exit_acc": 92.3076923076923
+    }
+   ],
+   "math500": [
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 1469.8,
+     "compute": 1477.75,
+     "exits": 15,
+     "exit_acc": 100.0
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 1323.75,
+     "compute": 1339.3,
+     "exits": 17,
+     "exit_acc": 82.3529411764706
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 1598.9,
+     "compute": 1607.3,
+     "exits": 15,
+     "exit_acc": 100.0
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 1299.25,
+     "compute": 1310.5,
+     "exits": 17,
+     "exit_acc": 76.47058823529412
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 1798.05,
+     "compute": 1814.1,
+     "exits": 17,
+     "exit_acc": 82.3529411764706
+    }
+   ],
+   "all": [
+    {
+     "n": 40,
+     "acc": 90.0,
+     "tokens": 1059.175,
+     "compute": 1065.75,
+     "exits": 31,
+     "exit_acc": 93.54838709677419
+    },
+    {
+     "n": 40,
+     "acc": 85.0,
+     "tokens": 1098.95,
+     "compute": 1109.8,
+     "exits": 33,
+     "exit_acc": 87.87878787878788
+    },
+    {
+     "n": 40,
+     "acc": 82.5,
+     "tokens": 1343.75,
+     "compute": 1351.7,
+     "exits": 28,
+     "exit_acc": 92.85714285714286
+    },
+    {
+     "n": 40,
+     "acc": 77.5,
+     "tokens": 972.25,
+     "compute": 979.8,
+     "exits": 37,
+     "exit_acc": 78.37837837837837
+    },
+    {
+     "n": 40,
+     "acc": 80.0,
+     "tokens": 1330.5,
+     "compute": 1341.325,
+     "exits": 30,
+     "exit_acc": 86.66666666666667
+    }
+   ]
+  },
+  "AdaDEER tuned (train)": {
+   "gsm8k": [
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 514.8,
+     "compute": 517.95,
+     "exits": 20,
+     "exit_acc": 85.0
+    },
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 846.8,
+     "compute": 852.15,
+     "exits": 16,
+     "exit_acc": 93.75
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 1024.05,
+     "compute": 1030.95,
+     "exits": 15,
+     "exit_acc": 86.66666666666667
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 625.8,
+     "compute": 629.05,
+     "exits": 20,
+     "exit_acc": 80.0
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 708.65,
+     "compute": 712.4,
+     "exits": 18,
+     "exit_acc": 88.88888888888889
+    }
+   ],
+   "math500": [
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 1469.8,
+     "compute": 1477.75,
+     "exits": 15,
+     "exit_acc": 100.0
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 1292.45,
+     "compute": 1307.0,
+     "exits": 17,
+     "exit_acc": 82.3529411764706
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 1568.25,
+     "compute": 1575.95,
+     "exits": 16,
+     "exit_acc": 100.0
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 1167.85,
+     "compute": 1176.8,
+     "exits": 19,
+     "exit_acc": 73.6842105263158
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 1140.65,
+     "compute": 1149.6,
+     "exits": 19,
+     "exit_acc": 73.6842105263158
+    }
+   ],
+   "all": [
+    {
+     "n": 40,
+     "acc": 87.5,
+     "tokens": 992.3,
+     "compute": 997.85,
+     "exits": 35,
+     "exit_acc": 91.42857142857143
+    },
+    {
+     "n": 40,
+     "acc": 85.0,
+     "tokens": 1069.625,
+     "compute": 1079.575,
+     "exits": 33,
+     "exit_acc": 87.87878787878788
+    },
+    {
+     "n": 40,
+     "acc": 82.5,
+     "tokens": 1296.15,
+     "compute": 1303.45,
+     "exits": 31,
+     "exit_acc": 93.54838709677419
+    },
+    {
+     "n": 40,
+     "acc": 77.5,
+     "tokens": 896.825,
+     "compute": 902.925,
+     "exits": 39,
+     "exit_acc": 76.92307692307692
+    },
+    {
+     "n": 40,
+     "acc": 80.0,
+     "tokens": 924.65,
+     "compute": 931.0,
+     "exits": 37,
+     "exit_acc": 81.08108108108108
+    }
+   ]
+  },
+  "AdaDEER-E frozen (theta=4.6, rho=1)": {
+   "gsm8k": [
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 548.65,
+     "compute": 552.15,
+     "exits": 19,
+     "exit_acc": 89.47368421052632
+    },
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 794.65,
+     "compute": 799.7,
+     "exits": 17,
+     "exit_acc": 94.11764705882354
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 828.35,
+     "compute": 834.15,
+     "exits": 16,
+     "exit_acc": 81.25
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 594.75,
+     "compute": 597.5,
+     "exits": 20,
+     "exit_acc": 80.0
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 571.05,
+     "compute": 574.8,
+     "exits": 18,
+     "exit_acc": 83.33333333333333
+    }
+   ],
+   "math500": [
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 1469.8,
+     "compute": 1477.75,
+     "exits": 15,
+     "exit_acc": 100.0
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 1257.65,
+     "compute": 1271.95,
+     "exits": 17,
+     "exit_acc": 82.3529411764706
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 1568.25,
+     "compute": 1575.95,
+     "exits": 16,
+     "exit_acc": 100.0
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 1079.05,
+     "compute": 1086.65,
+     "exits": 20,
+     "exit_acc": 75.0
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 1349.75,
+     "compute": 1362.0,
+     "exits": 18,
+     "exit_acc": 77.77777777777777
+    }
+   ],
+   "all": [
+    {
+     "n": 40,
+     "acc": 90.0,
+     "tokens": 1009.225,
+     "compute": 1014.95,
+     "exits": 34,
+     "exit_acc": 94.11764705882354
+    },
+    {
+     "n": 40,
+     "acc": 85.0,
+     "tokens": 1026.15,
+     "compute": 1035.825,
+     "exits": 34,
+     "exit_acc": 88.23529411764706
+    },
+    {
+     "n": 40,
+     "acc": 82.5,
+     "tokens": 1198.3,
+     "compute": 1205.05,
+     "exits": 32,
+     "exit_acc": 90.625
+    },
+    {
+     "n": 40,
+     "acc": 77.5,
+     "tokens": 836.9,
+     "compute": 842.075,
+     "exits": 40,
+     "exit_acc": 77.5
+    },
+    {
+     "n": 40,
+     "acc": 80.0,
+     "tokens": 960.4,
+     "compute": 968.4,
+     "exits": 36,
+     "exit_acc": 80.55555555555556
+    }
+   ]
+  },
+  "AdaDEER-E tuned (train)": {
+   "gsm8k": [
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 491.7,
+     "compute": 494.15,
+     "exits": 20,
+     "exit_acc": 80.0
+    },
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 794.65,
+     "compute": 799.7,
+     "exits": 17,
+     "exit_acc": 94.11764705882354
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 828.35,
+     "compute": 834.15,
+     "exits": 16,
+     "exit_acc": 81.25
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 594.75,
+     "compute": 597.5,
+     "exits": 20,
+     "exit_acc": 80.0
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 708.65,
+     "compute": 712.4,
+     "exits": 18,
+     "exit_acc": 88.88888888888889
+    }
+   ],
+   "math500": [
+    {
+     "n": 20,
+     "acc": 90.0,
+     "tokens": 1469.8,
+     "compute": 1477.75,
+     "exits": 15,
+     "exit_acc": 100.0
+    },
+    {
+     "n": 20,
+     "acc": 80.0,
+     "tokens": 1257.65,
+     "compute": 1271.95,
+     "exits": 17,
+     "exit_acc": 82.3529411764706
+    },
+    {
+     "n": 20,
+     "acc": 85.0,
+     "tokens": 1568.25,
+     "compute": 1575.95,
+     "exits": 16,
+     "exit_acc": 100.0
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 1079.05,
+     "compute": 1086.65,
+     "exits": 20,
+     "exit_acc": 75.0
+    },
+    {
+     "n": 20,
+     "acc": 75.0,
+     "tokens": 1169.5,
+     "compute": 1179.05,
+     "exits": 19,
+     "exit_acc": 73.6842105263158
+    }
+   ],
+   "all": [
+    {
+     "n": 40,
+     "acc": 85.0,
+     "tokens": 980.75,
+     "compute": 985.95,
+     "exits": 35,
+     "exit_acc": 88.57142857142857
+    },
+    {
+     "n": 40,
+     "acc": 85.0,
+     "tokens": 1026.15,
+     "compute": 1035.825,
+     "exits": 34,
+     "exit_acc": 88.23529411764706
+    },
+    {
+     "n": 40,
+     "acc": 82.5,
+     "tokens": 1198.3,
+     "compute": 1205.05,
+     "exits": 32,
+     "exit_acc": 90.625
+    },
+    {
+     "n": 40,
+     "acc": 77.5,
+     "tokens": 836.9,
+     "compute": 842.075,
+     "exits": 40,
+     "exit_acc": 77.5
+    },
+    {
+     "n": 40,
+     "acc": 80.0,
+     "tokens": 939.075,
+     "compute": 945.725,
+     "exits": 37,
+     "exit_acc": 81.08108108108108
+    }
+   ]
+  }
+ },
+ "iso": {
+  "gsm8k": [
+   {
+    "split": 0,
+    "policy": "AdaDEER defaults",
+    "tokens": 648.55,
+    "acc": 90.0,
+    "deer_acc_at_same_tokens": 85.0,
+    "gain": 5.0
+   },
+   {
+    "split": 0,
+    "policy": "AdaDEER tuned",
+    "tokens": 514.8,
+    "acc": 85.0,
+    "deer_acc_at_same_tokens": 85.0,
+    "gain": 0.0
+   },
+   {
+    "split": 0,
+    "policy": "AdaDEER-E frozen (theta=4.6, rho=1)",
+    "tokens": 548.65,
+    "acc": 90.0,
+    "deer_acc_at_same_tokens": 85.0,
+    "gain": 5.0
+   },
+   {
+    "split": 0,
+    "policy": "AdaDEER-E tuned",
+    "tokens": 491.7,
+    "acc": 80.0,
+    "deer_acc_at_same_tokens": 81.53846153846153,
+    "gain": -1.538461538461533
+   },
+   {
+    "split": 1,
+    "policy": "AdaDEER defaults",
+    "tokens": 874.15,
+    "acc": 90.0,
+    "deer_acc_at_same_tokens": 90.0,
+    "gain": 0.0
+   },
+   {
+    "split": 1,
+    "policy": "AdaDEER tuned",
+    "tokens": 846.8,
+    "acc": 90.0,
+    "deer_acc_at_same_tokens": 90.0,
+    "gain": 0.0
+   },
+   {
+    "split": 1,
+    "policy": "AdaDEER-E frozen (theta=4.6, rho=1)",
+    "tokens": 794.65,
+    "acc": 90.0,
+    "deer_acc_at_same_tokens": 90.0,
+    "gain": 0.0
+   },
+   {
+    "split": 1,
+    "policy": "AdaDEER-E tuned",
+    "tokens": 794.65,
+    "acc": 90.0,
+    "deer_acc_at_same_tokens": 90.0,
+    "gain": 0.0
+   },
+   {
+    "split": 2,
+    "policy": "AdaDEER defaults",
+    "tokens": 1088.6,
+    "acc": 80.0,
+    "deer_acc_at_same_tokens": 80.0,
+    "gain": 0.0
+   },
+   {
+    "split": 2,
+    "policy": "AdaDEER tuned",
+    "tokens": 1024.05,
+    "acc": 80.0,
+    "deer_acc_at_same_tokens": 80.0,
+    "gain": 0.0
+   },
+   {
+    "split": 2,
+    "policy": "AdaDEER-E frozen (theta=4.6, rho=1)",
+    "tokens": 828.35,
+    "acc": 80.0,
+    "deer_acc_at_same_tokens": 80.0,
+    "gain": 0.0
+   },
+   {
+    "split": 2,
+    "policy": "AdaDEER-E tuned",
+    "tokens": 828.35,
+    "acc": 80.0,
+    "deer_acc_at_same_tokens": 80.0,
+    "gain": 0.0
+   },
+   {
+    "split": 3,
+    "policy": "AdaDEER defaults",
+    "tokens": 645.25,
+    "acc": 80.0,
+    "deer_acc_at_same_tokens": 85.0,
+    "gain": -5.0
+   },
+   {
+    "split": 3,
+    "policy": "AdaDEER tuned",
+    "tokens": 625.8,
+    "acc": 80.0,
+    "deer_acc_at_same_tokens": 85.0,
+    "gain": -5.0
+   },
+   {
+    "split": 3,
+    "policy": "AdaDEER-E frozen (theta=4.6, rho=1)",
+    "tokens": 594.75,
+    "acc": 80.0,
+    "deer_acc_at_same_tokens": 85.0,
+    "gain": -5.0
+   },
+   {
+    "split": 3,
+    "policy": "AdaDEER-E tuned",
+    "tokens": 594.75,
+    "acc": 80.0,
+    "deer_acc_at_same_tokens": 85.0,
+    "gain": -5.0
+   },
+   {
+    "split": 4,
+    "policy": "AdaDEER defaults",
+    "tokens": 862.95,
+    "acc": 85.0,
+    "deer_acc_at_same_tokens": 85.0,
+    "gain": 0.0
+   },
+   {
+    "split": 4,
+    "policy": "AdaDEER tuned",
+    "tokens": 708.65,
+    "acc": 85.0,
+    "deer_acc_at_same_tokens": 85.0,
+    "gain": 0.0
+   },
+   {
+    "split": 4,
+    "policy": "AdaDEER-E frozen (theta=4.6, rho=1)",
+    "tokens": 571.05,
+    "acc": 85.0,
+    "deer_acc_at_same_tokens": 80.0,
+    "gain": 5.0
+   },
+   {
+    "split": 4,
+    "policy": "AdaDEER-E tuned",
+    "tokens": 708.65,
+    "acc": 85.0,
+    "deer_acc_at_same_tokens": 85.0,
+    "gain": 0.0
+   }
+  ],
+  "math500": [
+   {
+    "split": 0,
+    "policy": "AdaDEER defaults",
+    "tokens": 1469.8,
+    "acc": 90.0,
+    "deer_acc_at_same_tokens": 85.0,
+    "gain": 5.0
+   },
+   {
+    "split": 0,
+    "policy": "AdaDEER tuned",
+    "tokens": 1469.8,
+    "acc": 90.0,
+    "deer_acc_at_same_tokens": 85.0,
+    "gain": 5.0
+   },
+   {
+    "split": 0,
+    "policy": "AdaDEER-E frozen (theta=4.6, rho=1)",
+    "tokens": 1469.8,
+    "acc": 90.0,
+    "deer_acc_at_same_tokens": 85.0,
+    "gain": 5.0
+   },
+   {
+    "split": 0,
+    "policy": "AdaDEER-E tuned",
+    "tokens": 1469.8,
+    "acc": 90.0,
+    "deer_acc_at_same_tokens": 85.0,
+    "gain": 5.0
+   },
+   {
+    "split": 1,
+    "policy": "AdaDEER defaults",
+    "tokens": 1323.75,
+    "acc": 80.0,
+    "deer_acc_at_same_tokens": 80.0,
+    "gain": 0.0
+   },
+   {
+    "split": 1,
+    "policy": "AdaDEER tuned",
+    "tokens": 1292.45,
+    "acc": 80.0,
+    "deer_acc_at_same_tokens": 80.0,
+    "gain": 0.0
+   },
+   {
+    "split": 1,
+    "policy": "AdaDEER-E frozen (theta=4.6, rho=1)",
+    "tokens": 1257.65,
+    "acc": 80.0,
+    "deer_acc_at_same_tokens": 80.0,
+    "gain": 0.0
+   },
+   {
+    "split": 1,
+    "policy": "AdaDEER-E tuned",
+    "tokens": 1257.65,
+    "acc": 80.0,
+    "deer_acc_at_same_tokens": 80.0,
+    "gain": 0.0
+   },
+   {
+    "split": 2,
+    "policy": "AdaDEER defaults",
+    "tokens": 1598.9,
+    "acc": 85.0,
+    "deer_acc_at_same_tokens": 85.0,
+    "gain": 0.0
+   },
+   {
+    "split": 2,
+    "policy": "AdaDEER tuned",
+    "tokens": 1568.25,
+    "acc": 85.0,
+    "deer_acc_at_same_tokens": 85.0,
+    "gain": 0.0
+   },
+   {
+    "split": 2,
+    "policy": "AdaDEER-E frozen (theta=4.6, rho=1)",
+    "tokens": 1568.25,
+    "acc": 85.0,
+    "deer_acc_at_same_tokens": 85.0,
+    "gain": 0.0
+   },
+   {
+    "split": 2,
+    "policy": "AdaDEER-E tuned",
+    "tokens": 1568.25,
+    "acc": 85.0,
+    "deer_acc_at_same_tokens": 85.0,
+    "gain": 0.0
+   },
+   {
+    "split": 3,
+    "policy": "AdaDEER defaults",
+    "tokens": 1272.25,
+    "acc": 75.0,
+    "deer_acc_at_same_tokens": 75.0,
+    "gain": 0.0
+   },
+   {
+    "split": 3,
+    "policy": "AdaDEER tuned",
+    "tokens": 1167.85,
+    "acc": 75.0,
+    "deer_acc_at_same_tokens": 65.0,
+    "gain": 10.0
+   },
+   {
+    "split": 3,
+    "policy": "AdaDEER-E frozen (theta=4.6, rho=1)",
+    "tokens": 1079.05,
+    "acc": 75.0,
+    "deer_acc_at_same_tokens": 65.0,
+    "gain": 10.0
+   },
+   {
+    "split": 3,
+    "policy": "AdaDEER-E tuned",
+    "tokens": 1079.05,
+    "acc": 75.0,
+    "deer_acc_at_same_tokens": 65.0,
+    "gain": 10.0
+   },
+   {
+    "split": 4,
+    "policy": "AdaDEER defaults",
+    "tokens": 1798.05,
+    "acc": 75.0,
+    "deer_acc_at_same_tokens": 75.0,
+    "gain": 0.0
+   },
+   {
+    "split": 4,
+    "policy": "AdaDEER tuned",
+    "tokens": 1140.65,
+    "acc": 75.0,
+    "deer_acc_at_same_tokens": 75.0,
+    "gain": 0.0
+   },
+   {
+    "split": 4,
+    "policy": "AdaDEER-E frozen (theta=4.6, rho=1)",
+    "tokens": 1349.75,
+    "acc": 75.0,
+    "deer_acc_at_same_tokens": 75.0,
+    "gain": 0.0
+   },
+   {
+    "split": 4,
+    "policy": "AdaDEER-E tuned",
+    "tokens": 1169.5,
+    "acc": 75.0,
+    "deer_acc_at_same_tokens": 75.0,
+    "gain": 0.0
+   }
+  ]
+ },
+ "chosen": [
+  {
+   "split": 0,
+   "deer_tau": 0.95,
+   "adadeer": {
+    "tau0": 0.97,
+    "alpha": 0.06,
+    "s_max": 3,
+    "gamma": 0.0,
+    "vol_window": 3,
+    "beta": 0.0,
+    "eta": 0.2,
+    "budget_start": 0.5,
+    "tau_min": 0.8,
+    "tau_max": 0.999
+   },
+   "evidence": {
+    "theta": 3.0,
+    "rho": 1.0
+   }
+  },
+  {
+   "split": 1,
+   "deer_tau": 0.95,
+   "adadeer": {
+    "tau0": 0.99,
+    "alpha": 0.1,
+    "s_max": 3,
+    "gamma": 0.0,
+    "vol_window": 3,
+    "beta": 0.05,
+    "eta": 0.2,
+    "budget_start": 0.5,
+    "tau_min": 0.8,
+    "tau_max": 0.999
+   },
+   "evidence": {
+    "theta": 4.6,
+    "rho": 1.0
+   }
+  },
+  {
+   "split": 2,
+   "deer_tau": 0.95,
+   "adadeer": {
+    "tau0": 0.99,
+    "alpha": 0.06,
+    "s_max": 3,
+    "gamma": 0.0,
+    "vol_window": 3,
+    "beta": 0.0,
+    "eta": 0.2,
+    "budget_start": 0.5,
+    "tau_min": 0.8,
+    "tau_max": 0.999
+   },
+   "evidence": {
+    "theta": 4.6,
+    "rho": 1.0
+   }
+  },
+  {
+   "split": 3,
+   "deer_tau": 0.95,
+   "adadeer": {
+    "tau0": 0.99,
+    "alpha": 0.1,
+    "s_max": 3,
+    "gamma": 0.0,
+    "vol_window": 3,
+    "beta": 0.05,
+    "eta": 0.0,
+    "budget_start": 0.5,
+    "tau_min": 0.8,
+    "tau_max": 0.999
+   },
+   "evidence": {
+    "theta": 4.6,
+    "rho": 1.0
+   }
+  },
+  {
+   "split": 4,
+   "deer_tau": 0.95,
+   "adadeer": {
+    "tau0": 0.95,
+    "alpha": 0.1,
+    "s_max": 3,
+    "gamma": 0.0,
+    "vol_window": 3,
+    "beta": 0.0,
+    "eta": 0.1,
+    "budget_start": 0.5,
+    "tau_min": 0.8,
+    "tau_max": 0.999
+   },
+   "evidence": {
+    "theta": 3.0,
+    "rho": 0.75
+   }
+  }
+ ],
+ "args": {
+  "data": [
+   "results/traj/eval_gsm8k.jsonl",
+   "results/traj/eval_math500.jsonl"
+  ],
+  "out": "results/kfold",
+  "protocol": "kfold",
+  "n_splits": 5,
+  "seed": 0,
+  "think_budget": 4800,
+  "max_checkpoints": 10,
+  "conf_mode": "logged",
+  "objective": "match-deer",
+  "lam": 0.05,
+  "no_plot": false
+ }
+}

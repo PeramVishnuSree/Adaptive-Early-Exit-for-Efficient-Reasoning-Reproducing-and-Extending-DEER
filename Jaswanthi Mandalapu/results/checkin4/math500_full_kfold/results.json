@@ -1,0 +1,1575 @@
+{
+ "rows": {
+  "Full reasoning (never-exit)": {
+   "math500": [
+    {
+     "n": 100,
+     "acc": 83.0,
+     "tokens": 2841.7,
+     "compute": 2867.33,
+     "exits": 0,
+     "exit_acc": NaN
+    },
+    {
+     "n": 100,
+     "acc": 78.0,
+     "tokens": 3463.95,
+     "compute": 3500.51,
+     "exits": 0,
+     "exit_acc": NaN
+    },
+    {
+     "n": 100,
+     "acc": 74.0,
+     "tokens": 3457.32,
+     "compute": 3489.0,
+     "exits": 0,
+     "exit_acc": NaN
+    },
+    {
+     "n": 100,
+     "acc": 78.0,
+     "tokens": 2961.94,
+     "compute": 2995.07,
+     "exits": 0,
+     "exit_acc": NaN
+    },
+    {
+     "n": 100,
+     "acc": 82.0,
+     "tokens": 3321.33,
+     "compute": 3351.89,
+     "exits": 0,
+     "exit_acc": NaN
+    }
+   ],
+   "all": [
+    {
+     "n": 100,
+     "acc": 83.0,
+     "tokens": 2841.7,
+     "compute": 2867.33,
+     "exits": 0,
+     "exit_acc": NaN
+    },
+    {
+     "n": 100,
+     "acc": 78.0,
+     "tokens": 3463.95,
+     "compute": 3500.51,
+     "exits": 0,
+     "exit_acc": NaN
+    },
+    {
+     "n": 100,
+     "acc": 74.0,
+     "tokens": 3457.32,
+     "compute": 3489.0,
+     "exits": 0,
+     "exit_acc": NaN
+    },
+    {
+     "n": 100,
+     "acc": 78.0,
+     "tokens": 2961.94,
+     "compute": 2995.07,
+     "exits": 0,
+     "exit_acc": NaN
+    },
+    {
+     "n": 100,
+     "acc": 82.0,
+     "tokens": 3321.33,
+     "compute": 3351.89,
+     "exits": 0,
+     "exit_acc": NaN
+    }
+   ]
+  },
+  "DEER tau=0.9": {
+   "math500": [
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1300.38,
+     "compute": 1308.93,
+     "exits": 87,
+     "exit_acc": 87.35632183908046
+    },
+    {
+     "n": 100,
+     "acc": 74.0,
+     "tokens": 1443.78,
+     "compute": 1454.91,
+     "exits": 87,
+     "exit_acc": 81.60919540229885
+    },
+    {
+     "n": 100,
+     "acc": 72.0,
+     "tokens": 1459.94,
+     "compute": 1471.14,
+     "exits": 86,
+     "exit_acc": 76.74418604651163
+    },
+    {
+     "n": 100,
+     "acc": 73.0,
+     "tokens": 1475.66,
+     "compute": 1487.04,
+     "exits": 87,
+     "exit_acc": 80.45977011494253
+    },
+    {
+     "n": 100,
+     "acc": 75.0,
+     "tokens": 1511.19,
+     "compute": 1519.21,
+     "exits": 88,
+     "exit_acc": 80.68181818181819
+    }
+   ],
+   "all": [
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1300.38,
+     "compute": 1308.93,
+     "exits": 87,
+     "exit_acc": 87.35632183908046
+    },
+    {
+     "n": 100,
+     "acc": 74.0,
+     "tokens": 1443.78,
+     "compute": 1454.91,
+     "exits": 87,
+     "exit_acc": 81.60919540229885
+    },
+    {
+     "n": 100,
+     "acc": 72.0,
+     "tokens": 1459.94,
+     "compute": 1471.14,
+     "exits": 86,
+     "exit_acc": 76.74418604651163
+    },
+    {
+     "n": 100,
+     "acc": 73.0,
+     "tokens": 1475.66,
+     "compute": 1487.04,
+     "exits": 87,
+     "exit_acc": 80.45977011494253
+    },
+    {
+     "n": 100,
+     "acc": 75.0,
+     "tokens": 1511.19,
+     "compute": 1519.21,
+     "exits": 88,
+     "exit_acc": 80.68181818181819
+    }
+   ]
+  },
+  "DEER tau=0.95": {
+   "math500": [
+    {
+     "n": 100,
+     "acc": 80.0,
+     "tokens": 1448.65,
+     "compute": 1459.36,
+     "exits": 84,
+     "exit_acc": 88.0952380952381
+    },
+    {
+     "n": 100,
+     "acc": 78.0,
+     "tokens": 1635.81,
+     "compute": 1651.87,
+     "exits": 85,
+     "exit_acc": 87.05882352941177
+    },
+    {
+     "n": 100,
+     "acc": 73.0,
+     "tokens": 1755.13,
+     "compute": 1770.41,
+     "exits": 77,
+     "exit_acc": 81.81818181818181
+    },
+    {
+     "n": 100,
+     "acc": 74.0,
+     "tokens": 1608.71,
+     "compute": 1623.0,
+     "exits": 84,
+     "exit_acc": 82.14285714285714
+    },
+    {
+     "n": 100,
+     "acc": 78.0,
+     "tokens": 1667.6,
+     "compute": 1680.05,
+     "exits": 86,
+     "exit_acc": 84.88372093023256
+    }
+   ],
+   "all": [
+    {
+     "n": 100,
+     "acc": 80.0,
+     "tokens": 1448.65,
+     "compute": 1459.36,
+     "exits": 84,
+     "exit_acc": 88.0952380952381
+    },
+    {
+     "n": 100,
+     "acc": 78.0,
+     "tokens": 1635.81,
+     "compute": 1651.87,
+     "exits": 85,
+     "exit_acc": 87.05882352941177
+    },
+    {
+     "n": 100,
+     "acc": 73.0,
+     "tokens": 1755.13,
+     "compute": 1770.41,
+     "exits": 77,
+     "exit_acc": 81.81818181818181
+    },
+    {
+     "n": 100,
+     "acc": 74.0,
+     "tokens": 1608.71,
+     "compute": 1623.0,
+     "exits": 84,
+     "exit_acc": 82.14285714285714
+    },
+    {
+     "n": 100,
+     "acc": 78.0,
+     "tokens": 1667.6,
+     "compute": 1680.05,
+     "exits": 86,
+     "exit_acc": 84.88372093023256
+    }
+   ]
+  },
+  "DEER tau=0.99": {
+   "math500": [
+    {
+     "n": 100,
+     "acc": 82.0,
+     "tokens": 1672.86,
+     "compute": 1686.41,
+     "exits": 79,
+     "exit_acc": 92.40506329113924
+    },
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 2005.04,
+     "compute": 2027.07,
+     "exits": 72,
+     "exit_acc": 94.44444444444444
+    },
+    {
+     "n": 100,
+     "acc": 74.0,
+     "tokens": 2119.2,
+     "compute": 2137.68,
+     "exits": 70,
+     "exit_acc": 87.14285714285714
+    },
+    {
+     "n": 100,
+     "acc": 78.0,
+     "tokens": 1800.31,
+     "compute": 1818.66,
+     "exits": 76,
+     "exit_acc": 88.15789473684211
+    },
+    {
+     "n": 100,
+     "acc": 80.0,
+     "tokens": 1863.7,
+     "compute": 1878.38,
+     "exits": 82,
+     "exit_acc": 89.02439024390245
+    }
+   ],
+   "all": [
+    {
+     "n": 100,
+     "acc": 82.0,
+     "tokens": 1672.86,
+     "compute": 1686.41,
+     "exits": 79,
+     "exit_acc": 92.40506329113924
+    },
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 2005.04,
+     "compute": 2027.07,
+     "exits": 72,
+     "exit_acc": 94.44444444444444
+    },
+    {
+     "n": 100,
+     "acc": 74.0,
+     "tokens": 2119.2,
+     "compute": 2137.68,
+     "exits": 70,
+     "exit_acc": 87.14285714285714
+    },
+    {
+     "n": 100,
+     "acc": 78.0,
+     "tokens": 1800.31,
+     "compute": 1818.66,
+     "exits": 76,
+     "exit_acc": 88.15789473684211
+    },
+    {
+     "n": 100,
+     "acc": 80.0,
+     "tokens": 1863.7,
+     "compute": 1878.38,
+     "exits": 82,
+     "exit_acc": 89.02439024390245
+    }
+   ]
+  },
+  "Consistency (2 in a row)": {
+   "math500": [
+    {
+     "n": 100,
+     "acc": 78.0,
+     "tokens": 1205.07,
+     "compute": 1213.23,
+     "exits": 72,
+     "exit_acc": 69.44444444444444
+    },
+    {
+     "n": 100,
+     "acc": 74.0,
+     "tokens": 1246.44,
+     "compute": 1257.82,
+     "exits": 75,
+     "exit_acc": 66.66666666666667
+    },
+    {
+     "n": 100,
+     "acc": 71.0,
+     "tokens": 1188.84,
+     "compute": 1197.82,
+     "exits": 78,
+     "exit_acc": 64.1025641025641
+    },
+    {
+     "n": 100,
+     "acc": 77.0,
+     "tokens": 1284.99,
+     "compute": 1298.72,
+     "exits": 71,
+     "exit_acc": 69.01408450704226
+    },
+    {
+     "n": 100,
+     "acc": 74.0,
+     "tokens": 1325.94,
+     "compute": 1335.09,
+     "exits": 77,
+     "exit_acc": 67.53246753246754
+    }
+   ],
+   "all": [
+    {
+     "n": 100,
+     "acc": 78.0,
+     "tokens": 1205.07,
+     "compute": 1213.23,
+     "exits": 72,
+     "exit_acc": 69.44444444444444
+    },
+    {
+     "n": 100,
+     "acc": 74.0,
+     "tokens": 1246.44,
+     "compute": 1257.82,
+     "exits": 75,
+     "exit_acc": 66.66666666666667
+    },
+    {
+     "n": 100,
+     "acc": 71.0,
+     "tokens": 1188.84,
+     "compute": 1197.82,
+     "exits": 78,
+     "exit_acc": 64.1025641025641
+    },
+    {
+     "n": 100,
+     "acc": 77.0,
+     "tokens": 1284.99,
+     "compute": 1298.72,
+     "exits": 71,
+     "exit_acc": 69.01408450704226
+    },
+    {
+     "n": 100,
+     "acc": 74.0,
+     "tokens": 1325.94,
+     "compute": 1335.09,
+     "exits": 77,
+     "exit_acc": 67.53246753246754
+    }
+   ]
+  },
+  "Consistency + momentum": {
+   "math500": [
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1354.42,
+     "compute": 1365.71,
+     "exits": 69,
+     "exit_acc": 73.91304347826087
+    },
+    {
+     "n": 100,
+     "acc": 77.0,
+     "tokens": 1364.3,
+     "compute": 1379.17,
+     "exits": 74,
+     "exit_acc": 71.62162162162163
+    },
+    {
+     "n": 100,
+     "acc": 71.0,
+     "tokens": 1381.92,
+     "compute": 1393.84,
+     "exits": 76,
+     "exit_acc": 64.47368421052632
+    },
+    {
+     "n": 100,
+     "acc": 79.0,
+     "tokens": 1472.56,
+     "compute": 1489.67,
+     "exits": 63,
+     "exit_acc": 71.42857142857143
+    },
+    {
+     "n": 100,
+     "acc": 74.0,
+     "tokens": 1452.33,
+     "compute": 1464.81,
+     "exits": 75,
+     "exit_acc": 66.66666666666667
+    }
+   ],
+   "all": [
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1354.42,
+     "compute": 1365.71,
+     "exits": 69,
+     "exit_acc": 73.91304347826087
+    },
+    {
+     "n": 100,
+     "acc": 77.0,
+     "tokens": 1364.3,
+     "compute": 1379.17,
+     "exits": 74,
+     "exit_acc": 71.62162162162163
+    },
+    {
+     "n": 100,
+     "acc": 71.0,
+     "tokens": 1381.92,
+     "compute": 1393.84,
+     "exits": 76,
+     "exit_acc": 64.47368421052632
+    },
+    {
+     "n": 100,
+     "acc": 79.0,
+     "tokens": 1472.56,
+     "compute": 1489.67,
+     "exits": 63,
+     "exit_acc": 71.42857142857143
+    },
+    {
+     "n": 100,
+     "acc": 74.0,
+     "tokens": 1452.33,
+     "compute": 1464.81,
+     "exits": 75,
+     "exit_acc": 66.66666666666667
+    }
+   ]
+  },
+  "DEER tuned tau (train)": {
+   "math500": [
+    {
+     "n": 100,
+     "acc": 80.0,
+     "tokens": 1448.65,
+     "compute": 1459.36,
+     "exits": 84,
+     "exit_acc": 88.0952380952381
+    },
+    {
+     "n": 100,
+     "acc": 78.0,
+     "tokens": 1635.81,
+     "compute": 1651.87,
+     "exits": 85,
+     "exit_acc": 87.05882352941177
+    },
+    {
+     "n": 100,
+     "acc": 73.0,
+     "tokens": 1755.13,
+     "compute": 1770.41,
+     "exits": 77,
+     "exit_acc": 81.81818181818181
+    },
+    {
+     "n": 100,
+     "acc": 74.0,
+     "tokens": 1608.71,
+     "compute": 1623.0,
+     "exits": 84,
+     "exit_acc": 82.14285714285714
+    },
+    {
+     "n": 100,
+     "acc": 78.0,
+     "tokens": 1667.6,
+     "compute": 1680.05,
+     "exits": 86,
+     "exit_acc": 84.88372093023256
+    }
+   ],
+   "all": [
+    {
+     "n": 100,
+     "acc": 80.0,
+     "tokens": 1448.65,
+     "compute": 1459.36,
+     "exits": 84,
+     "exit_acc": 88.0952380952381
+    },
+    {
+     "n": 100,
+     "acc": 78.0,
+     "tokens": 1635.81,
+     "compute": 1651.87,
+     "exits": 85,
+     "exit_acc": 87.05882352941177
+    },
+    {
+     "n": 100,
+     "acc": 73.0,
+     "tokens": 1755.13,
+     "compute": 1770.41,
+     "exits": 77,
+     "exit_acc": 81.81818181818181
+    },
+    {
+     "n": 100,
+     "acc": 74.0,
+     "tokens": 1608.71,
+     "compute": 1623.0,
+     "exits": 84,
+     "exit_acc": 82.14285714285714
+    },
+    {
+     "n": 100,
+     "acc": 78.0,
+     "tokens": 1667.6,
+     "compute": 1680.05,
+     "exits": 86,
+     "exit_acc": 84.88372093023256
+    }
+   ]
+  },
+  "AdaDEER defaults": {
+   "math500": [
+    {
+     "n": 100,
+     "acc": 82.0,
+     "tokens": 1485.15,
+     "compute": 1497.3,
+     "exits": 83,
+     "exit_acc": 87.95180722891567
+    },
+    {
+     "n": 100,
+     "acc": 79.0,
+     "tokens": 1713.68,
+     "compute": 1731.68,
+     "exits": 79,
+     "exit_acc": 87.34177215189874
+    },
+    {
+     "n": 100,
+     "acc": 77.0,
+     "tokens": 1782.01,
+     "compute": 1797.29,
+     "exits": 77,
+     "exit_acc": 84.41558441558442
+    },
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1778.32,
+     "compute": 1798.27,
+     "exits": 78,
+     "exit_acc": 91.02564102564102
+    },
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1711.95,
+     "compute": 1725.84,
+     "exits": 84,
+     "exit_acc": 85.71428571428571
+    }
+   ],
+   "all": [
+    {
+     "n": 100,
+     "acc": 82.0,
+     "tokens": 1485.15,
+     "compute": 1497.3,
+     "exits": 83,
+     "exit_acc": 87.95180722891567
+    },
+    {
+     "n": 100,
+     "acc": 79.0,
+     "tokens": 1713.68,
+     "compute": 1731.68,
+     "exits": 79,
+     "exit_acc": 87.34177215189874
+    },
+    {
+     "n": 100,
+     "acc": 77.0,
+     "tokens": 1782.01,
+     "compute": 1797.29,
+     "exits": 77,
+     "exit_acc": 84.41558441558442
+    },
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1778.32,
+     "compute": 1798.27,
+     "exits": 78,
+     "exit_acc": 91.02564102564102
+    },
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1711.95,
+     "compute": 1725.84,
+     "exits": 84,
+     "exit_acc": 85.71428571428571
+    }
+   ]
+  },
+  "  - no stability (alpha=0)": {
+   "math500": [
+    {
+     "n": 100,
+     "acc": 83.0,
+     "tokens": 1844.19,
+     "compute": 1860.0,
+     "exits": 70,
+     "exit_acc": 94.28571428571429
+    },
+    {
+     "n": 100,
+     "acc": 82.0,
+     "tokens": 2176.81,
+     "compute": 2200.31,
+     "exits": 63,
+     "exit_acc": 96.82539682539682
+    },
+    {
+     "n": 100,
+     "acc": 75.0,
+     "tokens": 2208.76,
+     "compute": 2228.72,
+     "exits": 66,
+     "exit_acc": 87.87878787878788
+    },
+    {
+     "n": 100,
+     "acc": 80.0,
+     "tokens": 2006.98,
+     "compute": 2029.92,
+     "exits": 67,
+     "exit_acc": 92.53731343283582
+    },
+    {
+     "n": 100,
+     "acc": 80.0,
+     "tokens": 2159.78,
+     "compute": 2177.81,
+     "exits": 73,
+     "exit_acc": 89.04109589041096
+    }
+   ],
+   "all": [
+    {
+     "n": 100,
+     "acc": 83.0,
+     "tokens": 1844.19,
+     "compute": 1860.0,
+     "exits": 70,
+     "exit_acc": 94.28571428571429
+    },
+    {
+     "n": 100,
+     "acc": 82.0,
+     "tokens": 2176.81,
+     "compute": 2200.31,
+     "exits": 63,
+     "exit_acc": 96.82539682539682
+    },
+    {
+     "n": 100,
+     "acc": 75.0,
+     "tokens": 2208.76,
+     "compute": 2228.72,
+     "exits": 66,
+     "exit_acc": 87.87878787878788
+    },
+    {
+     "n": 100,
+     "acc": 80.0,
+     "tokens": 2006.98,
+     "compute": 2029.92,
+     "exits": 67,
+     "exit_acc": 92.53731343283582
+    },
+    {
+     "n": 100,
+     "acc": 80.0,
+     "tokens": 2159.78,
+     "compute": 2177.81,
+     "exits": 73,
+     "exit_acc": 89.04109589041096
+    }
+   ]
+  },
+  "  - no volatility (gamma=0)": {
+   "math500": [
+    {
+     "n": 100,
+     "acc": 83.0,
+     "tokens": 1388.29,
+     "compute": 1399.91,
+     "exits": 87,
+     "exit_acc": 88.50574712643679
+    },
+    {
+     "n": 100,
+     "acc": 79.0,
+     "tokens": 1680.86,
+     "compute": 1697.76,
+     "exits": 80,
+     "exit_acc": 87.5
+    },
+    {
+     "n": 100,
+     "acc": 77.0,
+     "tokens": 1669.41,
+     "compute": 1684.12,
+     "exits": 79,
+     "exit_acc": 83.54430379746836
+    },
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1742.79,
+     "compute": 1762.13,
+     "exits": 79,
+     "exit_acc": 91.13924050632912
+    },
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1658.85,
+     "compute": 1671.92,
+     "exits": 86,
+     "exit_acc": 86.04651162790698
+    }
+   ],
+   "all": [
+    {
+     "n": 100,
+     "acc": 83.0,
+     "tokens": 1388.29,
+     "compute": 1399.91,
+     "exits": 87,
+     "exit_acc": 88.50574712643679
+    },
+    {
+     "n": 100,
+     "acc": 79.0,
+     "tokens": 1680.86,
+     "compute": 1697.76,
+     "exits": 80,
+     "exit_acc": 87.5
+    },
+    {
+     "n": 100,
+     "acc": 77.0,
+     "tokens": 1669.41,
+     "compute": 1684.12,
+     "exits": 79,
+     "exit_acc": 83.54430379746836
+    },
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1742.79,
+     "compute": 1762.13,
+     "exits": 79,
+     "exit_acc": 91.13924050632912
+    },
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1658.85,
+     "compute": 1671.92,
+     "exits": 86,
+     "exit_acc": 86.04651162790698
+    }
+   ]
+  },
+  "  - no switching (beta=0)": {
+   "math500": [
+    {
+     "n": 100,
+     "acc": 83.0,
+     "tokens": 1418.31,
+     "compute": 1430.3,
+     "exits": 84,
+     "exit_acc": 88.0952380952381
+    },
+    {
+     "n": 100,
+     "acc": 79.0,
+     "tokens": 1711.09,
+     "compute": 1728.79,
+     "exits": 79,
+     "exit_acc": 87.34177215189874
+    },
+    {
+     "n": 100,
+     "acc": 77.0,
+     "tokens": 1780.65,
+     "compute": 1795.89,
+     "exits": 77,
+     "exit_acc": 84.41558441558442
+    },
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1774.64,
+     "compute": 1794.38,
+     "exits": 78,
+     "exit_acc": 91.02564102564102
+    },
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1692.68,
+     "compute": 1706.27,
+     "exits": 85,
+     "exit_acc": 85.88235294117646
+    }
+   ],
+   "all": [
+    {
+     "n": 100,
+     "acc": 83.0,
+     "tokens": 1418.31,
+     "compute": 1430.3,
+     "exits": 84,
+     "exit_acc": 88.0952380952381
+    },
+    {
+     "n": 100,
+     "acc": 79.0,
+     "tokens": 1711.09,
+     "compute": 1728.79,
+     "exits": 79,
+     "exit_acc": 87.34177215189874
+    },
+    {
+     "n": 100,
+     "acc": 77.0,
+     "tokens": 1780.65,
+     "compute": 1795.89,
+     "exits": 77,
+     "exit_acc": 84.41558441558442
+    },
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1774.64,
+     "compute": 1794.38,
+     "exits": 78,
+     "exit_acc": 91.02564102564102
+    },
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1692.68,
+     "compute": 1706.27,
+     "exits": 85,
+     "exit_acc": 85.88235294117646
+    }
+   ]
+  },
+  "  - no budget (eta=0)": {
+   "math500": [
+    {
+     "n": 100,
+     "acc": 82.0,
+     "tokens": 1487.07,
+     "compute": 1499.25,
+     "exits": 82,
+     "exit_acc": 89.02439024390245
+    },
+    {
+     "n": 100,
+     "acc": 79.0,
+     "tokens": 1754.16,
+     "compute": 1772.37,
+     "exits": 78,
+     "exit_acc": 88.46153846153847
+    },
+    {
+     "n": 100,
+     "acc": 77.0,
+     "tokens": 1782.01,
+     "compute": 1797.29,
+     "exits": 77,
+     "exit_acc": 84.41558441558442
+    },
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1781.28,
+     "compute": 1801.3,
+     "exits": 77,
+     "exit_acc": 92.20779220779221
+    },
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1717.35,
+     "compute": 1731.35,
+     "exits": 83,
+     "exit_acc": 86.74698795180723
+    }
+   ],
+   "all": [
+    {
+     "n": 100,
+     "acc": 82.0,
+     "tokens": 1487.07,
+     "compute": 1499.25,
+     "exits": 82,
+     "exit_acc": 89.02439024390245
+    },
+    {
+     "n": 100,
+     "acc": 79.0,
+     "tokens": 1754.16,
+     "compute": 1772.37,
+     "exits": 78,
+     "exit_acc": 88.46153846153847
+    },
+    {
+     "n": 100,
+     "acc": 77.0,
+     "tokens": 1782.01,
+     "compute": 1797.29,
+     "exits": 77,
+     "exit_acc": 84.41558441558442
+    },
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1781.28,
+     "compute": 1801.3,
+     "exits": 77,
+     "exit_acc": 92.20779220779221
+    },
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1717.35,
+     "compute": 1731.35,
+     "exits": 83,
+     "exit_acc": 86.74698795180723
+    }
+   ]
+  },
+  "AdaDEER tuned (train)": {
+   "math500": [
+    {
+     "n": 100,
+     "acc": 83.0,
+     "tokens": 1334.83,
+     "compute": 1346.01,
+     "exits": 88,
+     "exit_acc": 88.63636363636364
+    },
+    {
+     "n": 100,
+     "acc": 79.0,
+     "tokens": 1588.72,
+     "compute": 1604.71,
+     "exits": 85,
+     "exit_acc": 87.05882352941177
+    },
+    {
+     "n": 100,
+     "acc": 77.0,
+     "tokens": 1577.17,
+     "compute": 1591.06,
+     "exits": 80,
+     "exit_acc": 82.5
+    },
+    {
+     "n": 100,
+     "acc": 82.0,
+     "tokens": 1726.22,
+     "compute": 1744.97,
+     "exits": 80,
+     "exit_acc": 92.5
+    },
+    {
+     "n": 100,
+     "acc": 80.0,
+     "tokens": 1565.62,
+     "compute": 1577.99,
+     "exits": 88,
+     "exit_acc": 84.0909090909091
+    }
+   ],
+   "all": [
+    {
+     "n": 100,
+     "acc": 83.0,
+     "tokens": 1334.83,
+     "compute": 1346.01,
+     "exits": 88,
+     "exit_acc": 88.63636363636364
+    },
+    {
+     "n": 100,
+     "acc": 79.0,
+     "tokens": 1588.72,
+     "compute": 1604.71,
+     "exits": 85,
+     "exit_acc": 87.05882352941177
+    },
+    {
+     "n": 100,
+     "acc": 77.0,
+     "tokens": 1577.17,
+     "compute": 1591.06,
+     "exits": 80,
+     "exit_acc": 82.5
+    },
+    {
+     "n": 100,
+     "acc": 82.0,
+     "tokens": 1726.22,
+     "compute": 1744.97,
+     "exits": 80,
+     "exit_acc": 92.5
+    },
+    {
+     "n": 100,
+     "acc": 80.0,
+     "tokens": 1565.62,
+     "compute": 1577.99,
+     "exits": 88,
+     "exit_acc": 84.0909090909091
+    }
+   ]
+  },
+  "AdaDEER-E frozen (theta=4.6, rho=1)": {
+   "math500": [
+    {
+     "n": 100,
+     "acc": 83.0,
+     "tokens": 1270.08,
+     "compute": 1279.66,
+     "exits": 89,
+     "exit_acc": 87.64044943820225
+    },
+    {
+     "n": 100,
+     "acc": 77.0,
+     "tokens": 1570.09,
+     "compute": 1585.07,
+     "exits": 84,
+     "exit_acc": 84.52380952380952
+    },
+    {
+     "n": 100,
+     "acc": 76.0,
+     "tokens": 1383.93,
+     "compute": 1396.66,
+     "exits": 84,
+     "exit_acc": 78.57142857142857
+    },
+    {
+     "n": 100,
+     "acc": 80.0,
+     "tokens": 1652.82,
+     "compute": 1671.0,
+     "exits": 81,
+     "exit_acc": 88.88888888888889
+    },
+    {
+     "n": 100,
+     "acc": 82.0,
+     "tokens": 1564.37,
+     "compute": 1576.53,
+     "exits": 88,
+     "exit_acc": 86.36363636363636
+    }
+   ],
+   "all": [
+    {
+     "n": 100,
+     "acc": 83.0,
+     "tokens": 1270.08,
+     "compute": 1279.66,
+     "exits": 89,
+     "exit_acc": 87.64044943820225
+    },
+    {
+     "n": 100,
+     "acc": 77.0,
+     "tokens": 1570.09,
+     "compute": 1585.07,
+     "exits": 84,
+     "exit_acc": 84.52380952380952
+    },
+    {
+     "n": 100,
+     "acc": 76.0,
+     "tokens": 1383.93,
+     "compute": 1396.66,
+     "exits": 84,
+     "exit_acc": 78.57142857142857
+    },
+    {
+     "n": 100,
+     "acc": 80.0,
+     "tokens": 1652.82,
+     "compute": 1671.0,
+     "exits": 81,
+     "exit_acc": 88.88888888888889
+    },
+    {
+     "n": 100,
+     "acc": 82.0,
+     "tokens": 1564.37,
+     "compute": 1576.53,
+     "exits": 88,
+     "exit_acc": 86.36363636363636
+    }
+   ]
+  },
+  "AdaDEER-E tuned (train)": {
+   "math500": [
+    {
+     "n": 100,
+     "acc": 82.0,
+     "tokens": 1437.39,
+     "compute": 1448.72,
+     "exits": 85,
+     "exit_acc": 89.41176470588235
+    },
+    {
+     "n": 100,
+     "acc": 77.0,
+     "tokens": 1570.09,
+     "compute": 1585.07,
+     "exits": 84,
+     "exit_acc": 84.52380952380952
+    },
+    {
+     "n": 100,
+     "acc": 76.0,
+     "tokens": 1383.93,
+     "compute": 1396.66,
+     "exits": 84,
+     "exit_acc": 78.57142857142857
+    },
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1706.37,
+     "compute": 1724.98,
+     "exits": 80,
+     "exit_acc": 91.25
+    },
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1626.91,
+     "compute": 1639.6,
+     "exits": 87,
+     "exit_acc": 86.20689655172414
+    }
+   ],
+   "all": [
+    {
+     "n": 100,
+     "acc": 82.0,
+     "tokens": 1437.39,
+     "compute": 1448.72,
+     "exits": 85,
+     "exit_acc": 89.41176470588235
+    },
+    {
+     "n": 100,
+     "acc": 77.0,
+     "tokens": 1570.09,
+     "compute": 1585.07,
+     "exits": 84,
+     "exit_acc": 84.52380952380952
+    },
+    {
+     "n": 100,
+     "acc": 76.0,
+     "tokens": 1383.93,
+     "compute": 1396.66,
+     "exits": 84,
+     "exit_acc": 78.57142857142857
+    },
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1706.37,
+     "compute": 1724.98,
+     "exits": 80,
+     "exit_acc": 91.25
+    },
+    {
+     "n": 100,
+     "acc": 81.0,
+     "tokens": 1626.91,
+     "compute": 1639.6,
+     "exits": 87,
+     "exit_acc": 86.20689655172414
+    }
+   ]
+  }
+ },
+ "iso": {
+  "math500": [
+   {
+    "split": 0,
+    "policy": "AdaDEER defaults",
+    "tokens": 1485.15,
+    "acc": 82.0,
+    "deer_acc_at_same_tokens": 81.31292866941016,
+    "gain": 0.6870713305898448
+   },
+   {
+    "split": 0,
+    "policy": "AdaDEER tuned",
+    "tokens": 1334.83,
+    "acc": 83.0,
+    "deer_acc_at_same_tokens": 81.0,
+    "gain": 2.0
+   },
+   {
+    "split": 0,
+    "policy": "AdaDEER-E frozen (theta=4.6, rho=1)",
+    "tokens": 1270.08,
+    "acc": 83.0,
+    "deer_acc_at_same_tokens": 80.52619233776387,
+    "gain": 2.4738076622361262
+   },
+   {
+    "split": 0,
+    "policy": "AdaDEER-E tuned",
+    "tokens": 1437.39,
+    "acc": 82.0,
+    "deer_acc_at_same_tokens": 81.0,
+    "gain": 1.0
+   },
+   {
+    "split": 1,
+    "policy": "AdaDEER defaults",
+    "tokens": 1713.68,
+    "acc": 79.0,
+    "deer_acc_at_same_tokens": 78.75037340399903,
+    "gain": 0.24962659600096515
+   },
+   {
+    "split": 1,
+    "policy": "AdaDEER tuned",
+    "tokens": 1588.72,
+    "acc": 79.0,
+    "deer_acc_at_same_tokens": 77.9739529782713,
+    "gain": 1.0260470217287008
+   },
+   {
+    "split": 1,
+    "policy": "AdaDEER-E frozen (theta=4.6, rho=1)",
+    "tokens": 1570.09,
+    "acc": 77.0,
+    "deer_acc_at_same_tokens": 77.4631571732127,
+    "gain": -0.4631571732126929
+   },
+   {
+    "split": 1,
+    "policy": "AdaDEER-E tuned",
+    "tokens": 1570.09,
+    "acc": 77.0,
+    "deer_acc_at_same_tokens": 77.4631571732127,
+    "gain": -0.4631571732126929
+   },
+   {
+    "split": 2,
+    "policy": "AdaDEER defaults",
+    "tokens": 1782.01,
+    "acc": 77.0,
+    "deer_acc_at_same_tokens": 73.20672152580174,
+    "gain": 3.79327847419826
+   },
+   {
+    "split": 2,
+    "policy": "AdaDEER tuned",
+    "tokens": 1577.17,
+    "acc": 77.0,
+    "deer_acc_at_same_tokens": 72.0,
+    "gain": 5.0
+   },
+   {
+    "split": 2,
+    "policy": "AdaDEER-E frozen (theta=4.6, rho=1)",
+    "tokens": 1383.93,
+    "acc": 76.0,
+    "deer_acc_at_same_tokens": 69.0027986059774,
+    "gain": 6.997201394022596
+   },
+   {
+    "split": 2,
+    "policy": "AdaDEER-E tuned",
+    "tokens": 1383.93,
+    "acc": 76.0,
+    "deer_acc_at_same_tokens": 69.0027986059774,
+    "gain": 6.997201394022596
+   },
+   {
+    "split": 3,
+    "policy": "AdaDEER defaults",
+    "tokens": 1778.32,
+    "acc": 81.0,
+    "deer_acc_at_same_tokens": 77.59868601149739,
+    "gain": 3.401313988502608
+   },
+   {
+    "split": 3,
+    "policy": "AdaDEER tuned",
+    "tokens": 1726.22,
+    "acc": 82.0,
+    "deer_acc_at_same_tokens": 76.64786933114335,
+    "gain": 5.3521306688566455
+   },
+   {
+    "split": 3,
+    "policy": "AdaDEER-E frozen (theta=4.6, rho=1)",
+    "tokens": 1652.82,
+    "acc": 80.0,
+    "deer_acc_at_same_tokens": 75.07572247286916,
+    "gain": 4.92427752713084
+   },
+   {
+    "split": 3,
+    "policy": "AdaDEER-E tuned",
+    "tokens": 1706.37,
+    "acc": 81.0,
+    "deer_acc_at_same_tokens": 76.28561000091248,
+    "gain": 4.7143899990875155
+   },
+   {
+    "split": 4,
+    "policy": "AdaDEER defaults",
+    "tokens": 1711.95,
+    "acc": 81.0,
+    "deer_acc_at_same_tokens": 78.40402660107497,
+    "gain": 2.5959733989250253
+   },
+   {
+    "split": 4,
+    "policy": "AdaDEER tuned",
+    "tokens": 1565.62,
+    "acc": 80.0,
+    "deer_acc_at_same_tokens": 77.47671773092674,
+    "gain": 2.5232822690732633
+   },
+   {
+    "split": 4,
+    "policy": "AdaDEER-E frozen (theta=4.6, rho=1)",
+    "tokens": 1564.37,
+    "acc": 82.0,
+    "deer_acc_at_same_tokens": 77.41983922341878,
+    "gain": 4.580160776581224
+   },
+   {
+    "split": 4,
+    "policy": "AdaDEER-E tuned",
+    "tokens": 1626.91,
+    "acc": 81.0,
+    "deer_acc_at_same_tokens": 78.0,
+    "gain": 3.0
+   }
+  ]
+ },
+ "chosen": [
+  {
+   "split": 0,
+   "deer_tau": 0.95,
+   "adadeer": {
+    "tau0": 0.99,
+    "alpha": 0.06,
+    "s_max": 3,
+    "gamma": 0.0,
+    "vol_window": 3,
+    "beta": 0.0,
+    "eta": 0.0,
+    "budget_start": 0.5,
+    "tau_min": 0.8,
+    "tau_max": 0.999
+   },
+   "evidence": {
+    "theta": 4.6,
+    "rho": 0.75
+   }
+  },
+  {
+   "split": 1,
+   "deer_tau": 0.95,
+   "adadeer": {
+    "tau0": 0.99,
+    "alpha": 0.06,
+    "s_max": 3,
+    "gamma": 0.0,
+    "vol_window": 3,
+    "beta": 0.0,
+    "eta": 0.0,
+    "budget_start": 0.5,
+    "tau_min": 0.8,
+    "tau_max": 0.999
+   },
+   "evidence": {
+    "theta": 4.6,
+    "rho": 1.0
+   }
+  },
+  {
+   "split": 2,
+   "deer_tau": 0.95,
+   "adadeer": {
+    "tau0": 0.99,
+    "alpha": 0.06,
+    "s_max": 3,
+    "gamma": 0.0,
+    "vol_window": 3,
+    "beta": 0.0,
+    "eta": 0.0,
+    "budget_start": 0.5,
+    "tau_min": 0.8,
+    "tau_max": 0.999
+   },
+   "evidence": {
+    "theta": 4.6,
+    "rho": 1.0
+   }
+  },
+  {
+   "split": 3,
+   "deer_tau": 0.95,
+   "adadeer": {
+    "tau0": 0.99,
+    "alpha": 0.06,
+    "s_max": 3,
+    "gamma": 0.0,
+    "vol_window": 3,
+    "beta": 0.0,
+    "eta": 0.2,
+    "budget_start": 0.5,
+    "tau_min": 0.9,
+    "tau_max": 0.999
+   },
+   "evidence": {
+    "theta": 4.6,
+    "rho": 0.75
+   }
+  },
+  {
+   "split": 4,
+   "deer_tau": 0.95,
+   "adadeer": {
+    "tau0": 0.99,
+    "alpha": 0.06,
+    "s_max": 3,
+    "gamma": 0.0,
+    "vol_window": 3,
+    "beta": 0.0,
+    "eta": 0.1,
+    "budget_start": 0.5,
+    "tau_min": 0.8,
+    "tau_max": 0.999
+   },
+   "evidence": {
+    "theta": 4.6,
+    "rho": 0.75
+   }
+  }
+ ],
+ "args": {
+  "data": [
+   "results/traj/full_math500.jsonl"
+  ],
+  "out": "results/math500_full_kfold",
+  "protocol": "kfold",
+  "n_splits": 5,
+  "seed": 0,
+  "think_budget": 4800,
+  "max_checkpoints": 10,
+  "conf_mode": "logged",
+  "objective": "match-deer",
+  "lam": 0.05,
+  "no_plot": false
+ }
+}
