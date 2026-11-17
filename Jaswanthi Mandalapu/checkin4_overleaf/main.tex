@@ -70,6 +70,7 @@ A log-odds evidence rule, AdaDEER-E, then replaces the fixed threshold: a new an
 On all 500 MATH-500 problems, with parameters frozen before scoring, AdaDEER-E reaches 79.6\% accuracy at 1{,}488 tokens, against 76.6\% at 1{,}623 for DEER at $\tau=0.95$ (McNemar $p=0.003$) and 79.0\% at 1{,}892 for DEER at $\tau=0.99$.
 It matches full reasoning at 46\% of the tokens.
 The gain is an offline replay of never-exit trajectories, not a new live GPU run.
+The appendix copies the scored tables already in the repository: the dataset counts, the Check-In 2 smoke test, the synthetic controller bake-off, the Check-In 3 live runs, the answer-step fix, the stopping-method comparison, the state-dependent threshold, and the AdaDEER-E replay.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -503,6 +504,10 @@ Confirmation was.
 AdaDEER-E writes that fact as log-odds evidence: a new answer must clear $0.99$, a repeated answer accumulates, and an answer change resets the bar.
 On all 500 MATH-500 problems the frozen rule is more accurate and cheaper than DEER at $\tau=0.95$, and as accurate as DEER at $\tau=0.99$ at 21\% fewer tokens, at under half the tokens of full reasoning.
 The remaining work before the final submission, which this draft does not pretend is done, is a live run of the same rule, a shareable Drive link, invitations for the instructor and the TA, and enough further commits to meet the check-in count.
+
+\clearpage
+\appendices
+\input{appendix_data}
 
 \clearpage
 \begin{thebibliography}{9}

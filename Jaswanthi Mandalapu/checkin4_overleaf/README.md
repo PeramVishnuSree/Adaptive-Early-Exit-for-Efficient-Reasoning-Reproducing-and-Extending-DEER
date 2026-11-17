@@ -11,4 +11,4 @@ This folder is a self-contained IEEE conference draft for CMPE 258 Group 10, Che
 
 No extra style file is included. `graphicx`, `amsmath`, `booktabs`, `array`, `url`, `float`, and `dblfloatfix` are part of a standard TeX Live install.
 
-`figures/` holds every project plot used in the draft: the 20-question GSM8K reproduction, the dataset summaries, the Check-In 3 live and answer-fix comparisons, the stopping-method curves, the held-out controller curves, and the AdaDEER-E tradeoffs. `main.pdf` in this folder is the compiled report. The upstream DEER paper's own result images are not reprinted here.
+`appendix_data.tex` copies the scored tables from the repository into the PDF. `figures/` holds every project plot used in the draft: the 20-question GSM8K reproduction, the dataset summaries, the Check-In 3 live and answer-fix comparisons, the stopping-method curves, the held-out controller curves, and the AdaDEER-E tradeoffs. `main.pdf` in this folder is the compiled report. The upstream DEER paper's own result images are not reprinted here.

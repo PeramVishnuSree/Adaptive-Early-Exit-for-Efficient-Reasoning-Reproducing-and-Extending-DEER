@@ -1,0 +1,348 @@
+\section{Measurements Copied from the Repository}
+\label{sec:appendix}
+Every number in this appendix is taken from a file already committed in the repository.
+The path is named in the caption.
+Nothing here is a new run.
+Two logs must not be averaged: the Check-In 3 vLLM runs and the later MLX replay use different prompts and different checkpoint rates, so their GSM8K accuracies are not the same experiment.
+
+\subsection{What the datasets contain}
+\texttt{summary.md} in the dataset-exploration folder counts the files the later runs actually load.
+GSM8K has 1{,}319 test problems and 7{,}473 training problems.
+Questions average 61 tokens.
+Reference solutions average 3.2 calculation steps.
+The gold answer that a confidence average would cover is 2.29 tokens on average, and every test answer is an integer.
+No test question is duplicated, and none appears in the training split.
+MATH-500 has 500 problems in both the DEER file and the Hugging Face release, with no missing items.
+The grader accepts all 500 reference solutions.
+Answer types are 313 integers, 97 expressions, 50 fractions, 23 tuples or intervals, 10 text or choice answers, and 7 decimals.
+
+\begin{table*}[!t]
+\caption{MATH-500 by level, from the dataset exploration. Question, reference-solution, and trial-answer lengths are mean tokens.}
+\label{tab:explore}
+\centering
+\footnotesize
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Level & $n$ & Question & Solution & Trial ans. & Integer \\
+\midrule
+1 & 43 & 42 & 98 & 2.7 & 79\% \\
+2 & 90 & 53 & 141 & 3.4 & 64\% \\
+3 & 105 & 57 & 183 & 4.3 & 62\% \\
+4 & 128 & 76 & 213 & 4.3 & 64\% \\
+5 & 134 & 98 & 345 & 4.4 & 55\% \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Subjects, same file: Algebra 124, Intermediate Algebra 97, Prealgebra 82, Number Theory 62, Precalculus 56, Geometry 41, Counting and Probability 38.
+
+\subsection{Check-In 2, twenty GSM8K questions}
+\texttt{Jaswanthi Mandalapu/Plots/} is a 20-question reproduction, not the claim of this report.
+Full chain-of-thought is 65.0\% at 634.5 tokens.
+DEER is 70.0\% at 600.5 tokens.
+The savings sit on a few long traces (Figs.~\ref{fig:jm-q} and~\ref{fig:jm-long}).
+
+\subsection{Check-In 2 controller bake-off (synthetic)}
+\texttt{checkin2\_summary.md} and the CSV files in Sai's tables folder come from a notebook with live generation turned off.
+They are included because they are in git.
+They are not performance claims.
+The notebook's own caveat says to re-run on the never-exit logs before using these numbers, and Check-In 3 did that re-run.
+The tables below are the synthetic record.
+
+\begin{table*}[!t]
+\caption{Synthetic trajectory corpus (\texttt{table1\_trajectory\_corpus\_summary.csv}). Not a live measurement.}
+\label{tab:synth-corpus}
+\centering
+\footnotesize
+\begin{tabular}{@{}llrrrr@{}}
+\toprule
+Scale & Dataset & Problems & Checkpoints & Full acc. & Tokens \\
+\midrule
+1.5B & GSM8K & 800 & 6{,}591 & 84.36\% & 562.7 \\
+1.5B & MATH-500 & 500 & 8{,}499 & 63.20\% & 1{,}599.9 \\
+7B & GSM8K & 800 & 6{,}176 & 89.28\% & 525.7 \\
+7B & MATH-500 & 500 & 8{,}043 & 73.03\% & 1{,}531.6 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+The four rows sum to 29{,}309 checkpoints.
+The feature ablation on that corpus (\texttt{table3\_saichetan\_feature\_ablation.csv}) reports ROC-AUC 0.982 on confidence alone, 0.989 after momentum features, and 1.0 once token-uncertainty features are added, with the last step at 79.34\% accuracy, 552.8 reasoning tokens, 28.59\% compute savings, and 0\% premature exits.
+Adding self-consistency and length features does not change those four aggregates in the CSV.
+A ROC-AUC of 1.0 on synthetic traces is one of the reasons this table is not used as a result.
+The cross-dataset CSV reports a static DEER accuracy drop of 24.42 points on MATH-500 and 10.95 points on GSM8K, with the synthetic MLP matching its full-chain-of-thought row and saving 24.33\% and 35.62\% of tokens.
+The 7B transfer CSV reports the same pattern: the synthetic MLP matches the synthetic full-chain-of-thought accuracy and saves 43.99\% of tokens on GSM8K and 37.69\% on MATH-500.
+Fig.~\ref{fig:mlp-xfer} is that file.
+
+\subsection{Check-In 3 live runs}
+The two \texttt{comparison.md} files under the Check-In 3 GSM8K and MATH folders.
+First 100 problems, DeepSeek-R1-Distill-Qwen-1.5B, vLLM, 8{,}000-token budget.
+The $\pm$ values are 95\% intervals on one sample of 100.
+Token reduction is against full chain-of-thought compute tokens.
+
+\begin{table*}[!t]
+\caption{Check-In 3 live runs. Accuracy, mean reasoning tokens, and mean output tokens.}
+\label{tab:c3live}
+\centering
+\scriptsize
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+ & \multicolumn{3}{c}{GSM8K} & \multicolumn{3}{c}{MATH-500} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+Method & Acc. & Reason & Output & Acc. & Reason & Output \\
+\midrule
+Full chain-of-thought & $77.0\pm 8.2$ & 1{,}229 & 1{,}452 & $66.0\pm 9.3$ & 3{,}665 & 3{,}894 \\
+DEER $\tau=0.95$ & $68.0\pm 9.1$ & 442 & 773 & $69.0\pm 9.1$ & 1{,}423 & 1{,}747 \\
+Never-exit & $76.0\pm 8.4$ & 855 & 1{,}123 & $81.0\pm 7.7$ & 2{,}570 & 2{,}937 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+DEER's compute-token reduction in those files is 46.8\% on GSM8K and 55.1\% on MATH-500.
+The offline replay of the same traces, scored on the trial answer, is a different column from the live DEER row.
+
+\begin{table*}[!t]
+\caption{Offline threshold sweep on the Check-In 3 never-exit logs. The exit answer is the trial answer. Tokens are mean reasoning tokens.}
+\label{tab:c3sweep}
+\centering
+\footnotesize
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+ & \multicolumn{2}{c}{GSM8K} & \multicolumn{2}{c}{MATH-500} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+$\tau$ & Acc. & Tokens & Acc. & Tokens \\
+\midrule
+0.50 & 78 & 281 & 59 & 630 \\
+0.60 & 79 & 302 & 59 & 754 \\
+0.70 & 80 & 313 & 63 & 854 \\
+0.80 & 81 & 320 & 69 & 1{,}027 \\
+0.90 & 82 & 343 & 79 & 1{,}276 \\
+0.95 & 83 & 365 & 79 & 1{,}389 \\
+0.99 & 82 & 486 & 80 & 1{,}467 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\clearpage
+\subsection{Answer step, live}
+The answer-fix \texttt{comparison.md} files, and the paired tests in the checkpoint-4 README.
+Same 100 problems and the same model.
+
+\begin{table*}[!t]
+\caption{Live answer-step variants. Each cell is accuracy / mean output tokens.}
+\label{tab:fix}
+\centering
+\scriptsize
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Method & GSM8K & MATH-500 \\
+\midrule
+Full chain-of-thought & $77.0\pm 8.2$ / 1{,}452 & $66.0\pm 9.3$ / 3{,}894 \\
+DEER $\tau=0.95$, rewritten answer & $68.0\pm 9.1$ / 773 & $69.0\pm 9.1$ / 1{,}747 \\
+DEER $\tau=0.95$, keep trial answer & $82.0\pm 7.5$ / 592 & $79.0\pm 8.0$ / 1{,}446 \\
+DEER $\tau=0.95$, boxed prompt & $80.0\pm 7.8$ / 556 & $80.0\pm 7.8$ / 1{,}833 \\
+Never-exit & $76.0\pm 8.4$ / 1{,}123 & $81.0\pm 7.7$ / 2{,}937 \\
+Never-exit, boxed prompt & $81.0\pm 7.7$ / 1{,}058 & $77.0\pm 8.2$ / 2{,}988 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{Paired tests on the same 100 problems, from \texttt{checkpoint4/README.md}. Accuracy uses McNemar's exact test. Token intervals are bootstrap 95\% intervals on output tokens.}
+\label{tab:paired}
+\centering
+\scriptsize
+\begin{tabular}{@{}lll@{}}
+\toprule
+Comparison & GSM8K & MATH-500 \\
+\midrule
+Trial vs.\ official DEER & $+14$ pts ($p=0.001$), $-181$ ($-381,-13$) & $+10$ pts ($p=0.041$), $-301$ ($-489,-116$) \\
+Boxed vs.\ official DEER & $+12$ pts ($p=0.023$), $-217$ ($-378,-94$) & $+11$ pts ($p=0.043$), $+86$ ($-126,+332$) \\
+Trial vs.\ full chain-of-thought & $+5$ pts ($p=0.13$), $-860$ ($-1288,-475$) & $+13$ pts ($p=0.004$), $-2448$ ($-2961,-1943$) \\
+Trial vs.\ never-exit & $+6$ pts ($p=0.07$), $-531$ & $-2$ pts ($p=0.73$), $-1491$ \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+The offline simulator had predicted 82\% and 79\% for scoring DEER on the trial answer.
+The live trial-answer runs produced 82\% and 79\%.
+Two never-exit runs with the same greedy settings produced identical reasoning on 82 of 100 GSM8K problems and 52 of 100 MATH problems.
+On MATH those two runs are 81\% and 77\% ($p=0.29$).
+A four-point gap between single runs is the noise floor named in that README.
+
+\subsection{Stopping methods trained off the test set}
+\texttt{results.md} in \texttt{methods\_gsm8k} and in \texttt{methods\_math}.
+Early exits are scored on the trial answer.
+The threshold is chosen on the training trajectories at no more tokens than DEER $\tau=0.95$, then frozen.
+Differences are paired bootstrap 95\% intervals against that DEER point.
+GSM8K training data are 1{,}000 training problems.
+MATH training data are 500 MATH training problems that are not in MATH-500.
+Checkpoint ROC-AUC on the GSM8K test logs is 0.779 for confidence, 0.914 for logistic regression, 0.810 for gradient boosting, and 0.912 for the MLP.
+On MATH it is 0.921, 0.943, 0.934, and 0.936.
+
+\begin{table*}[!t]
+\caption{GSM8K stopping methods, threshold frozen on the GSM8K training split. One hundred test problems.}
+\label{tab:meth-gsm}
+\centering
+\scriptsize
+\begin{tabular}{@{}lrrll@{}}
+\toprule
+Method & Acc. & Tokens & $\Delta$ acc & $\Delta$ tokens \\
+\midrule
+Full reasoning & 76 & 1{,}123 & $-6$ ($-11,-2$) & $+495$ ($+280,+744$) \\
+Perfect stopping & 85 & 659 & $+3$ ($0,+7$) & $+31$ ($-159,+224$) \\
+DEER $\tau=0.95$ & 82 & 628 & 0 & 0 \\
+Consistency, $k=2$ & 82 & 694 & $0$ ($-3,+3$) & $+66$ ($-95,+225$) \\
+Logistic regression & 82 & 573 & $0$ ($-4,+4$) & $-55$ ($-139,-8$) \\
+Gradient boosting & 83 & 535 & $+1$ ($-3,+5$) & $-93$ ($-212,-11$) \\
+MLP & 82 & 596 & $0$ ($-4,+4$) & $-31$ ($-191,+125$) \\
+GBDT, confidence only & 84 & 537 & $+2$ ($-2,+6$) & $-91$ ($-210,-9$) \\
+GBDT, confidence + stability & 85 & 552 & $+3$ ($0,+7$) & $-76$ ($-195,+5$) \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table*}[!t]
+\caption{MATH-500 stopping methods, threshold frozen on the MATH training split. One hundred test problems.}
+\label{tab:meth-math}
+\centering
+\scriptsize
+\begin{tabular}{@{}lrrll@{}}
+\toprule
+Method & Acc. & Tokens & $\Delta$ acc & $\Delta$ tokens \\
+\midrule
+Full reasoning & 81 & 2{,}937 & $+2$ ($-3,+7$) & $+1405$ ($+1132,+1692$) \\
+Perfect stopping & 85 & 1{,}431 & $+6$ ($+2,+11$) & $-100$ ($-270,+42$) \\
+DEER $\tau=0.95$ & 79 & 1{,}531 & 0 & 0 \\
+Consistency, $k=2$ & 81 & 1{,}571 & $+2$ ($-2,+6$) & $+40$ ($-220,+285$) \\
+Logistic regression & 79 & 1{,}524 & $0$ ($0,0$) & $-7$ ($-34,+18$) \\
+Gradient boosting & 75 & 1{,}419 & $-4$ ($-9,0$) & $-112$ ($-242,-10$) \\
+MLP & 76 & 1{,}387 & $-3$ ($-8,+1$) & $-144$ ($-261,-54$) \\
+GBDT, confidence only & 75 & 1{,}431 & $-4$ ($-9,0$) & $-100$ ($-213,-6$) \\
+GBDT, confidence + stability & 77 & 1{,}443 & $-2$ ($-6,+2$) & $-89$ ($-218,+12$) \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Training on both sets and testing on each (\texttt{methods\_combined/results.md}) does not create a new winner.
+On GSM8K, logistic regression is 83\% at 577 tokens ($\Delta$ tokens $-51$, interval $-129$ to $-6$) and the MLP is 82\% at 624.
+On MATH-500, logistic regression is 78\% at 1{,}493 and the MLP is 73\% at 1{,}295 ($\Delta$ accuracy $-6$, interval $-12$ to $-1$).
+Joint checkpoint AUC is 0.896 for confidence and 0.932 for the MLP.
+The same file's perfect-stopping row stays at 85\% on both test sets.
+
+\clearpage
+\subsection{MLP on five splits of the Check-In 3 logs}
+\texttt{checkpoint3\_real/results.md}.
+Mean $\pm$ standard deviation over five 70/30 question splits of the same 100-problem logs.
+About 28 GSM8K and 31 MATH questions are held out per split.
+Checkpoint ROC-AUC is $0.920\pm 0.025$ for the MLP and $0.929\pm 0.028$ for raw confidence.
+
+\begin{table*}[!t]
+\caption{Five-split replay, selected rows. Tokens are mean output tokens.}
+\label{tab:mlp5}
+\centering
+\renewcommand{\arraystretch}{0.9}
+\scriptsize
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+ & \multicolumn{2}{c}{GSM8K} & \multicolumn{2}{c}{MATH} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Policy & Acc. & Tokens & Acc. & Tokens \\
+\midrule
+Full reasoning & $79.3\pm 13.2$ & $1{,}092\pm 196$ & $83.4\pm 2.7$ & $2{,}969\pm 200$ \\
+DEER $\tau=0.95$ & $84.5\pm 10.1$ & $522\pm 42$ & $82.5\pm 4.9$ & $1{,}454\pm 147$ \\
+DEER $\tau=0.99$ & $83.3\pm 11.5$ & $671\pm 126$ & $83.1\pm 4.1$ & $1{,}520\pm 179$ \\
+Consistency, twice & $83.9\pm 10.5$ & $647\pm 84$ & $84.2\pm 3.8$ & $1{,}430\pm 174$ \\
+Consistency + momentum & $83.9\pm 10.5$ & $669\pm 86$ & $83.5\pm 4.0$ & $1{,}495\pm 174$ \\
+MLP $p\ge 0.5$ & $85.1\pm 9.1$ & $561\pm 72$ & $81.1\pm 3.5$ & $1{,}425\pm 190$ \\
+MLP $p\ge 0.7$ & $84.5\pm 10.1$ & $642\pm 121$ & $85.0\pm 4.1$ & $1{,}804\pm 152$ \\
+MLP $p\ge 0.9$ & $84.5\pm 10.1$ & $851\pm 200$ & $85.0\pm 4.6$ & $2{,}290\pm 127$ \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+The file also records MLP thresholds 0.3, 0.4, 0.62, and 0.8, and DEER at 0.8 and 0.9.
+On MATH the low MLP thresholds (0.3 and 0.4) fall to 71.1\% and 76.4\%.
+On GSM8K, DEER at 0.8 and 0.9 is 83.9\% at about 490 tokens, and the MLP at 0.3 is 84.4\% at 486.
+
+\subsection{State-dependent threshold}
+\texttt{adaptive\_threshold\_heldout/results.md}.
+Eight seeds, 30\% of the Check-In 3 questions held out, thresholds chosen on the other 70\%.
+This is not the 1{,}000/500 training-trajectory experiment.
+The policy family (a higher bar on the first checkpoint, a lower bar once an answer repeats, and no exit on an unfinished formula) was chosen after reading misses on these same logs, so the held-out gap is optimistic.
+The README in that folder says so, and this report does not use the row as the final rule.
+
+\begin{table*}[!t]
+\caption{Equal-token protocol: the training side may not use more tokens than DEER $\tau=0.95$. Mean $\pm$ standard deviation across eight seeds. $\Delta$ is against DEER on the same held-out questions.}
+\label{tab:adapt}
+\centering
+\scriptsize
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+ & \multicolumn{2}{c}{GSM8K} & \multicolumn{2}{c}{MATH} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Method & Acc. & $\Delta$ acc & Acc. & $\Delta$ acc \\
+\midrule
+DEER $\tau=0.95$ & $84.2\pm 3.0$ & 0 & $77.5\pm 7.5$ & 0 \\
+DEER + complete answer & $84.2\pm 3.0$ & 0 & $78.8\pm 6.7$ & $+1.3\pm 1.7$ \\
+Consistency $k=2$ & $84.6\pm 2.5$ & $+0.4\pm 2.1$ & $79.2\pm 6.8$ & $+1.7\pm 3.6$ \\
+Confidence adaptive & $84.6\pm 2.5$ & $+0.4\pm 2.1$ & $78.8\pm 6.4$ & $+1.3\pm 5.0$ \\
+Closing adaptive & $85.4\pm 3.1$ & $+1.2\pm 1.7$ & $78.8\pm 6.4$ & $+1.3\pm 5.0$ \\
+MLP, one threshold & $80.8\pm 8.3$ & $-3.3\pm 6.7$ & $75.4\pm 5.0$ & $-2.1\pm 4.7$ \\
+MLP adaptive & $84.6\pm 2.5$ & $+0.4\pm 2.1$ & $78.8\pm 6.4$ & $+1.3\pm 3.5$ \\
+Perfect stopping & $87.5\pm 4.6$ & $+3.3\pm 2.5$ & $82.9\pm 6.3$ & $+5.4\pm 3.5$ \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Mean output tokens on that protocol, GSM8K then MATH: DEER 613 and 1{,}606; closing adaptive 574 and 1{,}493; perfect stopping 545 and 1{,}489.
+The gap-closing objective, which picks the highest training accuracy and then fewer tokens, matches the GSM8K table except the single-threshold MLP, which moves from 80.8\% at 514 tokens to 82.9\% at 587.
+On MATH it changes closing adaptive to $77.9\pm 6.7$ at 1{,}560 tokens and the single-threshold MLP to $79.2\pm 8.3$ at 2{,}038 tokens.
+The parameters chosen for closing adaptive are $\tau=0.995$ on the first checkpoint, $0.95$ after that, and $0.85$ once the answer repeats, in six of eight MATH seeds ($0.88$ in the other two).
+
+\subsection{AdaDEER-E replay, first 100 and all 500}
+The headline for all 500 MATH-500 problems is Table~\ref{tab:headline}.
+The first-100 file is \texttt{Jaswanthi Mandalapu/results/checkin4/kfold/results.md}, five folds, mean $\pm$ standard deviation.
+Tokens there are output tokens.
+AdaDEER-E is frozen at $\theta=4.6$, $\rho=1$.
+
+\begin{table*}[!t]
+\caption{First 100 problems, 5-fold means, from \texttt{kfold/results.md}.}
+\label{tab:k100}
+\centering
+\scriptsize
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+ & \multicolumn{2}{c}{GSM8K} & \multicolumn{2}{c}{MATH-500} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Policy & Acc. & Tokens & Acc. & Tokens \\
+\midrule
+Full reasoning & $81.0\pm 5.8$ & 2{,}017 & $81.0\pm 7.3$ & 2{,}856 \\
+DEER $\tau=0.90$ & $84.0\pm 3.7$ & 616 & $76.0\pm 6.6$ & 1{,}271 \\
+DEER $\tau=0.95$ & $84.0\pm 3.7$ & 683 & $79.0\pm 4.9$ & 1{,}409 \\
+DEER $\tau=0.99$ & $85.0\pm 4.5$ & 846 & $79.0\pm 5.8$ & 1{,}670 \\
+Consistency, twice & $87.0\pm 2.4$ & 820 & $79.0\pm 10.7$ & 1{,}256 \\
+Consistency + momentum & $88.0\pm 2.4$ & 911 & $81.0\pm 7.3$ & 1{,}322 \\
+AdaDEER defaults & $85.0\pm 4.5$ & 824 & $81.0\pm 5.8$ & 1{,}493 \\
+AdaDEER-E frozen & $85.0\pm 4.5$ & 667 & $81.0\pm 5.8$ & 1{,}345 \\
+AdaDEER-E tuned & $83.0\pm 4.0$ & 684 & $81.0\pm 5.8$ & 1{,}309 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Out of fold on these 200 problems, frozen AdaDEER-E against DEER $\tau=0.95$ is uniquely correct on 4 problems and uniquely wrong on 1 (McNemar $p=0.375$).
+The accuracy interval is $[-0.5,+4.0]$ points and the token interval is $[-154,+61]$.
+The same file's by-level cut of the first-100 MATH-500 slice, labeled there as AdaDEER rather than AdaDEER-E, is Level 1 ($n=11$) 81.8\% / 641 tokens against DEER 81.8\% / 1{,}329; Level 2 ($n=25$) 96.0 / 853 against 92.0 / 762; Level 3 ($n=19$) 94.7 / 884 against 89.5 / 788; Level 4 ($n=22$) 86.4 / 1{,}400 against 86.4 / 1{,}273; Level 5 ($n=23$) 47.8 / 2{,}545 against 47.8 / 2{,}793.
+
+The random 70/30 file on the same first 100, \texttt{random/results.md}, gives frozen AdaDEER-E at $86.7\pm 4.7$ / 643 tokens on GSM8K (iso-token gain $0.0\pm 2.1$) and $77.3\pm 3.3$ / 1{,}275 on MATH-500 (iso-token gain $1.0\pm 3.3$).
+Removing stability from AdaDEER on that file raises GSM8K tokens from 780 to 946 and MATH-500 tokens from 1{,}406 to 1{,}767.
+Removing volatility, switching, or budget pressure moves tokens by less than that.
+
+On all 500 MATH-500 problems the 5-fold file \texttt{math500\_full\_kfold/results.md} is the source of Table~\ref{tab:headline}, Table~\ref{tab:level}, and Table~\ref{tab:ablation}.
+The README next to the code, \texttt{Artifacts/adadeer/README.md}, reports the cut that drops the 32 dev problems used to freeze $\theta$ and $\rho$: 79.9\% at 1{,}448 tokens for AdaDEER-E against 76.7\% at 1{,}569 for DEER $\tau=0.95$, with the same 19-to-4 split.
+The five-random-split file \texttt{math500\_full\_random/results.md} is the source of the $+4.7\pm 1.1$ iso-token gain in Fig.~\ref{fig:random}.
+
+\subsection{Where each file sits in git}
+The measurement commits, oldest first, are \texttt{d1409f4} (20-question reproduction), \texttt{baaf80f} (synthetic controller), \texttt{6c4cdac} and \texttt{398e319} (never-exit and live Check-In 3 runs), \texttt{554a2c8} and \texttt{33471d0} (MLP replay and the live-versus-simulated comparison), \texttt{bd7379c} and \texttt{346e3fb} (answer step and stopping methods), \texttt{43f5567} (state-dependent threshold), and \texttt{92761d4} (AdaDEER-E code and the full MATH-500 replay).
+Raw vLLM logs were written to Google Drive under \texttt{MyDrive/deer\_final/} and are not in git.
+A shareable Drive URL is not in the repository.
