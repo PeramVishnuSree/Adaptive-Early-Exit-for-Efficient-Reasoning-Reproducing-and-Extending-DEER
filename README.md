@@ -6,7 +6,7 @@ This code repo accompanies a research paper titled: Adaptive Early Exit for Effi
 
 | Folder | Lead | Focus |
 |---|---|---|
-| `Jaswanthi Mandalapu/` | Jaswanthi Mandalapu | Baseline Full CoT + DEER reproduction (Check-In 2) |
+| `Jaswanthi Mandalapu/` | Jaswanthi Mandalapu | Baseline Full CoT + DEER reproduction (Check-In 2); AdaDEER-E code, full MATH-500 replay, and the Check-In 4 IEEE draft |
 | `Vishnu-evaluation/` | Vishnu Sree Peram | Evaluation pipeline, metrics, offline early-exit simulation |
 | `Saichetan-adaptive/` | Sai Chetan Muppalla | Trajectory features + AdaptiveDEER neural stopping controllers |
 
