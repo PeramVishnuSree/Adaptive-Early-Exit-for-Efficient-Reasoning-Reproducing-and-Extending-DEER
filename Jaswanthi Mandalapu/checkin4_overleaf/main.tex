@@ -227,6 +227,8 @@ With $\rho=0$ the rule is exactly DEER at $\tau=\sigma(\theta)$.
 There is no training, no extra probe, and no extra forward pass.
 $\theta$ and $\rho$ were fixed on a dev slice (MATH-500 problems 100--131 and GSM8K problems 100--147) before the evaluation problems were scored.
 
+\widefig{figures/threshold_evolution.png}{Illustrative exit bar, not one logged problem. DEER stays at $0.95$. AdaDEER-E opens at $0.99$. After a trial answer of confidence $0.95$, the next agreeing answer has to clear $0.84$. An answer change puts the bar back at $0.99$. Open circles are the confidences in this example. The star is where that confidence clears the AdaDEER-E bar. The band is the gray zone, $[0.95,0.99]$.}{fig:tau-evol}
+
 \section{Experimental Setup}
 The model is DeepSeek-R1-Distill-Qwen-1.5B, greedy decoding, an 8{,}000-token budget, and a thinking cap at 60\% of that budget (4{,}800 tokens).
 Checkpoints are ``Wait'' transitions, at most 10 of them, with \texttt{avg1} confidence.
