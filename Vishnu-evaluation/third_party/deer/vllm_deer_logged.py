@@ -2,7 +2,15 @@
 # with logging added for this project. Every change is marked "[OURS]".
 # Exit behaviour is unchanged unless a new flag is passed:
 #   --limit N               run only the first N questions (smoke tests)
+#   --offset K              skip the first K questions (run a dataset in chunks);
+#                           output idx stays the position in the full file
 #   --output_file PATH      explicit output path (+ PATH.meta.json with timing)
+#   --final_answer MODE     how the final answer is written after thinking ends:
+#                           regenerate (official): free-form answer after </think>
+#                           trial: on an early exit, keep the trial answer DEER
+#                                  stopped on (no extra generation)
+#                           boxed: the answer after </think> is prompted to start
+#                                  with "**Final Answer**\n\boxed{"
 #   --trial_temperature T   temperature of the trial-answer probe. Default -1
 #                           keeps the official behaviour (unset = vLLM default
 #                           1.0, i.e. the trial answer is *sampled*).
@@ -176,6 +184,10 @@ def token_probs_from_logprobs(logprobs_list):
 
 # [OURS] The probe generates "{answer" and stops before the closing brace, so
 # rebuild the content of \boxed{...} by brace matching.
+# [OURS] answer prefix used by --final_answer trial / boxed (same wording as DEER's probe)
+BOXED_ANSWER_PREFIX = "**Final Answer**\n\\boxed{"
+
+
 def parse_trial_answer(text):
     s = text.lstrip()
     if not s.startswith('{'):
@@ -228,6 +240,10 @@ def parse_args():
     parser.add_argument('--output_file', type=str, default=None)
     parser.add_argument('--trial_temperature', type=float, default=-1.0,
                         help="Trial-answer probe temperature; -1 keeps the official (vLLM default) behaviour")
+    parser.add_argument('--offset', type=int, default=0, help="Skip the first K questions")
+    parser.add_argument('--final_answer', type=str, default='regenerate', choices=['regenerate', 'trial', 'boxed'],
+                        help="regenerate (official), trial (keep the trial answer on early exit), "
+                             "or boxed (prompt the final answer with \\boxed{)")
 
     args = parser.parse_args()
     return args
@@ -281,9 +297,12 @@ def main():
             print(f"Error: No questions loaded from {dataset_path}.")
             sys.exit(1)
         print(f"Successfully loaded dataset: {dataset_path}, total {len(questions_json)} questions")
+        if args.offset > 0:  # [OURS]
+            questions_json = questions_json[args.offset:]
+            print(f"--offset: skipping the first {args.offset} questions")
         if args.limit > 0:  # [OURS]
             questions_json = questions_json[:args.limit]
-            print(f"--limit: using the first {len(questions_json)} questions")
+            print(f"--limit: using {len(questions_json)} questions")
     except Exception as e:
         print(f"Failed to load dataset: {e}")
         sys.exit(1)
@@ -330,8 +349,8 @@ def main():
     # Max token limit for thinking phase
     think_limit_tokens = int(args.max_len * args.think_ratio)
 
-    for i, question_data in enumerate(questions_json):
-        
+    for i, question_data in enumerate(questions_json, start=args.offset):  # [OURS] start= keeps global idx
+
         messages = [
             {"role": "system", "content": sys_prompt},
             {"role": "user", "content": question_data['problem']}
@@ -509,7 +528,11 @@ def main():
                     else:
                         final_answer_prompt = state['formatted_prompt'] + state['generated_thinking_history'] + '\n</think>\n\n'#+ answer_prompt_str
                         state['generated_thinking_history'] = state['generated_thinking_history'] + '\n</think>\n\n'
-                    
+
+                    if args.final_answer == 'boxed':  # [OURS] the answer starts inside \boxed{
+                        final_answer_prompt += BOXED_ANSWER_PREFIX
+                        state['generated_thinking_history'] += BOXED_ANSWER_PREFIX
+
                     len_final_answer_prompt = len(tokenizer.encode(final_answer_prompt, add_special_tokens=False))
                     total_tokens_before_answer_prompt = current_generated_thinking_tokens
                     # Calculate remaining total budget
@@ -714,6 +737,17 @@ def main():
                          else:
                              print(f"\nQuestion {q_idx}: Reached early exit threshold ({state['pred_prob']:.4f} > {args.threshold}). Switching to answer phase.")
                              state['high_prob'] = 1
+                             trial_ans = state['checkpoints'][-1]['trial_answer']
+                             if args.final_answer == 'trial' and trial_ans:
+                                 # [OURS] keep the trial answer DEER stopped on; no extra generation
+                                 state['generated_thinking_history'] += '\n</think>\n\n'
+                                 state['generated_answer_history'] = BOXED_ANSWER_PREFIX + trial_ans + '}'
+                                 state['current_full_sequence'] = state['formatted_prompt'] + state['generated_thinking_history'] + state['generated_answer_history']
+                                 state['state'] = 'finished'
+                                 state['output_dict'] = {'question': state['question_data']['problem'], 'generated_responses': [state['generated_thinking_history'] + state['generated_answer_history']], 'gold_answer': state['question_data']['answer'], 'too_long': state['too_long'], 'thinking_steps': state['thinking_steps'], 'rep_end': state['rep_end'], 'high_prob': state['high_prob'], 'regular_end': state['regular_end']}
+                                 if q_idx in active_questions_indices:
+                                     active_questions_indices.remove(q_idx)
+                                     pbar.update(1)
                     else:
                          # Probability not high enough, need more thinking
                          state['state'] = 'needs_thought_chunk'

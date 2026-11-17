@@ -61,6 +61,10 @@ class FakeLLM:
                 ids = self.tok.encode("{" + ans, add_special_tokens=False)
                 lps = [{i: Logprob(math.log(conf))} for i in ids]
                 outs.append(self._out("{" + ans, ids, lps))
+            elif gen.endswith("\\boxed{"):  # --final_answer boxed: answer prompted inside \boxed{
+                ans = spec["trials"][-1][0]
+                text = ans + "}."
+                outs.append(self._out(text, self.tok.encode(text, add_special_tokens=False) + [self.tok.eos_token_id]))
             elif "</think>" in gen:  # final answer
                 ans = spec["trials"][-1][0]
                 text = f"The answer is \\boxed{{{ans}}}."
@@ -95,7 +99,7 @@ def fake_modules():
             "torch.nn": nn, "torch.nn.functional": fn}
 
 
-def run_script(tmp_path, monkeypatch, threshold):
+def run_script(tmp_path, monkeypatch, threshold, extra=()):
     pytest.importorskip("transformers")
     try:
         FakeLLM()
@@ -112,7 +116,7 @@ def run_script(tmp_path, monkeypatch, threshold):
     monkeypatch.setattr(sys, "argv", [
         str(SCRIPT), "--model_name_or_path", TOKENIZER, "--dataset_dir", str(tmp_path / "data"),
         "--dataset", "toy", "--threshold", str(threshold), "--output_file", str(out),
-        "--max_generated_tokens", "2000"])
+        "--max_generated_tokens", "2000", *extra])
     runpy.run_path(str(SCRIPT), run_name="__main__")
     return [json.loads(line) for line in open(out)], json.load(open(tmp_path / "run.meta.json"))
 
@@ -148,3 +152,32 @@ def test_never_exit_logs_every_checkpoint(tmp_path, monkeypatch):
     s = summarize(annotate(recs))
     assert s["accuracy"] == 1.0
     assert s["avg_compute_tokens"] > s["avg_output_tokens"]
+
+
+def test_offset_keeps_global_index(tmp_path, monkeypatch):
+    recs, meta = run_script(tmp_path, monkeypatch, threshold=0.95, extra=["--offset", "1"])
+    assert [r["idx"] for r in recs] == [1]
+    assert recs[0]["question"].startswith("Q1")
+    assert meta["n_questions"] == 1
+
+
+def test_final_answer_trial_keeps_trial_answer(tmp_path, monkeypatch):
+    recs, _ = run_script(tmp_path, monkeypatch, threshold=0.95, extra=["--final_answer", "trial"])
+    q0, q1 = recs
+    # Q0 exits early: the answer is the boxed trial answer, nothing regenerated
+    assert q0["exit_reason"] == "confident"
+    assert q0["generated_responses"][0].endswith("</think>\n\n**Final Answer**\n\\boxed{18}")
+    assert "The answer is" not in q0["generated_responses"][0]
+    # Q1 never exits early, so its answer is generated as usual
+    assert q1["exit_reason"] == "natural"
+    assert "The answer is \\boxed{8}" in q1["generated_responses"][0]
+    from deer_eval.metrics import annotate
+    assert all(r["correct"] for r in annotate(recs))
+
+
+def test_final_answer_boxed_prompts_box(tmp_path, monkeypatch):
+    recs, _ = run_script(tmp_path, monkeypatch, threshold=0.95, extra=["--final_answer", "boxed"])
+    for r in recs:
+        assert "</think>\n\n**Final Answer**\n\\boxed{" in r["generated_responses"][0]
+    from deer_eval.metrics import annotate
+    assert all(r["correct"] for r in annotate(recs))

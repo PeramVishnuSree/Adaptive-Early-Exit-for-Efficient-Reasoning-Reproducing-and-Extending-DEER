@@ -14,15 +14,19 @@ All paths below are relative to this folder.
 | Path | What |
 |---|---|
 | `third_party/deer/vllm_deer_official.py` | Unmodified official DEER script (MIT), for reference |
-| `third_party/deer/vllm_deer_logged.py` | Same script plus per-checkpoint logging, `--limit`, `--output_file`, `--trial_temperature`. Changes are marked `[OURS]` |
+| `third_party/deer/vllm_deer_logged.py` | Same script plus per-checkpoint logging, `--limit`, `--offset`, `--output_file`, `--trial_temperature`, `--final_answer`. Changes are marked `[OURS]` |
 | `scripts/run_full_cot.py` | Full chain-of-thought baseline (same prompt and budget, no early exit) |
 | `scripts/score_run.py` | Grade one run and write `.scored.jsonl` + `.summary.json` |
 | `scripts/compare_runs.py` | Comparison table + accuracy-vs-tokens plot (+ offline threshold sweep) |
 | `scripts/explore_datasets.py` | Dataset statistics and figures → `results/data_exploration/` |
+| `scripts/make_train_splits.py` | Builds `data/gsm8k_train` (1,000 GSM8K train) and `data/math_train` (500 MATH train, none in MATH-500) |
+| `scripts/compare_stopping_methods.py` | Trains stopping methods on training trajectories, tests on test trajectories, with paired bootstrap CIs vs. DEER |
 | `deer_eval/` | Scoring (DEER's own grader, vendored), metrics, offline exit simulation, plots |
 | `notebooks/01_smoke_test.ipynb` | Colab notebook: Full CoT vs. DEER τ=0.95 on a subset |
+| `notebooks/02_checkpoint3_never_exit.ipynb` | Checkpoint 3 never-exit trajectories (first 100 test problems) |
+| `notebooks/04_training_trajectories_and_answer_fix.ipynb` | Never-exit trajectories on the training sets; DEER with `--final_answer trial` / `boxed` |
 | `docs/deer_code_notes.md` | How the official code works, and reproduction pitfalls |
-| `data/` | GSM8K test and MATH-500 in DEER's format (from the DEER repo) |
+| `data/` | GSM8K test and MATH-500 in DEER's format (from the DEER repo), plus `gsm8k_train/` and `math_train/` (each file is named `test.jsonl` because the DEER script always reads that name) |
 
 ## Metrics
 
@@ -60,3 +64,11 @@ python scripts/score_run.py --input outputs/deer_t0.95_gsm8k.jsonl --dataset gsm
 DEER pins `latex2sympy2==1.9.1` with `antlr4-python3-runtime==4.11.1`, and those two
 can't be installed together. We use `latex2sympy2_extended` (ANTLR 4.11) instead. Checked:
 all 500 MATH-500 reference solutions grade as correct.
+
+## DEER script options added for this project
+
+| Flag | Default | What it does |
+|---|---|---|
+| `--offset K` | 0 | Skip the first K questions, so a dataset can run in chunks. Output `idx` stays the position in the full file. |
+| `--final_answer` | `regenerate` | `regenerate`: official behavior (free-form answer after `</think>`). `trial`: on an early exit, keep the trial answer DEER stopped on. `boxed`: the answer after `</think>` is prompted to start with `**Final Answer**\n\boxed{`. |
+| `--trial_temperature T` | -1 | Temperature of the trial-answer probe; -1 keeps the official behavior (vLLM default 1.0). |
