@@ -62,4 +62,43 @@ logistic regression 0.914, MLP 0.912, gradient boosting 0.810.
 - On GSM8K the room for any stopping rule is small (DEER 82% vs. the perfect-stopping bound 85%), and only 36 of
   the 100 test problems ever reach a checkpoint, so the test has little power. The full GSM8K test set is needed.
 
-MATH-500 methods comparison: pending (MATH training run in progress).
+## 3. Stopping methods on MATH-500 — `methods_math/`, and both datasets — `methods_combined/`
+
+Training data: never-exit trajectories on 500 MATH **train** problems (none in MATH-500): 6,480 checkpoints from
+479 problems. Test: the 100 MATH-500 problems from checkpoint 3 (1,050 checkpoints from 97 problems).
+`methods_combined/` trains one model on both training sets and tests on both test sets.
+
+Checkpoint-level ROC-AUC on MATH-500 test: DEER confidence 0.921, logistic regression 0.943, MLP 0.936,
+gradient boosting 0.934.
+
+| Method (threshold chosen on train), trained on MATH | Acc. | Output tok | Δ acc vs DEER (95% CI) | Δ tok vs DEER (95% CI) |
+|---|---|---|---|---|
+| Full reasoning | 81% | 2937 | +2 (−3, +7) | +1405 |
+| **Perfect stopping (upper bound)** | 85% | 1431 | +6 (+2, +11) | −100 |
+| DEER τ=0.95 | 79% | 1531 | — | — |
+| Consistency (2 in a row) | 81% | 1571 | +2 (−2, +6) | +40 (−220, +285) |
+| Logistic regression | 79% | 1524 | 0 (0, 0) | −7 (−34, +18) |
+| MLP | 76% | 1387 | −3 (−8, +1) | **−144 (−261, −54)** |
+| Gradient boosting | 75% | 1419 | −4 (−9, 0) | **−112 (−242, −10)** |
+| Gradient boosting, confidence + answer stability | 77% | 1443 | −2 (−6, +2) | −89 (−218, +12) |
+
+Trained on both datasets: GSM8K results are similar to section 2 (logistic regression 83%, −51 tokens,
+CI −129 to −6); on MATH-500 the learned methods are again at or below DEER (logistic regression 78% / −38 tokens;
+MLP 73% / −236 tokens, a significant accuracy loss).
+
+- On MATH-500, every learned method lies on or below DEER's accuracy–token curve (`methods_math/tradeoff_math.png`):
+  it saves tokens only by losing accuracy, as DEER does with a lower τ.
+- DEER's confidence is already a strong signal on MATH (AUC 0.92); the 12 trajectory features add little (0.94).
+- The perfect-stopping bound (85%) is 6 points above DEER, so the headroom exists, but none of the current features
+  capture it. The simple "same answer twice in a row" rule is the only method above DEER's curve on MATH
+  (81% at 1,571 tokens vs. DEER ≈ 80% at that cost), and not significantly.
+
+## Summary so far
+
+1. **Answer step:** keeping DEER's trial answer is a significant, free improvement (+14 / +10 points with fewer
+   tokens) and matches full-reasoning accuracy at about half the tokens.
+2. **Adaptive stopping:** learned scores predict trial-answer correctness better than DEER's confidence where
+   confidence is weak (GSM8K AUC 0.91 vs. 0.78), but not where it is already strong (MATH 0.94 vs. 0.92). At the
+   policy level they match DEER with somewhat fewer tokens on GSM8K and do not beat DEER on MATH.
+3. **Power:** with 100 test problems per dataset (36 GSM8K problems with any checkpoint) and about ±4 points of
+   run-to-run noise, the full test sets and repeated runs are needed before final conclusions.

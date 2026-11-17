@@ -1,0 +1,817 @@
+{
+  "auc_test_checkpoints": {
+    "DEER confidence": 0.9214870406561368,
+    "LogReg": 0.942684138019415,
+    "GBDT": 0.9344263608112005,
+    "MLP": 0.9358200108928972,
+    "GBDT conf-only": 0.9175663986159613,
+    "GBDT conf+stability": 0.9291040592061001
+  },
+  "max_checks": 10,
+  "datasets": {
+    "math": {
+      "n_test": 100,
+      "operating_points": [
+        {
+          "method": "Full reasoning",
+          "family": "Full reasoning",
+          "param": null,
+          "over_budget": false,
+          "accuracy": 0.81,
+          "output_tokens": 2936.59,
+          "reasoning_tokens": 2570.13,
+          "compute_tokens": 2996.88,
+          "acc_diff_vs_deer": [
+            0.020000000000000018,
+            -0.029999999999999916,
+            0.06999999999999995
+          ],
+          "token_diff_vs_deer": [
+            1405.3200000000002,
+            1132.3137500000003,
+            1692.1722499999998
+          ],
+          "gap_closed": 0.3333333333333339
+        },
+        {
+          "method": "Perfect stopping",
+          "family": "Perfect stopping",
+          "param": null,
+          "over_budget": false,
+          "accuracy": 0.85,
+          "output_tokens": 1431.27,
+          "reasoning_tokens": 1287.88,
+          "compute_tokens": 1448.31,
+          "acc_diff_vs_deer": [
+            0.05999999999999994,
+            0.020000000000000018,
+            0.10999999999999999
+          ],
+          "token_diff_vs_deer": [
+            -100.0,
+            -270.22150000000005,
+            42.09849999999995
+          ],
+          "gap_closed": 1.0
+        },
+        {
+          "method": "DEER (0.95)",
+          "family": "DEER",
+          "param": 0.95,
+          "over_budget": false,
+          "accuracy": 0.79,
+          "output_tokens": 1531.27,
+          "reasoning_tokens": 1402.05,
+          "compute_tokens": 1552.22,
+          "acc_diff_vs_deer": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "token_diff_vs_deer": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "gap_closed": 0.0
+        },
+        {
+          "method": "Consistency k (2, over budget)",
+          "family": "Consistency k",
+          "param": 2,
+          "over_budget": true,
+          "accuracy": 0.81,
+          "output_tokens": 1571.44,
+          "reasoning_tokens": 1393.93,
+          "compute_tokens": 1586.26,
+          "acc_diff_vs_deer": [
+            0.020000000000000018,
+            -0.01999999999999991,
+            0.06000000000000005
+          ],
+          "token_diff_vs_deer": [
+            40.17000000000007,
+            -220.05524999999994,
+            285.4330000000001
+          ],
+          "gap_closed": 0.3333333333333339
+        },
+        {
+          "method": "Consistency + conf (0.0, over budget)",
+          "family": "Consistency + conf",
+          "param": 0.0,
+          "over_budget": true,
+          "accuracy": 0.81,
+          "output_tokens": 1571.44,
+          "reasoning_tokens": 1393.93,
+          "compute_tokens": 1586.26,
+          "acc_diff_vs_deer": [
+            0.020000000000000018,
+            -0.01999999999999991,
+            0.06000000000000005
+          ],
+          "token_diff_vs_deer": [
+            40.17000000000007,
+            -220.05524999999994,
+            285.4330000000001
+          ],
+          "gap_closed": 0.3333333333333339
+        },
+        {
+          "method": "LogReg (0.7)",
+          "family": "LogReg",
+          "param": 0.7,
+          "over_budget": false,
+          "accuracy": 0.79,
+          "output_tokens": 1523.92,
+          "reasoning_tokens": 1396.47,
+          "compute_tokens": 1544.99,
+          "acc_diff_vs_deer": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "token_diff_vs_deer": [
+            -7.349999999999909,
+            -33.959999999999816,
+            18.300000000000182
+          ],
+          "gap_closed": 0.0
+        },
+        {
+          "method": "GBDT (0.6)",
+          "family": "GBDT",
+          "param": 0.6,
+          "over_budget": false,
+          "accuracy": 0.75,
+          "output_tokens": 1419.12,
+          "reasoning_tokens": 1300.63,
+          "compute_tokens": 1436.57,
+          "acc_diff_vs_deer": [
+            -0.040000000000000036,
+            -0.08999999999999997,
+            0.0
+          ],
+          "token_diff_vs_deer": [
+            -112.15000000000009,
+            -241.82024999999993,
+            -10.029749999999972
+          ],
+          "gap_closed": -0.6666666666666679
+        },
+        {
+          "method": "MLP (0.4)",
+          "family": "MLP",
+          "param": 0.4,
+          "over_budget": false,
+          "accuracy": 0.76,
+          "output_tokens": 1387.04,
+          "reasoning_tokens": 1278.62,
+          "compute_tokens": 1404.75,
+          "acc_diff_vs_deer": [
+            -0.030000000000000027,
+            -0.07999999999999996,
+            0.010000000000000009
+          ],
+          "token_diff_vs_deer": [
+            -144.23000000000002,
+            -261.3404999999999,
+            -54.3895000000001
+          ],
+          "gap_closed": -0.5000000000000009
+        },
+        {
+          "method": "GBDT conf-only (0.6)",
+          "family": "GBDT conf-only",
+          "param": 0.6,
+          "over_budget": false,
+          "accuracy": 0.75,
+          "output_tokens": 1431.44,
+          "reasoning_tokens": 1315.1,
+          "compute_tokens": 1451.26,
+          "acc_diff_vs_deer": [
+            -0.040000000000000036,
+            -0.09000000000000008,
+            0.0
+          ],
+          "token_diff_vs_deer": [
+            -99.82999999999993,
+            -212.92475000000007,
+            -5.888999999999876
+          ],
+          "gap_closed": -0.6666666666666679
+        },
+        {
+          "method": "GBDT conf+stability (0.6)",
+          "family": "GBDT conf+stability",
+          "param": 0.6,
+          "over_budget": false,
+          "accuracy": 0.77,
+          "output_tokens": 1442.71,
+          "reasoning_tokens": 1328.72,
+          "compute_tokens": 1461.74,
+          "acc_diff_vs_deer": [
+            -0.020000000000000018,
+            -0.06000000000000005,
+            0.020000000000000018
+          ],
+          "token_diff_vs_deer": [
+            -88.55999999999995,
+            -218.35649999999993,
+            12.151000000000094
+          ],
+          "gap_closed": -0.3333333333333339
+        }
+      ],
+      "curves": {
+        "Full reasoning": [
+          {
+            "param": null,
+            "accuracy": 0.81,
+            "output_tokens": 2936.59,
+            "reasoning_tokens": 2570.13,
+            "compute_tokens": 2996.88
+          }
+        ],
+        "Perfect stopping": [
+          {
+            "param": null,
+            "accuracy": 0.85,
+            "output_tokens": 1431.27,
+            "reasoning_tokens": 1287.88,
+            "compute_tokens": 1448.31
+          }
+        ],
+        "DEER": [
+          {
+            "param": 0.5,
+            "accuracy": 0.59,
+            "output_tokens": 646.68,
+            "reasoning_tokens": 629.86,
+            "compute_tokens": 647.79
+          },
+          {
+            "param": 0.6,
+            "accuracy": 0.59,
+            "output_tokens": 775.86,
+            "reasoning_tokens": 754.43,
+            "compute_tokens": 778.46
+          },
+          {
+            "param": 0.7,
+            "accuracy": 0.63,
+            "output_tokens": 923.31,
+            "reasoning_tokens": 894.71,
+            "compute_tokens": 929.79
+          },
+          {
+            "param": 0.8,
+            "accuracy": 0.69,
+            "output_tokens": 1087.54,
+            "reasoning_tokens": 1027.21,
+            "compute_tokens": 1097.84
+          },
+          {
+            "param": 0.85,
+            "accuracy": 0.74,
+            "output_tokens": 1155.66,
+            "reasoning_tokens": 1090.64,
+            "compute_tokens": 1167.31
+          },
+          {
+            "param": 0.9,
+            "accuracy": 0.79,
+            "output_tokens": 1454.47,
+            "reasoning_tokens": 1335.66,
+            "compute_tokens": 1473.27
+          },
+          {
+            "param": 0.95,
+            "accuracy": 0.79,
+            "output_tokens": 1531.27,
+            "reasoning_tokens": 1402.05,
+            "compute_tokens": 1552.22
+          },
+          {
+            "param": 0.97,
+            "accuracy": 0.8,
+            "output_tokens": 1569.07,
+            "reasoning_tokens": 1430.3,
+            "compute_tokens": 1590.98
+          },
+          {
+            "param": 0.99,
+            "accuracy": 0.8,
+            "output_tokens": 1628.67,
+            "reasoning_tokens": 1479.92,
+            "compute_tokens": 1651.94
+          },
+          {
+            "param": 0.995,
+            "accuracy": 0.81,
+            "output_tokens": 1653.3,
+            "reasoning_tokens": 1504.55,
+            "compute_tokens": 1677.08
+          },
+          {
+            "param": 0.999,
+            "accuracy": 0.81,
+            "output_tokens": 1944.56,
+            "reasoning_tokens": 1754.21,
+            "compute_tokens": 1978.37
+          }
+        ],
+        "Consistency k": [
+          {
+            "param": 2,
+            "accuracy": 0.81,
+            "output_tokens": 1571.44,
+            "reasoning_tokens": 1393.93,
+            "compute_tokens": 1586.26
+          },
+          {
+            "param": 3,
+            "accuracy": 0.8,
+            "output_tokens": 2053.02,
+            "reasoning_tokens": 1814.01,
+            "compute_tokens": 2079.41
+          }
+        ],
+        "Consistency + conf": [
+          {
+            "param": 0.0,
+            "accuracy": 0.81,
+            "output_tokens": 1571.44,
+            "reasoning_tokens": 1393.93,
+            "compute_tokens": 1586.26
+          },
+          {
+            "param": 0.5,
+            "accuracy": 0.8,
+            "output_tokens": 1621.27,
+            "reasoning_tokens": 1443.7,
+            "compute_tokens": 1636.78
+          },
+          {
+            "param": 0.7,
+            "accuracy": 0.8,
+            "output_tokens": 1772.07,
+            "reasoning_tokens": 1585.5,
+            "compute_tokens": 1792.66
+          },
+          {
+            "param": 0.8,
+            "accuracy": 0.8,
+            "output_tokens": 1776.8,
+            "reasoning_tokens": 1590.23,
+            "compute_tokens": 1797.42
+          },
+          {
+            "param": 0.9,
+            "accuracy": 0.81,
+            "output_tokens": 1869.08,
+            "reasoning_tokens": 1675.5,
+            "compute_tokens": 1893.06
+          },
+          {
+            "param": 0.95,
+            "accuracy": 0.81,
+            "output_tokens": 1921.83,
+            "reasoning_tokens": 1718.67,
+            "compute_tokens": 1947.92
+          }
+        ],
+        "LogReg": [
+          {
+            "param": 0.3,
+            "accuracy": 0.71,
+            "output_tokens": 1113.5,
+            "reasoning_tokens": 1019.53,
+            "compute_tokens": 1123.54
+          },
+          {
+            "param": 0.4,
+            "accuracy": 0.74,
+            "output_tokens": 1357.63,
+            "reasoning_tokens": 1254.42,
+            "compute_tokens": 1374.65
+          },
+          {
+            "param": 0.5,
+            "accuracy": 0.75,
+            "output_tokens": 1421.33,
+            "reasoning_tokens": 1312.8,
+            "compute_tokens": 1439.84
+          },
+          {
+            "param": 0.6,
+            "accuracy": 0.78,
+            "output_tokens": 1507.48,
+            "reasoning_tokens": 1382.23,
+            "compute_tokens": 1528.21
+          },
+          {
+            "param": 0.7,
+            "accuracy": 0.79,
+            "output_tokens": 1523.92,
+            "reasoning_tokens": 1396.47,
+            "compute_tokens": 1544.99
+          },
+          {
+            "param": 0.75,
+            "accuracy": 0.79,
+            "output_tokens": 1581.73,
+            "reasoning_tokens": 1444.02,
+            "compute_tokens": 1604.06
+          },
+          {
+            "param": 0.8,
+            "accuracy": 0.79,
+            "output_tokens": 1622.12,
+            "reasoning_tokens": 1473.1,
+            "compute_tokens": 1645.27
+          },
+          {
+            "param": 0.85,
+            "accuracy": 0.81,
+            "output_tokens": 1639.85,
+            "reasoning_tokens": 1490.83,
+            "compute_tokens": 1663.38
+          },
+          {
+            "param": 0.9,
+            "accuracy": 0.81,
+            "output_tokens": 1797.13,
+            "reasoning_tokens": 1619.93,
+            "compute_tokens": 1823.5
+          },
+          {
+            "param": 0.95,
+            "accuracy": 0.81,
+            "output_tokens": 2883.21,
+            "reasoning_tokens": 2519.24,
+            "compute_tokens": 2941.81
+          },
+          {
+            "param": 0.97,
+            "accuracy": 0.81,
+            "output_tokens": 2936.59,
+            "reasoning_tokens": 2570.13,
+            "compute_tokens": 2996.88
+          },
+          {
+            "param": 0.99,
+            "accuracy": 0.81,
+            "output_tokens": 2936.59,
+            "reasoning_tokens": 2570.13,
+            "compute_tokens": 2996.88
+          }
+        ],
+        "GBDT": [
+          {
+            "param": 0.3,
+            "accuracy": 0.7,
+            "output_tokens": 994.19,
+            "reasoning_tokens": 937.51,
+            "compute_tokens": 1002.37
+          },
+          {
+            "param": 0.4,
+            "accuracy": 0.72,
+            "output_tokens": 1116.43,
+            "reasoning_tokens": 1024.67,
+            "compute_tokens": 1126.44
+          },
+          {
+            "param": 0.5,
+            "accuracy": 0.73,
+            "output_tokens": 1245.57,
+            "reasoning_tokens": 1144.44,
+            "compute_tokens": 1257.48
+          },
+          {
+            "param": 0.6,
+            "accuracy": 0.75,
+            "output_tokens": 1419.12,
+            "reasoning_tokens": 1300.63,
+            "compute_tokens": 1436.57
+          },
+          {
+            "param": 0.7,
+            "accuracy": 0.77,
+            "output_tokens": 1511.32,
+            "reasoning_tokens": 1379.58,
+            "compute_tokens": 1532.28
+          },
+          {
+            "param": 0.75,
+            "accuracy": 0.79,
+            "output_tokens": 1561.59,
+            "reasoning_tokens": 1416.89,
+            "compute_tokens": 1584.12
+          },
+          {
+            "param": 0.8,
+            "accuracy": 0.81,
+            "output_tokens": 1584.26,
+            "reasoning_tokens": 1436.41,
+            "compute_tokens": 1607.12
+          },
+          {
+            "param": 0.85,
+            "accuracy": 0.81,
+            "output_tokens": 1684.36,
+            "reasoning_tokens": 1527.17,
+            "compute_tokens": 1710.43
+          },
+          {
+            "param": 0.9,
+            "accuracy": 0.81,
+            "output_tokens": 1755.33,
+            "reasoning_tokens": 1587.67,
+            "compute_tokens": 1782.4
+          },
+          {
+            "param": 0.95,
+            "accuracy": 0.81,
+            "output_tokens": 1933.88,
+            "reasoning_tokens": 1743.26,
+            "compute_tokens": 1968.37
+          },
+          {
+            "param": 0.97,
+            "accuracy": 0.81,
+            "output_tokens": 2050.81,
+            "reasoning_tokens": 1828.71,
+            "compute_tokens": 2089.05
+          },
+          {
+            "param": 0.99,
+            "accuracy": 0.81,
+            "output_tokens": 2345.78,
+            "reasoning_tokens": 2078.57,
+            "compute_tokens": 2391.34
+          }
+        ],
+        "MLP": [
+          {
+            "param": 0.3,
+            "accuracy": 0.7,
+            "output_tokens": 1108.81,
+            "reasoning_tokens": 1018.93,
+            "compute_tokens": 1117.91
+          },
+          {
+            "param": 0.4,
+            "accuracy": 0.76,
+            "output_tokens": 1387.04,
+            "reasoning_tokens": 1278.62,
+            "compute_tokens": 1404.75
+          },
+          {
+            "param": 0.5,
+            "accuracy": 0.79,
+            "output_tokens": 1581.35,
+            "reasoning_tokens": 1441.08,
+            "compute_tokens": 1603.55
+          },
+          {
+            "param": 0.6,
+            "accuracy": 0.82,
+            "output_tokens": 1736.1,
+            "reasoning_tokens": 1563.44,
+            "compute_tokens": 1761.82
+          },
+          {
+            "param": 0.7,
+            "accuracy": 0.81,
+            "output_tokens": 1947.51,
+            "reasoning_tokens": 1745.96,
+            "compute_tokens": 1982.14
+          },
+          {
+            "param": 0.75,
+            "accuracy": 0.81,
+            "output_tokens": 2082.1,
+            "reasoning_tokens": 1860.73,
+            "compute_tokens": 2121.83
+          },
+          {
+            "param": 0.8,
+            "accuracy": 0.81,
+            "output_tokens": 2317.81,
+            "reasoning_tokens": 2050.65,
+            "compute_tokens": 2360.68
+          },
+          {
+            "param": 0.85,
+            "accuracy": 0.81,
+            "output_tokens": 2646.9,
+            "reasoning_tokens": 2313.91,
+            "compute_tokens": 2698.69
+          },
+          {
+            "param": 0.9,
+            "accuracy": 0.81,
+            "output_tokens": 2893.0,
+            "reasoning_tokens": 2527.53,
+            "compute_tokens": 2951.69
+          },
+          {
+            "param": 0.95,
+            "accuracy": 0.81,
+            "output_tokens": 2936.59,
+            "reasoning_tokens": 2570.13,
+            "compute_tokens": 2996.88
+          },
+          {
+            "param": 0.97,
+            "accuracy": 0.81,
+            "output_tokens": 2936.59,
+            "reasoning_tokens": 2570.13,
+            "compute_tokens": 2996.88
+          },
+          {
+            "param": 0.99,
+            "accuracy": 0.81,
+            "output_tokens": 2936.59,
+            "reasoning_tokens": 2570.13,
+            "compute_tokens": 2996.88
+          }
+        ],
+        "GBDT conf-only": [
+          {
+            "param": 0.3,
+            "accuracy": 0.7,
+            "output_tokens": 1135.92,
+            "reasoning_tokens": 1073.78,
+            "compute_tokens": 1147.4
+          },
+          {
+            "param": 0.4,
+            "accuracy": 0.72,
+            "output_tokens": 1234.06,
+            "reasoning_tokens": 1137.94,
+            "compute_tokens": 1248.36
+          },
+          {
+            "param": 0.5,
+            "accuracy": 0.73,
+            "output_tokens": 1263.68,
+            "reasoning_tokens": 1161.82,
+            "compute_tokens": 1278.8
+          },
+          {
+            "param": 0.6,
+            "accuracy": 0.75,
+            "output_tokens": 1431.44,
+            "reasoning_tokens": 1315.1,
+            "compute_tokens": 1451.26
+          },
+          {
+            "param": 0.7,
+            "accuracy": 0.78,
+            "output_tokens": 1546.2,
+            "reasoning_tokens": 1424.99,
+            "compute_tokens": 1569.38
+          },
+          {
+            "param": 0.75,
+            "accuracy": 0.78,
+            "output_tokens": 1582.0,
+            "reasoning_tokens": 1450.42,
+            "compute_tokens": 1606.01
+          },
+          {
+            "param": 0.8,
+            "accuracy": 0.81,
+            "output_tokens": 1665.82,
+            "reasoning_tokens": 1512.84,
+            "compute_tokens": 1692.13
+          },
+          {
+            "param": 0.85,
+            "accuracy": 0.81,
+            "output_tokens": 1747.81,
+            "reasoning_tokens": 1581.88,
+            "compute_tokens": 1775.5
+          },
+          {
+            "param": 0.9,
+            "accuracy": 0.82,
+            "output_tokens": 1894.53,
+            "reasoning_tokens": 1707.34,
+            "compute_tokens": 1930.33
+          },
+          {
+            "param": 0.95,
+            "accuracy": 0.82,
+            "output_tokens": 2007.97,
+            "reasoning_tokens": 1804.21,
+            "compute_tokens": 2047.07
+          },
+          {
+            "param": 0.97,
+            "accuracy": 0.82,
+            "output_tokens": 2122.47,
+            "reasoning_tokens": 1903.91,
+            "compute_tokens": 2165.46
+          },
+          {
+            "param": 0.99,
+            "accuracy": 0.81,
+            "output_tokens": 2548.92,
+            "reasoning_tokens": 2253.79,
+            "compute_tokens": 2601.5
+          }
+        ],
+        "GBDT conf+stability": [
+          {
+            "param": 0.3,
+            "accuracy": 0.71,
+            "output_tokens": 1167.79,
+            "reasoning_tokens": 1074.82,
+            "compute_tokens": 1178.41
+          },
+          {
+            "param": 0.4,
+            "accuracy": 0.74,
+            "output_tokens": 1265.56,
+            "reasoning_tokens": 1169.35,
+            "compute_tokens": 1280.38
+          },
+          {
+            "param": 0.5,
+            "accuracy": 0.76,
+            "output_tokens": 1358.28,
+            "reasoning_tokens": 1245.93,
+            "compute_tokens": 1375.66
+          },
+          {
+            "param": 0.6,
+            "accuracy": 0.77,
+            "output_tokens": 1442.71,
+            "reasoning_tokens": 1328.72,
+            "compute_tokens": 1461.74
+          },
+          {
+            "param": 0.7,
+            "accuracy": 0.79,
+            "output_tokens": 1577.55,
+            "reasoning_tokens": 1444.26,
+            "compute_tokens": 1601.38
+          },
+          {
+            "param": 0.75,
+            "accuracy": 0.79,
+            "output_tokens": 1604.09,
+            "reasoning_tokens": 1465.18,
+            "compute_tokens": 1628.29
+          },
+          {
+            "param": 0.8,
+            "accuracy": 0.8,
+            "output_tokens": 1650.67,
+            "reasoning_tokens": 1504.1,
+            "compute_tokens": 1677.08
+          },
+          {
+            "param": 0.85,
+            "accuracy": 0.81,
+            "output_tokens": 1744.16,
+            "reasoning_tokens": 1571.17,
+            "compute_tokens": 1771.88
+          },
+          {
+            "param": 0.9,
+            "accuracy": 0.82,
+            "output_tokens": 1868.82,
+            "reasoning_tokens": 1682.32,
+            "compute_tokens": 1902.19
+          },
+          {
+            "param": 0.95,
+            "accuracy": 0.82,
+            "output_tokens": 2077.17,
+            "reasoning_tokens": 1861.67,
+            "compute_tokens": 2117.48
+          },
+          {
+            "param": 0.97,
+            "accuracy": 0.82,
+            "output_tokens": 2206.55,
+            "reasoning_tokens": 1978.23,
+            "compute_tokens": 2251.78
+          },
+          {
+            "param": 0.99,
+            "accuracy": 0.81,
+            "output_tokens": 2636.03,
+            "reasoning_tokens": 2328.35,
+            "compute_tokens": 2689.65
+          }
+        ]
+      }
+    }
+  }
+}
