@@ -24,7 +24,10 @@ All paths below are relative to this folder.
 | `scripts/` | CLI: build synthetic trajectories, extract features, train, eval |
 | `docs/method_notes.md` | Feature vector, oracle label, controllers |
 | `docs/integration_notes.md` | How this plugs into Vishnu logged DEER / `simulate.py` |
-| `tests/` | Unit tests on synthetic checkpoints |
+| `results/checkpoint3_real/` | Check-In 3: AdaptiveDEER-MLP on the checkpoint-3 never-exit logs |
+| `results/checkpoint4/` | Check-In 4 note: state-dependent threshold and held-out comparison |
+| `adaptive_exit/adaptive_threshold.py` | Closing rule: three confidence bars plus a complete-answer check |
+| `tests/` | Unit tests on synthetic checkpoints and the adaptive threshold |
 
 ## Experiment outline (from notebook)
 
